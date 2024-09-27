@@ -7,13 +7,15 @@ namespace Game
 	{
 	public:
 		Application(HWND hwnd, UINT screenWidth, UINT m_screenHeight);
+
 		~Application();
 
 	public:
-		void Run();
+		void Initalize();
+		bool Run();
 
 	private:
-		void initalize();
+		
 		void update();
 		void postUpdate();
 		void render();
@@ -26,6 +28,8 @@ namespace Game
 		HDC m_MainWindowDc;
 
 		GameObject m_GameObject;
+
+		bool m_Run;
 	};
 }
 

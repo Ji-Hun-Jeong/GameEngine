@@ -51,6 +51,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
 
     g_MyApp = new Game::Application(hWnd, screenWidth, screenHeight);
+    g_MyApp->Initalize();
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_EDITORWINDOW));
 
@@ -70,7 +71,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             }
         }
         else
-            g_MyApp->Run();        
+            if (g_MyApp->Run() == false)
+                break;
     }
     delete g_MyApp;
     return (int) msg.wParam;

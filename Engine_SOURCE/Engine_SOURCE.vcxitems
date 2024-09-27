@@ -16,10 +16,18 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)EventMgr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)EventReceiver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)KeyEventReceiver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseEventReceiver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)EventMgr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)EventReceiver.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)KeyEventReceiver.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseEventReceiver.cpp" />
   </ItemGroup>
 </Project>
