@@ -29,27 +29,26 @@ namespace Game
 		update();
 		postUpdate();
 		render();
+
 		return m_Run;
 	}
 
 	void Application::Initalize()
 	{
-		m_GameObject.AddComponent(new MouseEventReceiver);
-		m_GameObject.AddComponent(new KeyEventReceiver);
+		m_SceneManager.Initalize();
 	}
 	void Application::update()
 	{
 		MouseMgr::GetInst().Update();
 		KeyMgr::GetInst().Update();
-
-		m_GameObject.Update();
+		m_SceneManager.Update();
 	}
 	void Application::postUpdate()
 	{
-
+		m_SceneManager.PostUpdate();
 	}
 	void Application::render()
 	{
-		m_GameObject.Render(m_MainWindowDc);
+		m_SceneManager.Render(m_MainWindowDc);
 	}
 }

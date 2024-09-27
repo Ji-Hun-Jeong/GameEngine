@@ -75,6 +75,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 break;
     }
     delete g_MyApp;
+    //system("pause");
     return (int) msg.wParam;
 }
 

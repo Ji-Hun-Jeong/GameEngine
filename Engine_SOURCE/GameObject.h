@@ -3,15 +3,16 @@
 #include "Component.h"
 namespace Game
 {
-	class GameObject
+	class GameObject : public Entity
 	{
 	public:
-		GameObject();
+		GameObject(const std::string& name);
 		virtual ~GameObject();
 
 	public:
-		void Update();
-		void Render(HDC dc);
+		virtual void Update();
+		virtual void PostUpdate();
+		virtual void Render(HDC dc);
 		void AddComponent(Component* const component);
 
 		template <typename T>

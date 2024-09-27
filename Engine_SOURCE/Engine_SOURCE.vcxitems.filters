@@ -28,6 +28,18 @@
     <Filter Include="Component\Component\KeyEventReceiver">
       <UniqueIdentifier>{2aef4163-1917-47ba-a404-1550689c5e48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SceneManager">
+      <UniqueIdentifier>{0e187777-caee-4d05-98dc-3ebe272a7444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{3d24dea4-bf81-4bea-ad5f-2b0596618aa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Scene">
+      <UniqueIdentifier>{1fc89627-e84e-4611-b434-44b6dc2b92c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\TestScene">
+      <UniqueIdentifier>{59e62a49-2f83-4831-a378-a99d7f653bd0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -55,6 +67,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyEventReceiver.h">
       <Filter>Component\Component\KeyEventReceiver</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SceneManager.h">
+      <Filter>SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h">
+      <Filter>Scene\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TestScene.h">
+      <Filter>Scene\TestScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp">
@@ -78,6 +99,15 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyEventReceiver.cpp">
       <Filter>Component\Component\KeyEventReceiver</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SceneManager.cpp">
+      <Filter>SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp">
+      <Filter>Scene\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TestScene.cpp">
+      <Filter>Scene\TestScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

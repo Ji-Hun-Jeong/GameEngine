@@ -2,7 +2,8 @@
 
 namespace Game
 {
-	GameObject::GameObject()
+	GameObject::GameObject(const std::string& name)
+		: Entity(name)
 	{
 		
 	}
@@ -24,6 +25,10 @@ namespace Game
 	{
 		for (auto iter = m_MapComponents.begin(); iter != m_MapComponents.end(); ++iter)
 			iter->second->DoSomething(this);
+	}
+	void GameObject::PostUpdate()
+	{
+
 	}
 	void GameObject::Render(HDC dc)
 	{

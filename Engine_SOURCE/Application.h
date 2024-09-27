@@ -1,13 +1,13 @@
 #pragma once
 #include <Common.h>
 #include "GameObject.h"
+#include "SceneManager.h"
 namespace Game
 {
 	class Application
 	{
 	public:
 		Application(HWND hwnd, UINT screenWidth, UINT m_screenHeight);
-
 		~Application();
 
 	public:
@@ -15,7 +15,6 @@ namespace Game
 		bool Run();
 
 	private:
-		
 		void update();
 		void postUpdate();
 		void render();
@@ -27,7 +26,7 @@ namespace Game
 
 		HDC m_MainWindowDc;
 
-		GameObject m_GameObject;
+		SceneManager m_SceneManager;
 
 		bool m_Run;
 	};
