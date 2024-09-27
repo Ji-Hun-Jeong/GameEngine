@@ -1,20 +1,17 @@
 #pragma once
-#include "EventReceiver.h"
+#include "Component.h"
 namespace Game
 {
-	namespace Event
+	class MouseEventReceiver : public Component
 	{
-		class MouseEventReceiver : public IEventReceiver
-		{
-		public:
-			MouseEventReceiver() = default;
-			~MouseEventReceiver() = default;
+	public:
+		MouseEventReceiver();
+		~MouseEventReceiver();
 
-		public:
-			void Update() override;
+	public:
+		void DoSomething(class GameObject* const owner) override;
 
-		};
-	}
+	};
 }
 
 

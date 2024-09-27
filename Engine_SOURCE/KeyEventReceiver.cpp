@@ -1,11 +1,19 @@
 #include "KeyEventReceiver.h"
+#include "KeyMgr.h"
+
 namespace Game
 {
-	namespace Event
+	KeyEventReceiver::KeyEventReceiver()
+		: Component("KER")
 	{
-		void KeyEventReceiver::Update()
-		{
-
-		}
+	}
+	KeyEventReceiver::~KeyEventReceiver()
+	{
+	}
+	void KeyEventReceiver::DoSomething(GameObject* const owner)
+	{
+		if (KeyMgr::GetInst().GetKeyState(eKeyType::Q, eButtonState::Tap))
+			std::cout << "Q Tap!\n";
 	}
 }
+

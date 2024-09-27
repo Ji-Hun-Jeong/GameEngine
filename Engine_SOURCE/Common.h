@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Windows.h>
+#include <assert.h>
 #include <vector>
 #include <map>
 #include <string>
@@ -30,4 +31,11 @@ namespace Game
 			}
 		}
 	}
+	enum class eButtonState
+	{
+		None,
+		Tap,
+		Hold,
+		Released,
+	};
 }

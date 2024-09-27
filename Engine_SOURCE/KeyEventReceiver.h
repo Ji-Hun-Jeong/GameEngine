@@ -1,22 +1,17 @@
 #pragma once
-#include "EventReceiver.h"
+#include "Component.h"
 namespace Game
 {
-	namespace Event
+	class KeyEventReceiver : public Component
 	{
-		class KeyEventReceiver : public IEventReceiver
-		{
-		public:
-			KeyEventReceiver() = default;
-			~KeyEventReceiver() = default;
+	public:
+		KeyEventReceiver();
+		~KeyEventReceiver();
 
-		public:
-			void Update() override;
+	private:
+		void DoSomething(class GameObject* const owner) override;
 
-		private:
-
-		};
-	}
+	};
 }
 
 

@@ -7,17 +7,26 @@
     <Filter Include="GameObject">
       <UniqueIdentifier>{56659890-c0be-45f2-8c9b-f2d8935cd014}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Event">
-      <UniqueIdentifier>{90f2611a-f7ce-4577-bf8b-972bce1767a8}</UniqueIdentifier>
+    <Filter Include="Component">
+      <UniqueIdentifier>{e05a3603-f3c5-4924-9888-2901fa99d16d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Event\EventMgr">
-      <UniqueIdentifier>{48987125-560f-46bf-96c5-e02687293a4d}</UniqueIdentifier>
+    <Filter Include="Entity">
+      <UniqueIdentifier>{8cb449ff-eae7-466b-9577-e0eef8669842}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Event\Event">
-      <UniqueIdentifier>{a6c91beb-4b94-45f9-aaed-6a8c7d15e2e3}</UniqueIdentifier>
+    <Filter Include="Component\Component">
+      <UniqueIdentifier>{31bb2fcb-5823-4fcd-a216-fec424afba9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Event\EventMgr\EventReceiver">
-      <UniqueIdentifier>{51622e5a-0635-406d-9e0e-3e6c800b43a5}</UniqueIdentifier>
+    <Filter Include="MouseMgr">
+      <UniqueIdentifier>{68ca8c92-0186-44c2-9703-1e6f582950b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KeyMgr">
+      <UniqueIdentifier>{9542921c-0eb0-4e23-9103-93ef7bde182e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Component\MouseEventReceiver">
+      <UniqueIdentifier>{4acabd1f-ddda-446f-b530-c00b27447901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Component\KeyEventReceiver">
+      <UniqueIdentifier>{2aef4163-1917-47ba-a404-1550689c5e48}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,17 +37,23 @@
       <Filter>GameObject</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)EventMgr.h">
-      <Filter>Event\EventMgr</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h">
+      <Filter>Entity</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)EventReceiver.h">
-      <Filter>Event\EventMgr\EventReceiver</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
+      <Filter>Component\Component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseEventReceiver.h">
-      <Filter>Event\EventMgr\EventReceiver</Filter>
+      <Filter>Component\Component\MouseEventReceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h">
+      <Filter>MouseMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h">
+      <Filter>KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyEventReceiver.h">
-      <Filter>Event\EventMgr\EventReceiver</Filter>
+      <Filter>Component\Component\KeyEventReceiver</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -46,17 +61,23 @@
       <Filter>GameObject</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)EventMgr.cpp">
-      <Filter>Event\EventMgr</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp">
+      <Filter>Entity</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)EventReceiver.cpp">
-      <Filter>Event\EventMgr\EventReceiver</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
+      <Filter>Component\Component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseEventReceiver.cpp">
-      <Filter>Event\EventMgr\EventReceiver</Filter>
+      <Filter>Component\Component\MouseEventReceiver</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp">
+      <Filter>MouseMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp">
+      <Filter>KeyMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyEventReceiver.cpp">
-      <Filter>Event\EventMgr\EventReceiver</Filter>
+      <Filter>Component\Component\KeyEventReceiver</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

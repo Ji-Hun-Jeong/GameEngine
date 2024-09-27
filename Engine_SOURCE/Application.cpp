@@ -1,5 +1,8 @@
 #include "Application.h"
-#include "EventMgr.h"
+#include "MouseMgr.h"
+#include "KeyMgr.h"
+#include "MouseEventReceiver.h"
+#include "KeyEventReceiver.h"
 
 namespace Game
 {
@@ -31,11 +34,15 @@ namespace Game
 
 	void Application::Initalize()
 	{
-		Game::Event::EventMgr::GetInst().Initalize();
+		m_GameObject.AddComponent(new MouseEventReceiver);
+		m_GameObject.AddComponent(new KeyEventReceiver);
 	}
 	void Application::update()
 	{
-		Game::Event::EventMgr::GetInst().Update();
+		MouseMgr::GetInst().Update();
+		KeyMgr::GetInst().Update();
+
+		m_GameObject.Update();
 	}
 	void Application::postUpdate()
 	{

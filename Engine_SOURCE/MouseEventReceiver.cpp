@@ -1,11 +1,18 @@
 #include "MouseEventReceiver.h"
+#include "MouseMgr.h"
+
 namespace Game
 {
-	namespace Event
+	MouseEventReceiver::MouseEventReceiver()
+		: Component("MER")
 	{
-		void MouseEventReceiver::Update()
-		{
-
-		}
+	}
+	MouseEventReceiver::~MouseEventReceiver()
+	{
+	}
+	void MouseEventReceiver::DoSomething(GameObject* const owner)
+	{
+		if (MouseMgr::GetInst().GetMouseState(eButtonState::Tap))
+			std::cout << "MouseTap!\n";
 	}
 }

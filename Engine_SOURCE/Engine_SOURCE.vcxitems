@@ -16,18 +16,22 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)EventMgr.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)EventReceiver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyEventReceiver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseEventReceiver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)EventMgr.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)EventReceiver.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyEventReceiver.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseEventReceiver.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp" />
   </ItemGroup>
 </Project>
