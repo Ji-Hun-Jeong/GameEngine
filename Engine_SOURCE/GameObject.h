@@ -3,11 +3,12 @@
 #include "Component.h"
 namespace Game
 {
+	class PlayerKeyMove;
 	class GameObject : public Entity
 	{
 	public:
 		GameObject(const std::string& name);
-		virtual ~GameObject();
+		virtual ~GameObject() = 0;
 
 	public:
 		virtual void Update();
@@ -17,9 +18,11 @@ namespace Game
 
 		template <typename T>
 		T GetComponent(const std::string& componentName);
-
+		float m_X;
+		float m_Y;
 	protected:
 		std::map<std::string, Component*> m_MapComponents;
+		
 	};
 
 	template <typename T>

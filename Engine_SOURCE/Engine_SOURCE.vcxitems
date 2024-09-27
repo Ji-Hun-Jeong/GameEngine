@@ -19,10 +19,10 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)KeyEventReceiver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)MouseEventReceiver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Player.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerKeyMove.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TestScene.h" />
@@ -32,10 +32,10 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)KeyEventReceiver.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)MouseEventReceiver.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerKeyMove.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TestScene.cpp" />

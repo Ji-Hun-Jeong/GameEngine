@@ -9,14 +9,12 @@ namespace Game
 	SceneManager::~SceneManager()
 	{
 		Utility::DeleteMap<std::string, Scene*>(m_MapScenes);
-		std::cout << "SceneManager Destructor!\n";
 	}
 	void SceneManager::Initalize()
 	{
 		Scene* scene = new TestScene;
 		AddScene(scene);
 		m_CurScene = scene;
-		new int;
 	}
 	void SceneManager::Update()
 	{

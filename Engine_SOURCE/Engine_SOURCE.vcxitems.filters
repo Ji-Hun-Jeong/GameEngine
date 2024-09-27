@@ -22,12 +22,6 @@
     <Filter Include="KeyMgr">
       <UniqueIdentifier>{9542921c-0eb0-4e23-9103-93ef7bde182e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Component\MouseEventReceiver">
-      <UniqueIdentifier>{4acabd1f-ddda-446f-b530-c00b27447901}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\Component\KeyEventReceiver">
-      <UniqueIdentifier>{2aef4163-1917-47ba-a404-1550689c5e48}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SceneManager">
       <UniqueIdentifier>{0e187777-caee-4d05-98dc-3ebe272a7444}</UniqueIdentifier>
     </Filter>
@@ -40,32 +34,35 @@
     <Filter Include="Scene\TestScene">
       <UniqueIdentifier>{59e62a49-2f83-4831-a378-a99d7f653bd0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\GameObject">
+      <UniqueIdentifier>{5e3aa055-65a5-46e3-a999-57822c028f56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Player">
+      <UniqueIdentifier>{6bd357c0-7bc3-430f-81a0-5f20c6bdea5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\PlayerComponent">
+      <UniqueIdentifier>{6204062d-3cf8-4021-86ec-ed5ca6024deb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\PlayerComponent\MouseEvent">
+      <UniqueIdentifier>{9210592e-34aa-4757-aa08-2b13f6402d96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\PlayerComponent\KeyEvent">
+      <UniqueIdentifier>{175bbed5-837c-4f06-8825-34c4873f2956}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
       <Filter>CommonInclude</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h">
-      <Filter>GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h">
       <Filter>Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
-      <Filter>Component\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)MouseEventReceiver.h">
-      <Filter>Component\Component\MouseEventReceiver</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h">
       <Filter>MouseMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h">
       <Filter>KeyMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)KeyEventReceiver.h">
-      <Filter>Component\Component\KeyEventReceiver</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneManager.h">
       <Filter>SceneManager</Filter>
@@ -76,29 +73,29 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TestScene.h">
       <Filter>Scene\TestScene</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h">
+      <Filter>GameObject\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Player.h">
+      <Filter>GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
+      <Filter>Component\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerKeyMove.h">
+      <Filter>Component\PlayerComponent\KeyEvent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp">
-      <Filter>GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp">
       <Filter>Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
-      <Filter>Component\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)MouseEventReceiver.cpp">
-      <Filter>Component\Component\MouseEventReceiver</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp">
       <Filter>MouseMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp">
       <Filter>KeyMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)KeyEventReceiver.cpp">
-      <Filter>Component\Component\KeyEventReceiver</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneManager.cpp">
       <Filter>SceneManager</Filter>
@@ -108,6 +105,18 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TestScene.cpp">
       <Filter>Scene\TestScene</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp">
+      <Filter>GameObject\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp">
+      <Filter>GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
+      <Filter>Component\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerKeyMove.cpp">
+      <Filter>Component\PlayerComponent\KeyEvent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

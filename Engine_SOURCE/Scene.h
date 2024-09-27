@@ -8,7 +8,7 @@ namespace Game
 	{
 	public:
 		Scene(const std::string& name);
-		virtual ~Scene();
+		virtual ~Scene() = 0;
 
 	public:
 		void Update();

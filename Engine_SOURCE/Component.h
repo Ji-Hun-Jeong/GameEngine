@@ -2,6 +2,7 @@
 #include "Entity.h"
 namespace Game
 {
+	class GameObject;
 	class Component : public Entity
 	{
 	public:
@@ -9,7 +10,7 @@ namespace Game
 		virtual ~Component();
 
 	public:
-		virtual void DoSomething(class GameObject* const owner) = 0;
+		virtual void DoSomething(GameObject* const owner) = 0;
 
 	};
 }

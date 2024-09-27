@@ -1,19 +1,17 @@
 #include "TestScene.h"
-#include "MouseEventReceiver.h"
-#include "KeyEventReceiver.h"
+#include "PlayerKeyMove.h"
+#include "Player.h"
 
 namespace Game
 {
 	TestScene::TestScene()
 		: Scene("Test")
 	{
-		GameObject* obj = new GameObject("obj");
-		obj->AddComponent(new MouseEventReceiver);
-		obj->AddComponent(new KeyEventReceiver);
+		GameObject* obj = new Player;
+		obj->AddComponent(new PlayerKeyMove);
 		AddGameObject(obj);
 	}
 	TestScene::~TestScene()
 	{
-		std::cout << "TestScene Destructor!\n";
 	}
 }

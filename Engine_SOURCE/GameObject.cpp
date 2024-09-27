@@ -4,6 +4,8 @@ namespace Game
 {
 	GameObject::GameObject(const std::string& name)
 		: Entity(name)
+		, m_X(100.0f)
+		, m_Y(100.0f)
 	{
 		
 	}
@@ -32,6 +34,6 @@ namespace Game
 	}
 	void GameObject::Render(HDC dc)
 	{
-		Rectangle(dc, 100, 100, 200, 200);
+		Rectangle(dc, m_X, m_Y, m_X + 100, m_Y + 100);
 	}
 }
