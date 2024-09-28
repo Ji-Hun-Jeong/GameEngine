@@ -40,14 +40,23 @@
     <Filter Include="GameObject\Player">
       <UniqueIdentifier>{6bd357c0-7bc3-430f-81a0-5f20c6bdea5c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\PlayerComponent">
-      <UniqueIdentifier>{6204062d-3cf8-4021-86ec-ed5ca6024deb}</UniqueIdentifier>
+    <Filter Include="Component\Transform">
+      <UniqueIdentifier>{be3aaf8e-28c0-43a9-8142-7e80e958c026}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\PlayerComponent\MouseEvent">
-      <UniqueIdentifier>{9210592e-34aa-4757-aa08-2b13f6402d96}</UniqueIdentifier>
+    <Filter Include="Component\Transform\Transform">
+      <UniqueIdentifier>{f5423a25-29be-41ca-a612-a0b73b9e9482}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\PlayerComponent\KeyEvent">
-      <UniqueIdentifier>{175bbed5-837c-4f06-8825-34c4873f2956}</UniqueIdentifier>
+    <Filter Include="Component\Transform\PlayerTransform">
+      <UniqueIdentifier>{9a0d244e-0e1d-48bc-a679-97197ae2ca9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Renderer">
+      <UniqueIdentifier>{a689af2b-be7d-4836-af8e-cf281ea70398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Renderer\BasicRederer">
+      <UniqueIdentifier>{20e4fa30-04dd-462f-bc2a-20633b09f904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Renderer\RenderComponent">
+      <UniqueIdentifier>{b0deaca9-8b19-4f40-81d6-61544921a98e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,8 +91,23 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
       <Filter>Component\Component</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerKeyMove.h">
-      <Filter>Component\PlayerComponent\KeyEvent</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MyMath.h">
+      <Filter>CommonInclude</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TransformComponent.h">
+      <Filter>Component\Transform\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerTransform.h">
+      <Filter>Component\Transform\PlayerTransform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)RenderComponent.h">
+      <Filter>Component\Renderer\RenderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BasicRenderer.h">
+      <Filter>Component\Renderer\BasicRederer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h">
+      <Filter>CommonInclude</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -115,8 +139,17 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
       <Filter>Component\Component</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerKeyMove.cpp">
-      <Filter>Component\PlayerComponent\KeyEvent</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TransformComponent.cpp">
+      <Filter>Component\Transform\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerTransform.cpp">
+      <Filter>Component\Transform\PlayerTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)RenderComponent.cpp">
+      <Filter>Component\Renderer\RenderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp">
+      <Filter>Component\Renderer\BasicRederer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,6 +1,5 @@
 #pragma once
 #include "Common.h"
-#include "MouseEventReceiver.h"
 namespace Game
 {
 	class MouseMgr

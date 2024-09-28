@@ -8,10 +8,6 @@ namespace Game
 		Player();
 		~Player();
 
-	public:
-
-	private:
-
 	};
 }
 

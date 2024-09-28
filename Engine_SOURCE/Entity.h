@@ -9,11 +9,11 @@ namespace Game
 		virtual ~Entity();
 
 	public:
-		const std::string& GetName() const { return m_StrName; }
-		void SetName(const std::string& name) { m_StrName = name; }
+		const std::string& GetName() const { return m_Name; }
+		void SetName(const std::string& name) { m_Name = name; }
 
 	protected:
-		std::string m_StrName;
+		std::string m_Name;
 	};
 }
 

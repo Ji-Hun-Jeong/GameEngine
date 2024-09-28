@@ -1,9 +1,12 @@
 #pragma once
 #include "Common.h"
-#include "Component.h"
+#include "Entity.h"
+
 namespace Game
 {
-	class PlayerKeyMove;
+	class Component;
+	class TransformComponent;
+	class RenderComponent;
 	class GameObject : public Entity
 	{
 	public:
@@ -18,20 +21,17 @@ namespace Game
 
 		template <typename T>
 		T GetComponent(const std::string& componentName);
-		float m_X;
-		float m_Y;
+
 	protected:
-		std::map<std::string, Component*> m_MapComponents;
-		
+		TransformComponent* m_TransformComponent;
+		RenderComponent* m_RenderComponent;
+
 	};
 
 	template <typename T>
 	T GameObject::GetComponent(const std::string& componentName)
 	{
-		auto iter = m_MapComponents.find(componentName);
-		if (iter == m_MapComponents.end())
-			assert(0);
-		return dynamic_cast<T>(iter->second);
+		
 	}
 }
 

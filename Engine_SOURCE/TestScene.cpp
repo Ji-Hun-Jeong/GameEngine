@@ -1,5 +1,4 @@
 #include "TestScene.h"
-#include "PlayerKeyMove.h"
 #include "Player.h"
 
 namespace Game
@@ -8,7 +7,7 @@ namespace Game
 		: Scene("Test")
 	{
 		GameObject* obj = new Player;
-		obj->AddComponent(new PlayerKeyMove);
+
 		AddGameObject(obj);
 	}
 	TestScene::~TestScene()

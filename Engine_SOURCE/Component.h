@@ -1,17 +1,20 @@
 #pragma once
-#include "Entity.h"
+#include "GameObject.h"
 namespace Game
 {
-	class GameObject;
+	enum class eComponentType
+	{
+		Transform,
+		End,
+	};
 	class Component : public Entity
 	{
 	public:
-		Component(const std::string& name);
-		virtual ~Component();
+		Component(const std::string& name, GameObject* const owner);
+		virtual ~Component() = 0;
 
-	public:
-		virtual void DoSomething(GameObject* const owner) = 0;
-
+	protected:
+		GameObject* m_Owner;
 	};
 }
 

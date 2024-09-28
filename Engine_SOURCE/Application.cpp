@@ -1,8 +1,6 @@
 #include "Application.h"
 #include "MouseMgr.h"
 #include "KeyMgr.h"
-#include "MouseEventReceiver.h"
-#include "KeyEventReceiver.h"
 
 namespace Game
 {
@@ -29,7 +27,8 @@ namespace Game
 		update();
 		postUpdate();
 		render();
-
+		if (KeyMgr::GetInst().GetKeyState(eKeyType::Esc, eButtonState::Tap))
+			m_Run = false;
 		return m_Run;
 	}
 
