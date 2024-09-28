@@ -19,12 +19,6 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{3d24dea4-bf81-4bea-ad5f-2b0596618aa9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Scene">
-      <UniqueIdentifier>{1fc89627-e84e-4611-b434-44b6dc2b92c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\TestScene">
-      <UniqueIdentifier>{59e62a49-2f83-4831-a378-a99d7f653bd0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameObject\GameObject">
       <UniqueIdentifier>{5e3aa055-65a5-46e3-a999-57822c028f56}</UniqueIdentifier>
     </Filter>
@@ -64,6 +58,9 @@
     <Filter Include="Manager\TimeMgr">
       <UniqueIdentifier>{01dfabd1-a061-4554-aab6-16e08050a252}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bitmap">
+      <UniqueIdentifier>{2accad72-ca93-42b3-911c-cec3b9b94c29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -81,12 +78,6 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneMgr.h">
       <Filter>Manager\SceneMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h">
-      <Filter>Scene\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TestScene.h">
-      <Filter>Scene\TestScene</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h">
       <Filter>GameObject\GameObject</Filter>
@@ -118,6 +109,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TimeMgr.h">
       <Filter>Manager\TimeMgr</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Bitmap.h">
+      <Filter>Bitmap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -132,12 +129,6 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneMgr.cpp">
       <Filter>Manager\SceneMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp">
-      <Filter>Scene\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)TestScene.cpp">
-      <Filter>Scene\TestScene</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp">
       <Filter>GameObject\GameObject</Filter>
@@ -162,6 +153,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TimeMgr.cpp">
       <Filter>Manager\TimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Bitmap.cpp">
+      <Filter>Bitmap</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

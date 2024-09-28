@@ -24,9 +24,6 @@ namespace Game
 
 		HDC m_MainWindowDc;
 
-		HBITMAP m_BufferBitmap;
-		HDC m_BufferDc;
-
 		bool m_Run;
 	};
 }

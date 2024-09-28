@@ -2,11 +2,11 @@
 #include "Scene.h"
 namespace Game
 {
-	class TestScene : public Scene
+	class TestScene2 : public Scene
 	{
 	public:
-		TestScene();
-		~TestScene();
+		TestScene2();
+		~TestScene2();
 
 	public:
 		void EnterScene() override;
@@ -16,5 +16,6 @@ namespace Game
 	private:
 
 	};
+
 }
 

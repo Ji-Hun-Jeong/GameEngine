@@ -128,6 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Engine_SOURCE\TestScene.cpp" />
+    <ClCompile Include="TestScene2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Engine_SOURCE\TestScene.h" />
+    <ClInclude Include="LoadScene.h" />
+    <ClInclude Include="TestScene2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

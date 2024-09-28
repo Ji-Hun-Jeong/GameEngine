@@ -7,6 +7,7 @@
 #include "framework.h"
 #include "resource.h"
 #include "../Engine_SOURCE/Application.h"
+#include "../Engine_Window/LoadScene.h"
 
 #define MAX_LOADSTRING 100
 
@@ -57,7 +58,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     g_MyApp = new Game::Application(hWnd, screenWidth, screenHeight);
     g_MyApp->Initalize();
-
+    Game::LoadScene();
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_EDITORWINDOW));
 
     MSG msg;

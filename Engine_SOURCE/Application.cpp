@@ -3,6 +3,7 @@
 #include "KeyMgr.h"
 #include "SceneMgr.h"
 #include "TimeMgr.h"
+#include "Bitmap.h"
 
 namespace Game
 {
@@ -11,8 +12,6 @@ namespace Game
 		, m_ScreenWidth(screenWidth)
 		, m_ScreenHeight(screenHeight)
 		, m_MainWindowDc(nullptr)
-		, m_BufferBitmap{}
-		, m_BufferDc{}
 		, m_Run(true)
 	{
 		ShowWindow(m_Hwnd, SW_SHOWDEFAULT);
@@ -25,8 +24,7 @@ namespace Game
 	Application::~Application()
 	{
 		ReleaseDC(m_Hwnd, m_MainWindowDc);
-		DeleteDC(m_BufferDc);
-		DeleteObject(m_BufferBitmap);
+
 	}
 	bool Application::Run()
 	{
@@ -40,12 +38,9 @@ namespace Game
 
 	void Application::Initalize()
 	{
-		m_BufferBitmap = CreateCompatibleBitmap(m_MainWindowDc, m_ScreenWidth, m_ScreenHeight);
-		m_BufferDc = CreateCompatibleDC(m_MainWindowDc);
-
-		HBITMAP prevBitmap = static_cast<HBITMAP>(SelectObject(m_BufferDc, m_BufferBitmap));
-		DeleteObject(prevBitmap);
-
+		Bitmap::s_MainWindowDc = m_MainWindowDc;
+		Bitmap::s_ScreenWidth = m_ScreenWidth;
+		Bitmap::s_ScreenHeight = m_ScreenHeight;
 		TimeMgr::GetInst().Initailize();
 		SceneMgr::GetInst().Initalize();
 	}
@@ -62,8 +57,7 @@ namespace Game
 	}
 	void Application::render()
 	{
-		SceneMgr::GetInst().Render(m_BufferDc);
-		TimeMgr::GetInst().Render(m_BufferDc);
-		BitBlt(m_MainWindowDc, 0, 0, m_ScreenWidth, m_ScreenHeight, m_BufferDc, 0, 0, SRCCOPY);
+		SceneMgr::GetInst().Render();
+		TimeMgr::GetInst().Render(m_MainWindowDc);
 	}
 }

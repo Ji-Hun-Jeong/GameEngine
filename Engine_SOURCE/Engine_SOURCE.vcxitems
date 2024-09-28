@@ -16,6 +16,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Bitmap.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
@@ -28,7 +29,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)RenderComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneMgr.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)TestScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TimeMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TransformComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h" />
@@ -36,6 +36,7 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Bitmap.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
@@ -46,7 +47,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)RenderComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneMgr.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)TestScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TimeMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TransformComponent.cpp" />
   </ItemGroup>
