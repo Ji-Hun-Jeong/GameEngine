@@ -23,8 +23,5 @@ namespace Game
 			m_Pos.y += -1.0f * dt;
 		if (keyMgr.GetKeyState(eKeyType::Down, eButtonState::Hold))
 			m_Pos.y += 1.0f * dt;
-
-		std::cout << "x : " << m_Pos.x << "\n";
-		std::cout << "y : " << m_Pos.y << "\n";
 	}
 }

@@ -3,12 +3,9 @@
 namespace Game
 {
 	class Scene;
-	class SceneManager
+	class SceneMgr
 	{
-	public:
-		SceneManager();
-		~SceneManager();
-
+		SINGLE(SceneMgr)
 	public:
 		void Initalize();
 		void Update();

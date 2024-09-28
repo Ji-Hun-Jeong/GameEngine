@@ -1,7 +1,5 @@
 #pragma once
 #include <Common.h>
-#include "GameObject.h"
-#include "SceneManager.h"
 namespace Game
 {
 	class Application
@@ -26,7 +24,8 @@ namespace Game
 
 		HDC m_MainWindowDc;
 
-		SceneManager m_SceneManager;
+		HBITMAP m_BufferBitmap;
+		HDC m_BufferDc;
 
 		bool m_Run;
 	};

@@ -22,9 +22,6 @@
     <Filter Include="KeyMgr">
       <UniqueIdentifier>{9542921c-0eb0-4e23-9103-93ef7bde182e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SceneManager">
-      <UniqueIdentifier>{0e187777-caee-4d05-98dc-3ebe272a7444}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{3d24dea4-bf81-4bea-ad5f-2b0596618aa9}</UniqueIdentifier>
     </Filter>
@@ -58,6 +55,9 @@
     <Filter Include="Component\Renderer\RenderComponent">
       <UniqueIdentifier>{b0deaca9-8b19-4f40-81d6-61544921a98e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SceneMgr">
+      <UniqueIdentifier>{0e187777-caee-4d05-98dc-3ebe272a7444}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -73,8 +73,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h">
       <Filter>KeyMgr</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SceneManager.h">
-      <Filter>SceneManager</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SceneMgr.h">
+      <Filter>SceneMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h">
       <Filter>Scene\Scene</Filter>
@@ -121,8 +121,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp">
       <Filter>KeyMgr</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SceneManager.cpp">
-      <Filter>SceneManager</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SceneMgr.cpp">
+      <Filter>SceneMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp">
       <Filter>Scene\Scene</Filter>
