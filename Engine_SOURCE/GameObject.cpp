@@ -20,12 +20,12 @@ namespace Game
 		
 	}
 
-	void GameObject::Update()
+	void GameObject::Update(float dt)
 	{
 		if (m_TransformComponent)
-			m_TransformComponent->Update();
+			m_TransformComponent->Update(dt);
 	}
-	void GameObject::PostUpdate()
+	void GameObject::PostUpdate(float dt)
 	{
 
 	}

@@ -14,8 +14,8 @@ namespace Game
 		virtual ~GameObject() = 0;
 
 	public:
-		virtual void Update();
-		virtual void PostUpdate();
+		virtual void Update(float dt);
+		virtual void PostUpdate(float dt);
 		virtual void Render(HDC dc);
 		void AddComponent(Component* const component);
 

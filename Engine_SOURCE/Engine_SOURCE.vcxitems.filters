@@ -16,12 +16,6 @@
     <Filter Include="Component\Component">
       <UniqueIdentifier>{31bb2fcb-5823-4fcd-a216-fec424afba9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MouseMgr">
-      <UniqueIdentifier>{68ca8c92-0186-44c2-9703-1e6f582950b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="KeyMgr">
-      <UniqueIdentifier>{9542921c-0eb0-4e23-9103-93ef7bde182e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{3d24dea4-bf81-4bea-ad5f-2b0596618aa9}</UniqueIdentifier>
     </Filter>
@@ -55,8 +49,20 @@
     <Filter Include="Component\Renderer\RenderComponent">
       <UniqueIdentifier>{b0deaca9-8b19-4f40-81d6-61544921a98e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SceneMgr">
+    <Filter Include="Manager">
+      <UniqueIdentifier>{3f2b444b-73f9-4801-8aae-d81ed25059e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\SceneMgr">
       <UniqueIdentifier>{0e187777-caee-4d05-98dc-3ebe272a7444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\KeyMgr">
+      <UniqueIdentifier>{9542921c-0eb0-4e23-9103-93ef7bde182e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\MouseMgr">
+      <UniqueIdentifier>{68ca8c92-0186-44c2-9703-1e6f582950b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\TimeMgr">
+      <UniqueIdentifier>{01dfabd1-a061-4554-aab6-16e08050a252}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -68,13 +74,13 @@
       <Filter>Entity</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h">
-      <Filter>MouseMgr</Filter>
+      <Filter>Manager\MouseMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h">
-      <Filter>KeyMgr</Filter>
+      <Filter>Manager\KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneMgr.h">
-      <Filter>SceneMgr</Filter>
+      <Filter>Manager\SceneMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h">
       <Filter>Scene\Scene</Filter>
@@ -109,6 +115,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h">
       <Filter>CommonInclude</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TimeMgr.h">
+      <Filter>Manager\TimeMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -116,13 +125,13 @@
       <Filter>Entity</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp">
-      <Filter>MouseMgr</Filter>
+      <Filter>Manager\MouseMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp">
-      <Filter>KeyMgr</Filter>
+      <Filter>Manager\KeyMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneMgr.cpp">
-      <Filter>SceneMgr</Filter>
+      <Filter>Manager\SceneMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp">
       <Filter>Scene\Scene</Filter>
@@ -150,6 +159,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp">
       <Filter>Component\Renderer\BasicRederer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TimeMgr.cpp">
+      <Filter>Manager\TimeMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

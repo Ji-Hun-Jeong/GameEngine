@@ -2,6 +2,7 @@
 #include "MouseMgr.h"
 #include "KeyMgr.h"
 #include "SceneMgr.h"
+#include "TimeMgr.h"
 
 namespace Game
 {
@@ -45,12 +46,14 @@ namespace Game
 		HBITMAP prevBitmap = static_cast<HBITMAP>(SelectObject(m_BufferDc, m_BufferBitmap));
 		DeleteObject(prevBitmap);
 
+		TimeMgr::GetInst().Initailize();
 		SceneMgr::GetInst().Initalize();
 	}
 	void Application::update()
 	{
 		MouseMgr::GetInst().Update();
 		KeyMgr::GetInst().Update();
+		TimeMgr::GetInst().Update();
 		SceneMgr::GetInst().Update();
 	}
 	void Application::postUpdate()
@@ -60,6 +63,7 @@ namespace Game
 	void Application::render()
 	{
 		SceneMgr::GetInst().Render(m_BufferDc);
+		TimeMgr::GetInst().Render(m_BufferDc);
 		BitBlt(m_MainWindowDc, 0, 0, m_ScreenWidth, m_ScreenHeight, m_BufferDc, 0, 0, SRCCOPY);
 	}
 }

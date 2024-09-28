@@ -10,16 +10,16 @@ namespace Game
 		Utility::DeleteMap<std::string, GameObject*>(m_MapGameObjects);
 	}
 
-	void Scene::Update()
+	void Scene::Update(float dt)
 	{
 		for (auto iter = m_MapGameObjects.begin(); iter != m_MapGameObjects.end(); ++iter)
-			iter->second->Update();
+			iter->second->Update(dt);
 	}
 
-	void Scene::PostUpdate()
+	void Scene::PostUpdate(float dt)
 	{
 		for (auto iter = m_MapGameObjects.begin(); iter != m_MapGameObjects.end(); ++iter)
-			iter->second->PostUpdate();
+			iter->second->PostUpdate(dt);
 	}
 
 	void Scene::Render(HDC dc)

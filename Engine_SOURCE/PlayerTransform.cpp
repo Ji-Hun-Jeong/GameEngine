@@ -11,17 +11,16 @@ namespace Game
 	PlayerTransform::~PlayerTransform()
 	{
 	}
-	void PlayerTransform::Update()
+	void PlayerTransform::Update(float dt)
 	{
-		static const float dt = 0.05f;
 		static KeyMgr& keyMgr = KeyMgr::GetInst();
 		if (keyMgr.GetKeyState(eKeyType::Left, eButtonState::Hold))
-			m_Pos.x += -1.0f * dt;
+			m_Pos.x += -100.0f * dt;
 		if (keyMgr.GetKeyState(eKeyType::Right, eButtonState::Hold))
-			m_Pos.x += 1.0f * dt;
+			m_Pos.x += 100.0f * dt;
 		if (keyMgr.GetKeyState(eKeyType::Up, eButtonState::Hold))
-			m_Pos.y += -1.0f * dt;
+			m_Pos.y += -100.0f * dt;
 		if (keyMgr.GetKeyState(eKeyType::Down, eButtonState::Hold))
-			m_Pos.y += 1.0f * dt;
+			m_Pos.y += 100.0f * dt;
 	}
 }

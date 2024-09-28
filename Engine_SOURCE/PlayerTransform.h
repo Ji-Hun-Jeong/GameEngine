@@ -9,7 +9,7 @@ namespace Game
 		~PlayerTransform();
 		
 	public:
-		void Update() override;
+		void Update(float dt) override;
 
 	private:
 

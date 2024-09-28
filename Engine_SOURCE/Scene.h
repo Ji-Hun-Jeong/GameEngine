@@ -11,8 +11,8 @@ namespace Game
 		virtual ~Scene() = 0;
 
 	public:
-		void Update();
-		void PostUpdate();
+		void Update(float dt);
+		void PostUpdate(float dt);
 		void Render(HDC dc);
 		void AddGameObject(GameObject* const object);
 		void DeleteGameObject(const std::string& objectName);

@@ -1,5 +1,6 @@
 #include "SceneMgr.h"
 #include "TestScene.h"
+#include "TimeMgr.h"
 
 namespace Game
 {
@@ -18,11 +19,11 @@ namespace Game
 	}
 	void SceneMgr::Update()
 	{
-		m_CurScene->Update();
+		m_CurScene->Update(TimeMgr::GetInst().DeltaTime());
 	}
 	void SceneMgr::PostUpdate()
 	{
-		m_CurScene->PostUpdate();
+		m_CurScene->PostUpdate(TimeMgr::GetInst().DeltaTime());
 	}
 	void SceneMgr::Render(HDC dc)
 	{

@@ -29,6 +29,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TestScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TimeMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TransformComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h" />
   </ItemGroup>
@@ -46,6 +47,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TestScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TimeMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TransformComponent.cpp" />
   </ItemGroup>
 </Project>
