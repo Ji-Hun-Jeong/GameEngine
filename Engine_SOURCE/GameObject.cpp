@@ -13,7 +13,10 @@ namespace Game
 	}
 	GameObject::~GameObject()
 	{
-		
+		if (m_TransformComponent)
+			delete m_TransformComponent;
+		if (m_RenderComponent)
+			delete m_RenderComponent;
 	}
 	void GameObject::AddComponent(Component* const component)
 	{

@@ -1,5 +1,6 @@
 #include "TestScene.h"
 #include "Player.h"
+#include "BackGround.h"
 
 
 namespace Game
@@ -7,9 +8,8 @@ namespace Game
 	TestScene::TestScene(UINT width, UINT height)
 		: Scene("Test", width, height)
 	{
-		GameObject* obj = new Player;
-
-		AddGameObject(obj);
+		AddGameObject(new Player);
+		AddGameObject(new BackGround);
 	}
 	TestScene::~TestScene()
 	{

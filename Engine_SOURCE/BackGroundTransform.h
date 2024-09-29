@@ -2,18 +2,15 @@
 #include "TransformComponent.h"
 namespace Game
 {
-	class PlayerTransform : public TransformComponent
+	class BackGroundTransform :	public TransformComponent
 	{
 	public:
-		explicit PlayerTransform(GameObject* const owner
+		explicit BackGroundTransform(GameObject* const owner
 			, const Math::Vector2& pos, const Math::Vector2& size);
-		~PlayerTransform();
-		
+		~BackGroundTransform();
+
 	public:
 		void Update(float dt) override;
-
-	private:
-
 	};
 }
 

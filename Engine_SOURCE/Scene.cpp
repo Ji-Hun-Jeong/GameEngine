@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "Application.h"
+#include "TimeMgr.h"
 extern Game::Application* g_MyApp;
 namespace Game
 {
@@ -31,6 +32,7 @@ namespace Game
 	{
 		for (auto iter = m_MapGameObjects.begin(); iter != m_MapGameObjects.end(); ++iter)
 			iter->second->Render(m_BitmapSet.GetDc());
+		TimeMgr::GetInst().Render(m_BitmapSet.GetDc());
 
 		BitBlt(dc, 0, 0
 			, m_BitmapSet.GetWidth()

@@ -59,6 +59,5 @@ namespace Game
 	void Application::render()
 	{
 		SceneMgr::GetInst().Render(m_MainWindowDc);
-		TimeMgr::GetInst().Render(m_MainWindowDc);
 	}
 }

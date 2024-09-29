@@ -70,6 +70,15 @@
     <Filter Include="Component\RenderComponent\Animator">
       <UniqueIdentifier>{0b08627f-f4f2-48e7-965e-9f6e1c3e4ffd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\RenderComponent\BackGroundRenderer">
+      <UniqueIdentifier>{ba336eab-ab51-4030-9f92-bd9686cb9be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\BackGround">
+      <UniqueIdentifier>{ebf9a405-00b4-415c-bb56-7ddd4922358d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform\BackGroundTransform">
+      <UniqueIdentifier>{2dbccd0a-fc9f-42d0-99cf-b87fedff262f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -142,6 +151,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Animator.h">
       <Filter>Component\RenderComponent\Animator</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h">
+      <Filter>Component\RenderComponent\BackGroundRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackGround.h">
+      <Filter>GameObject\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundTransform.h">
+      <Filter>Component\Transform\BackGroundTransform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -204,6 +222,15 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp">
       <Filter>Component\RenderComponent\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp">
+      <Filter>Component\RenderComponent\BackGroundRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackGround.cpp">
+      <Filter>GameObject\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundTransform.cpp">
+      <Filter>Component\Transform\BackGroundTransform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

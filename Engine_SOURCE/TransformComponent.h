@@ -5,7 +5,8 @@ namespace Game
 	class TransformComponent : public Component
 	{
 	public:
-		TransformComponent(const std::string& name, GameObject* const owner);
+		TransformComponent(const std::string& name, GameObject* const owner
+			, const Math::Vector2& pos, const Math::Vector2& size);
 		virtual ~TransformComponent();
 
 	public:

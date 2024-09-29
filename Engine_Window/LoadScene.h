@@ -20,6 +20,7 @@ namespace Game
 	void LoadResource()
 	{
 		ResourceMgr& inst = ResourceMgr::GetInst();
-		inst.LoadResource(eResourceType::Texture, "TestTexture", "Texture/char_black.bmp");
+		inst.LoadResource(eResourceType::Texture, "PlayerTexture", "Texture/char_black.bmp");
+		inst.LoadResource(eResourceType::Texture, "BackGroundTexture", "Texture/BackGround1.bmp");
 	}
 }

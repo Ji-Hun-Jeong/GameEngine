@@ -16,6 +16,8 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Animator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackGround.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Bitmap.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
@@ -23,6 +25,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PathMgr.h" />
@@ -42,12 +45,15 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackGround.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Bitmap.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PathMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
