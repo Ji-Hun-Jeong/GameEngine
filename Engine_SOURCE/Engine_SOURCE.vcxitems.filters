@@ -13,14 +13,8 @@
     <Filter Include="Entity">
       <UniqueIdentifier>{8cb449ff-eae7-466b-9577-e0eef8669842}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Component">
-      <UniqueIdentifier>{31bb2fcb-5823-4fcd-a216-fec424afba9b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{3d24dea4-bf81-4bea-ad5f-2b0596618aa9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\GameObject">
-      <UniqueIdentifier>{5e3aa055-65a5-46e3-a999-57822c028f56}</UniqueIdentifier>
     </Filter>
     <Filter Include="GameObject\Player">
       <UniqueIdentifier>{6bd357c0-7bc3-430f-81a0-5f20c6bdea5c}</UniqueIdentifier>
@@ -58,11 +52,23 @@
     <Filter Include="Component\RenderComponent\BasicRederer">
       <UniqueIdentifier>{20e4fa30-04dd-462f-bc2a-20633b09f904}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\RenderComponent\RenderComponent">
-      <UniqueIdentifier>{b0deaca9-8b19-4f40-81d6-61544921a98e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Component\RenderComponent\SpriteRenderer">
       <UniqueIdentifier>{3bc9c42a-993e-40d2-a912-c17e6f0a6d27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\PathMgr">
+      <UniqueIdentifier>{bca345c0-f7d6-4ce3-8179-fd6a53429ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ResourceMgr">
+      <UniqueIdentifier>{f4762990-9412-41f1-97e3-e87e71ae8c75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{02dc3129-4d1e-45b6-977f-fd5c13be660d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Texture">
+      <UniqueIdentifier>{99e81e00-b47f-49bb-bff7-c9ea4c5ed29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\RenderComponent\Animator">
+      <UniqueIdentifier>{0b08627f-f4f2-48e7-965e-9f6e1c3e4ffd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,14 +88,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneMgr.h">
       <Filter>Manager\SceneMgr</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h">
-      <Filter>GameObject\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Player.h">
       <Filter>GameObject\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
-      <Filter>Component\Component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MyMath.h">
       <Filter>CommonInclude</Filter>
@@ -99,9 +99,6 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerTransform.h">
       <Filter>Component\Transform\PlayerTransform</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)RenderComponent.h">
-      <Filter>Component\RenderComponent\RenderComponent</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRenderer.h">
       <Filter>Component\RenderComponent\BasicRederer</Filter>
@@ -121,6 +118,30 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)SpriteRenderer.h">
       <Filter>Component\RenderComponent\SpriteRenderer</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PathMgr.h">
+      <Filter>Manager\PathMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourceMgr.h">
+      <Filter>Manager\ResourceMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)RenderComponent.h">
+      <Filter>Component\RenderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h">
+      <Filter>Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Animator.h">
+      <Filter>Component\RenderComponent\Animator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -136,23 +157,14 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneMgr.cpp">
       <Filter>Manager\SceneMgr</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp">
-      <Filter>GameObject\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp">
       <Filter>GameObject\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
-      <Filter>Component\Component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TransformComponent.cpp">
       <Filter>Component\Transform\Transform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerTransform.cpp">
       <Filter>Component\Transform\PlayerTransform</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)RenderComponent.cpp">
-      <Filter>Component\RenderComponent\RenderComponent</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp">
       <Filter>Component\RenderComponent\BasicRederer</Filter>
@@ -168,6 +180,30 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SpriteRenderer.cpp">
       <Filter>Component\RenderComponent\SpriteRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PathMgr.cpp">
+      <Filter>Manager\PathMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ResourceMgr.cpp">
+      <Filter>Manager\ResourceMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)RenderComponent.cpp">
+      <Filter>Component\RenderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp">
+      <Filter>Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp">
+      <Filter>Component\RenderComponent\Animator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

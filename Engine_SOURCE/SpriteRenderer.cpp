@@ -1,5 +1,5 @@
 #include "SpriteRenderer.h"
-#include "TransformComponent.h"
+#include "Texture.h"
 
 namespace Game
 {
@@ -14,11 +14,17 @@ namespace Game
 
 	void SpriteRenderer::Render(HDC dc, const TransformComponent* const transform)
 	{
-		Gdiplus::Image* image = Gdiplus::Image::FromFile(L"../Resource/Texture/Test.png");
-		Gdiplus::Graphics g(dc);
-		RECT rect = RenderComponent::GetRectangle(transform->GetPos(), transform->GetSize());
-		Gdiplus::Rect r(rect.left, rect.top, transform->GetSize().x, transform->GetSize().y);
-		g.DrawImage(image, r);
+		const Math::Vector2& pos = transform->GetPos();
+		const Math::Vector2& size = transform->GetSize();
+		UINT sizeX = static_cast<UINT>(size.x);
+		UINT sizeY = static_cast<UINT>(size.y);
+		RECT newRect = GetRectangle(pos, size);
+
+		TransparentBlt(dc, newRect.left, newRect.top, sizeX, sizeY
+			, m_Texture->GetBitmapDc()
+			, 0, 0
+			, m_Texture->GetWidth(), m_Texture->GetHeight(), MAGENTA);
+
 	}
 }
 

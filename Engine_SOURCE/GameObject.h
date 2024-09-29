@@ -17,6 +17,7 @@ namespace Game
 		virtual void Update(float dt);
 		virtual void PostUpdate(float dt);
 		virtual void Render(HDC dc);
+		
 		void AddComponent(Component* const component);
 
 		template <typename T>

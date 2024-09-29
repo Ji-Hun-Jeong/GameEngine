@@ -33,13 +33,13 @@ namespace Game
 			iter->second->Render(m_BitmapSet.GetDc());
 
 		BitBlt(dc, 0, 0
-			, m_BitmapSet.GetScreenWidth()
-			, m_BitmapSet.GetScreenHeight()
+			, m_BitmapSet.GetWidth()
+			, m_BitmapSet.GetHeight()
 			, m_BitmapSet.GetDc(), 0, 0, SRCCOPY);
 
 		Rectangle(m_BitmapSet.GetDc(), 0, 0
-			, m_BitmapSet.GetScreenWidth()
-			, m_BitmapSet.GetScreenWidth());
+			, m_BitmapSet.GetWidth()
+			, m_BitmapSet.GetWidth());
 	}
 
 	void Scene::AddGameObject(GameObject* const object)

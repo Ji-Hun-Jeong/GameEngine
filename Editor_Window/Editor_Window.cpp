@@ -58,6 +58,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     g_MyApp = new Game::Application(hWnd, screenWidth, screenHeight);
     g_MyApp->Initalize();
+
+    Game::LoadResource();
     Game::LoadScene();
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_EDITORWINDOW));
 

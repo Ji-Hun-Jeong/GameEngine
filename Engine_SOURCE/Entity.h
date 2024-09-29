@@ -10,10 +10,11 @@ namespace Game
 
 	public:
 		const std::string& GetName() const { return m_Name; }
-		void SetName(const std::string& name) { m_Name = name; }
+		const std::wstring& GetNameW() const { return m_NameW; }
 
 	protected:
 		std::string m_Name;
+		std::wstring m_NameW;
 	};
 }
 

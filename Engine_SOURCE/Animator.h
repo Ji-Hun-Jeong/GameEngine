@@ -1,0 +1,24 @@
+#pragma once
+#include "RenderComponent.h"
+namespace Game
+{
+	class Animator : public RenderComponent
+	{
+	public:
+		Animator(GameObject* const owner, float changeTime);
+		virtual ~Animator();
+
+	public:
+		void Render(HDC dc, const TransformComponent* const transform) override;
+		void AddTextureCutInfo(const Gdiplus::Rect& cutInfo) { m_VecTextureCutInfo.push_back(cutInfo); }
+		void SetChangeTime(float changeTime) { m_ChangeTime = changeTime; }
+
+	private:
+		std::vector<Gdiplus::Rect> m_VecTextureCutInfo;
+		size_t m_AnimateFrame = 0;
+		float m_ChangeTime;
+		float m_MeasureTime;
+	};
+}
+
+

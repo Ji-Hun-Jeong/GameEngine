@@ -5,13 +5,14 @@ namespace Game
 	class Bitmap
 	{
 	public:
+		explicit Bitmap(const std::string& fileName);
 		explicit Bitmap(UINT width, UINT height);
 		~Bitmap();
 
 	public:
 		HDC& GetDc() { return m_Dc; }
-		UINT GetScreenWidth() { return m_Width; }
-		UINT GetScreenHeight() { return m_Height; }
+		UINT GetWidth() { return m_Width; }
+		UINT GetHeight() { return m_Height; }
 
 	private:
 		HBITMAP m_Bitmap;

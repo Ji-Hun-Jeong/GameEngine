@@ -3,6 +3,7 @@
 #include "KeyMgr.h"
 #include "SceneMgr.h"
 #include "TimeMgr.h"
+#include "PathMgr.h"
 #include "Bitmap.h"
 
 namespace Game
@@ -40,6 +41,7 @@ namespace Game
 
 	void Application::Initalize()
 	{
+		PathMgr::GetInst().Initalize();
 		TimeMgr::GetInst().Initailize();
 		SceneMgr::GetInst().Initalize(m_ScreenWidth, m_ScreenHeight);
 	}

@@ -7,6 +7,8 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+#include <array>
+#include <algorithm>
 
 #include <mmsystem.h>
 #include <dinput.h>
@@ -27,6 +29,7 @@
 								return inst;\
 							}\
 							~Type();
+#define MAGENTA RGB(255,0,255)
 
 namespace Game
 {

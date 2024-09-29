@@ -3,6 +3,7 @@
 #include "TestScene.h"
 #include "TestScene2.h"
 #include "Application.h"
+#include "ResourceMgr.h"
 
 namespace Game
 {
@@ -15,5 +16,10 @@ namespace Game
 		inst.AddScene(new TestScene2(screenWidth, screenHeight));
 
 		inst.SetFirstScene("Test");
+	}
+	void LoadResource()
+	{
+		ResourceMgr& inst = ResourceMgr::GetInst();
+		inst.LoadResource(eResourceType::Texture, "TestTexture", "Texture/char_black.bmp");
 	}
 }
