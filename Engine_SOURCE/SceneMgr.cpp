@@ -7,13 +7,17 @@ namespace Game
 	SceneMgr::SceneMgr()
 		: m_CurScene(nullptr)
 		, m_ToChangeScene(nullptr)
+		, m_ScreenWidth(0)
+		, m_ScreenHeight(0)
 	{}
 	SceneMgr::~SceneMgr()
 	{
 		Utility::DeleteMap<std::string, Scene*>(m_MapScenes);
 	}
-	void SceneMgr::Initalize()
+	void SceneMgr::Initalize(UINT screenWidth, UINT screenHeight)
 	{
+		m_ScreenWidth = screenWidth;
+		m_ScreenHeight = screenHeight;
 	}
 	void SceneMgr::Update()
 	{
@@ -25,9 +29,9 @@ namespace Game
 	{
 		m_CurScene->PostUpdate(TimeMgr::GetInst().DeltaTime());
 	}
-	void SceneMgr::Render()
+	void SceneMgr::Render(HDC dc)
 	{
-		m_CurScene->Render();
+		m_CurScene->Render(dc);
 	}
 	void SceneMgr::AddScene(Scene* const scene)
 	{

@@ -9,11 +9,14 @@ namespace Game
 {
 	Application::Application(HWND hwnd, UINT screenWidth, UINT screenHeight)
 		: m_Hwnd(hwnd)
+		, m_MainWindowDc(nullptr)
 		, m_ScreenWidth(screenWidth)
 		, m_ScreenHeight(screenHeight)
-		, m_MainWindowDc(nullptr)
 		, m_Run(true)
 	{
+		if (m_Hwnd == nullptr)
+			assert(0);
+
 		ShowWindow(m_Hwnd, SW_SHOWDEFAULT);
 		UpdateWindow(m_Hwnd);
 
@@ -24,7 +27,6 @@ namespace Game
 	Application::~Application()
 	{
 		ReleaseDC(m_Hwnd, m_MainWindowDc);
-
 	}
 	bool Application::Run()
 	{
@@ -38,11 +40,8 @@ namespace Game
 
 	void Application::Initalize()
 	{
-		Bitmap::s_MainWindowDc = m_MainWindowDc;
-		Bitmap::s_ScreenWidth = m_ScreenWidth;
-		Bitmap::s_ScreenHeight = m_ScreenHeight;
 		TimeMgr::GetInst().Initailize();
-		SceneMgr::GetInst().Initalize();
+		SceneMgr::GetInst().Initalize(m_ScreenWidth, m_ScreenHeight);
 	}
 	void Application::update()
 	{
@@ -57,7 +56,7 @@ namespace Game
 	}
 	void Application::render()
 	{
-		SceneMgr::GetInst().Render();
+		SceneMgr::GetInst().Render(m_MainWindowDc);
 		TimeMgr::GetInst().Render(m_MainWindowDc);
 	}
 }

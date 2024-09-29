@@ -9,7 +9,7 @@ namespace Game
 	BasicRenderer::~BasicRenderer()
 	{
 	}
-	void BasicRenderer::Render(HDC dc, TransformComponent* const transform)
+	void BasicRenderer::Render(HDC dc, const TransformComponent* const transform)
 	{
 		const Math::Vector2& ownerPos = transform->GetPos();
 		const Math::Vector2& ownerSize = transform->GetSize();

@@ -1,16 +1,17 @@
 #include "Bitmap.h"
+#include "Application.h"
 
+extern Game::Application* g_MyApp;
 namespace Game
 {
-	HDC		Bitmap::s_MainWindowDc;
-	UINT	Bitmap::s_ScreenWidth;
-	UINT	Bitmap::s_ScreenHeight;
-	Bitmap::Bitmap()
+	Bitmap::Bitmap(UINT width, UINT height)
 		: m_Bitmap{}
 		, m_Dc{}
+		, m_Width(width)
+		, m_Height(height)
 	{
-		m_Bitmap = CreateCompatibleBitmap(s_MainWindowDc, s_ScreenWidth, s_ScreenHeight);
-		m_Dc = CreateCompatibleDC(s_MainWindowDc);
+		m_Bitmap = CreateCompatibleBitmap(g_MyApp->GetMainWindowDc(), m_Width, m_Height);
+		m_Dc = CreateCompatibleDC(g_MyApp->GetMainWindowDc());
 
 		HBITMAP prevBitmap = static_cast<HBITMAP>(SelectObject(m_Dc, m_Bitmap));
 		DeleteObject(prevBitmap);

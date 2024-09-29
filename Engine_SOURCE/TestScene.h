@@ -5,7 +5,7 @@ namespace Game
 	class TestScene : public Scene
 	{
 	public:
-		TestScene();
+		explicit TestScene(UINT width, UINT height);
 		~TestScene();
 
 	public:

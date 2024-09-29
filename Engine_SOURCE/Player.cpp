@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "PlayerTransform.h"
 #include "BasicRenderer.h"
+#include "SpriteRenderer.h"
 
 namespace Game
 {
@@ -8,7 +9,7 @@ namespace Game
 		: GameObject("Player")
 	{
 		m_TransformComponent = new PlayerTransform(this);
-		m_RenderComponent = new BasicRenderer(this);
+		m_RenderComponent = new SpriteRenderer(this);
 	}
 	Player::~Player()
 	{

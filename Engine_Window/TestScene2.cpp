@@ -2,8 +2,8 @@
 
 namespace Game
 {
-	TestScene2::TestScene2()
-		: Scene("Test2")
+	TestScene2::TestScene2(UINT width, UINT height)
+		: Scene("Test2", width, height)
 	{
 	}
 
@@ -13,10 +13,12 @@ namespace Game
 
 	void TestScene2::EnterScene()
 	{
+		std::cout << m_Name + "Enter\n";
 	}
 
 	void TestScene2::ExitScene()
 	{
+		std::cout << m_Name + "Exit\n";
 	}
 
 	void TestScene2::DetectSceneEvent()

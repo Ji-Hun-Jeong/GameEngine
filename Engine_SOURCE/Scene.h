@@ -11,7 +11,7 @@ namespace Game
 	class Scene : public Entity
 	{
 	public:
-		Scene(const std::string& name);
+		Scene(const std::string& name, UINT width, UINT height);
 		virtual ~Scene() = 0;
 
 	public:
@@ -21,14 +21,13 @@ namespace Game
 
 		void Update(float dt);
 		void PostUpdate(float dt);
-		void Render();
+		void Render(HDC dc);
 		void AddGameObject(GameObject* const object);
 		void DeleteGameObject(const std::string& objectName);
 
 	protected:
 		std::map<std::string, GameObject*> m_MapGameObjects;
 		Bitmap m_BitmapSet;
-
 	};
 }
 

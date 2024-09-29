@@ -11,6 +11,7 @@ namespace Game
 	public:
 		void Initalize();
 		bool Run();
+		HDC GetMainWindowDc() { return m_MainWindowDc; }
 
 	private:
 		void update();
@@ -19,10 +20,9 @@ namespace Game
 
 	private:
 		HWND m_Hwnd;
+		HDC m_MainWindowDc;
 		UINT m_ScreenWidth;
 		UINT m_ScreenHeight;
-
-		HDC m_MainWindowDc;
 
 		bool m_Run;
 	};

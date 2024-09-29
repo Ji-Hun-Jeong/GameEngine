@@ -13,8 +13,8 @@
 
 // 전역 변수:
 Game::Application* g_MyApp = nullptr;
-//ULONG_PTR gpToken;
-//Gdiplus::GdiplusStartupInput gpsi;
+ULONG_PTR gpToken;
+Gdiplus::GdiplusStartupInput gpsi;
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
@@ -48,13 +48,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UINT screenHeight = windowSize.bottom - windowSize.top;
 
     HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-        100, 100, screenWidth, screenHeight, nullptr, nullptr, hInstance, nullptr);
+        300, 100, screenWidth, screenHeight, nullptr, nullptr, hInstance, nullptr);
 
     if (!hWnd)
         return FALSE;
 
-    //if (Gdiplus::GdiplusStartup(&gpToken, &gpsi, nullptr) != Gdiplus::Ok)
-    //    assert(0);
+    if (Gdiplus::GdiplusStartup(&gpToken, &gpsi, nullptr) != Gdiplus::Ok)
+        assert(0);
 
     g_MyApp = new Game::Application(hWnd, screenWidth, screenHeight);
     g_MyApp->Initalize();
@@ -81,8 +81,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 break;
     }
     delete g_MyApp;
-    //Gdiplus::GdiplusShutdown(gpToken);
-    //system("pause");
+    Gdiplus::GdiplusShutdown(gpToken);
+    // system("pause");
     return (int) msg.wParam;
 }
 

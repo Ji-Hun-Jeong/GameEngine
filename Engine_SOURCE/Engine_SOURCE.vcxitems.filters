@@ -34,15 +34,6 @@
     <Filter Include="Component\Transform\PlayerTransform">
       <UniqueIdentifier>{9a0d244e-0e1d-48bc-a679-97197ae2ca9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Renderer">
-      <UniqueIdentifier>{a689af2b-be7d-4836-af8e-cf281ea70398}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\Renderer\BasicRederer">
-      <UniqueIdentifier>{20e4fa30-04dd-462f-bc2a-20633b09f904}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\Renderer\RenderComponent">
-      <UniqueIdentifier>{b0deaca9-8b19-4f40-81d6-61544921a98e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{3f2b444b-73f9-4801-8aae-d81ed25059e6}</UniqueIdentifier>
     </Filter>
@@ -60,6 +51,18 @@
     </Filter>
     <Filter Include="Bitmap">
       <UniqueIdentifier>{2accad72-ca93-42b3-911c-cec3b9b94c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\RenderComponent">
+      <UniqueIdentifier>{a689af2b-be7d-4836-af8e-cf281ea70398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\RenderComponent\BasicRederer">
+      <UniqueIdentifier>{20e4fa30-04dd-462f-bc2a-20633b09f904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\RenderComponent\RenderComponent">
+      <UniqueIdentifier>{b0deaca9-8b19-4f40-81d6-61544921a98e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\RenderComponent\SpriteRenderer">
+      <UniqueIdentifier>{3bc9c42a-993e-40d2-a912-c17e6f0a6d27}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -98,10 +101,10 @@
       <Filter>Component\Transform\PlayerTransform</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)RenderComponent.h">
-      <Filter>Component\Renderer\RenderComponent</Filter>
+      <Filter>Component\RenderComponent\RenderComponent</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRenderer.h">
-      <Filter>Component\Renderer\BasicRederer</Filter>
+      <Filter>Component\RenderComponent\BasicRederer</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h">
       <Filter>CommonInclude</Filter>
@@ -114,6 +117,9 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Bitmap.h">
       <Filter>Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SpriteRenderer.h">
+      <Filter>Component\RenderComponent\SpriteRenderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -146,10 +152,10 @@
       <Filter>Component\Transform\PlayerTransform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)RenderComponent.cpp">
-      <Filter>Component\Renderer\RenderComponent</Filter>
+      <Filter>Component\RenderComponent\RenderComponent</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp">
-      <Filter>Component\Renderer\BasicRederer</Filter>
+      <Filter>Component\RenderComponent\BasicRederer</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TimeMgr.cpp">
       <Filter>Manager\TimeMgr</Filter>
@@ -159,6 +165,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Bitmap.cpp">
       <Filter>Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SpriteRenderer.cpp">
+      <Filter>Component\RenderComponent\SpriteRenderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

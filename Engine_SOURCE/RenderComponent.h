@@ -9,7 +9,7 @@ namespace Game
 		virtual ~RenderComponent();
 
 	public:
-		virtual void Render(HDC dc, TransformComponent* const transform) = 0;
+		virtual void Render(HDC dc, const TransformComponent* const transform) = 0;
 
 	protected:
 		RECT GetRectangle(const Math::Vector2& pos, const Math::Vector2& size);

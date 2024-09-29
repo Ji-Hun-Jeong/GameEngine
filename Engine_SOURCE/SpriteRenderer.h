@@ -2,15 +2,14 @@
 #include "RenderComponent.h"
 namespace Game
 {
-	class BasicRenderer : public RenderComponent
+	class SpriteRenderer : public RenderComponent
 	{
 	public:
-		explicit BasicRenderer(GameObject* const owner);
-		~BasicRenderer();
+		explicit SpriteRenderer(GameObject* const owner);
+		~SpriteRenderer();
 
 	public:
 		void Render(HDC dc, const TransformComponent* const transform) override;
-
 	};
 }
 

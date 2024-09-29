@@ -4,8 +4,8 @@
 
 namespace Game
 {
-	TestScene::TestScene()
-		: Scene("Test")
+	TestScene::TestScene(UINT width, UINT height)
+		: Scene("Test", width, height)
 	{
 		GameObject* obj = new Player;
 
@@ -16,9 +16,11 @@ namespace Game
 	}
 	void TestScene::EnterScene()
 	{
+		std::cout << m_Name + "Enter\n";
 	}
 	void TestScene::ExitScene()
 	{
+		std::cout << m_Name + "Exit\n";
 	}
 	void TestScene::DetectSceneEvent()
 	{
