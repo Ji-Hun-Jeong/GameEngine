@@ -14,29 +14,31 @@ namespace Game
 	}
 	Scene::~Scene()
 	{
-		Utility::DeleteMap<std::string, GameObject*>(m_MapGameObjects);
 		Utility::DeleteVector<Camera*>(m_VecCameras);
 	}
 
 	void Scene::Update(float dt)
 	{
 		DetectSceneEvent();
-		for (auto iter = m_MapGameObjects.begin(); iter != m_MapGameObjects.end(); ++iter)
-			iter->second->Update(dt);
+		for (size_t i = 0; i < m_ArrLayers.size(); ++i)
+			m_ArrLayers[i].Update(dt);
+		
 		for (size_t i = 0; i < m_VecCameras.size(); ++i)
 			m_VecCameras[i]->Update(dt);
 	}
 
 	void Scene::PostUpdate(float dt)
 	{
-		for (auto iter = m_MapGameObjects.begin(); iter != m_MapGameObjects.end(); ++iter)
-			iter->second->PostUpdate(dt, m_CurCamera);
+		for (size_t i = 0; i < m_ArrLayers.size(); ++i)
+			m_ArrLayers[i].PostUpdate(dt, m_CurCamera);
+		
 	}
 
 	void Scene::Render(HDC dc)
 	{
-		for (auto iter = m_MapGameObjects.begin(); iter != m_MapGameObjects.end(); ++iter)
-			iter->second->Render(m_BitmapSet.GetDc());
+		for (size_t i = 0; i < m_ArrLayers.size(); ++i)
+			m_ArrLayers[i].Render(m_BitmapSet.GetDc());
+
 		TimeMgr::GetInst().Render(m_BitmapSet.GetDc());
 
 		BitBlt(dc, 0, 0
@@ -49,13 +51,14 @@ namespace Game
 			, m_BitmapSet.GetWidth());
 	}
 
-	void Scene::AddGameObject(GameObject* const object)
+	void Scene::AddGameObject(eLayerType layerType, GameObject* const object)
 	{
-		const std::string& objectName = object->GetName();
-		auto iter = m_MapGameObjects.find(objectName);
-		if (iter != m_MapGameObjects.end())
-			assert(0);
-		m_MapGameObjects.insert(std::make_pair(objectName, object));
+		m_ArrLayers[(size_t)layerType].AddGameObject(object);
+	}
+
+	void Scene::DeleteGameObject(eLayerType layerType, const std::string& objectName)
+	{
+		m_ArrLayers[(size_t)layerType].DeleteGameObject(objectName);
 	}
 
 	void Scene::AddCamera(Camera* const camera)
@@ -66,14 +69,6 @@ namespace Game
 				assert(0);
 		}
 		m_VecCameras.push_back(camera);
-	}
-
-	void Scene::DeleteGameObject(const std::string& objectName)
-	{
-		auto iter = m_MapGameObjects.find(objectName);
-		if (iter == m_MapGameObjects.end())
-			assert(0);
-		m_MapGameObjects.erase(objectName);
 	}
 
 	void Scene::SetCurCamera(const std::string& cameraName)
@@ -89,5 +84,10 @@ namespace Game
 		}
 		assert(foundCamera);
 		m_CurCamera = foundCamera;
+	}
+	void Scene::SetCurCamera(Camera* const camera)
+	{
+		assert(camera);
+		m_CurCamera = camera;
 	}
 }

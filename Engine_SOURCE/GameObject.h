@@ -19,8 +19,18 @@ namespace Game
 		virtual void PostUpdate(float dt, Camera* const curCamera);
 		virtual void Render(HDC dc);
 		
-		void AddComponent(Component* const component);
+		void SetTransformComponent(TransformComponent* const transformComponent);
+		void SetRenderComponent(RenderComponent* const renderComponent);
+		void SetTexture(const std::string& textureName);
+		void SetPos(const Math::Vector2& pos);
+		void SetSize(const Math::Vector2& size);
+		void SetSizeFromTexture();
 
+		const Math::Vector2& GetPos();
+		const Math::Vector2& GetFinalPos();
+		const Math::Vector2& GetSize();
+
+		void AddComponent(Component* const component);
 		template <typename T>
 		T GetComponent(const std::string& componentName);
 

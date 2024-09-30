@@ -15,12 +15,12 @@ namespace Game
 		inst.AddScene(new TestScene(screenWidth, screenHeight));
 		inst.AddScene(new TestScene2(screenWidth, screenHeight));
 
-		inst.SetFirstScene("Test");
+		inst.SetFirstScene("Test2");
 	}
 	void LoadResource()
 	{
 		ResourceMgr& inst = ResourceMgr::GetInst();
 		inst.LoadResource(eResourceType::Texture, "PlayerTexture", "Texture/char_black.bmp");
-		inst.LoadResource(eResourceType::Texture, "BackGroundTexture", "Texture/BackGround1.bmp");
+		inst.LoadResource(eResourceType::Texture, "BackGroundTexture", "Texture/char_black.bmp");
 	}
 }

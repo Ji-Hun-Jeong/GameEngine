@@ -85,6 +85,18 @@
     <Filter Include="Component\Transform\CameraTransform">
       <UniqueIdentifier>{75f7be85-12ca-4e81-a94b-9791e2610d03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\MouseDrager">
+      <UniqueIdentifier>{29410a45-625a-4d00-84ff-be8f5e637f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform\MouseDragTransform">
+      <UniqueIdentifier>{f634403b-482d-4c85-bac5-4b53b176efd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\AnimationGenerator">
+      <UniqueIdentifier>{20f69a34-eb11-450e-9fc0-5ef5e3f2a745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity\Layer">
+      <UniqueIdentifier>{ae9d1d38-af51-47f2-b10a-de0bc3aa35df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -175,6 +187,18 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h">
       <Filter>Component\Transform\CameraTransform</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrager.h">
+      <Filter>GameObject\MouseDrager</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseDragTransform.h">
+      <Filter>Component\Transform\MouseDragTransform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimationGenerator.h">
+      <Filter>GameObject\AnimationGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h">
+      <Filter>Entity\Layer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -255,6 +279,21 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp">
       <Filter>Component\Transform\CameraTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrager.cpp">
+      <Filter>GameObject\MouseDrager</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseDragTransform.cpp">
+      <Filter>Component\Transform\MouseDragTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MyMath.cpp">
+      <Filter>CommonInclude</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimationGenerator.cpp">
+      <Filter>GameObject\AnimationGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp">
+      <Filter>Entity\Layer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

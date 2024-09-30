@@ -20,4 +20,10 @@ namespace Game
 		assert(m_Texture);
 	}
 
+	Math::Vector2 RenderComponent::GetTextureSize()
+	{
+		assert(m_Texture);
+		return Math::Vector2(m_Texture->GetWidth(), m_Texture->GetHeight());
+	}
+
 }

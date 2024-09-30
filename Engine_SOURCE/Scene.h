@@ -1,11 +1,14 @@
 #pragma once
+#include "BackGround.h"
+#include "Bitmap.h"
+#include "Camera.h"
 #include "Entity.h"
 #include "GameObject.h"
 #include "KeyMgr.h"
 #include "MouseMgr.h"
+#include "Player.h"
 #include "SceneMgr.h"
-#include "Bitmap.h"
-#include "Camera.h"
+#include "Layer.h"
 
 namespace Game
 {
@@ -20,16 +23,17 @@ namespace Game
 		virtual void ExitScene() = 0;
 		virtual void DetectSceneEvent() = 0;
 
-		void Update(float dt);
-		void PostUpdate(float dt);
-		void Render(HDC dc);
-		void AddGameObject(GameObject* const object);
+		virtual void Update(float dt);
+		virtual void PostUpdate(float dt);
+		virtual void Render(HDC dc);
+		void AddGameObject(eLayerType layerType, GameObject* const object);
 		void AddCamera(Camera* const camera);
-		void DeleteGameObject(const std::string& objectName);
+		void DeleteGameObject(eLayerType layerType, const std::string& objectName);
 		void SetCurCamera(const std::string& cameraName);
+		void SetCurCamera(Camera* const camera);
 
 	protected:
-		std::map<std::string, GameObject*> m_MapGameObjects;
+		std::array<Layer, (size_t)eLayerType::End> m_ArrLayers;
 		std::vector<Camera*> m_VecCameras;
 		Camera* m_CurCamera;
 		Bitmap m_BitmapSet;

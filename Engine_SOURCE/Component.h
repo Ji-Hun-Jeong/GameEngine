@@ -13,9 +13,12 @@ namespace Game
 		Component(const std::string& name, GameObject* const owner);
 		virtual ~Component() = 0;
 
+	public:
+		static RECT TransformMYC(const Math::Vector2& pos, const Math::Vector2& size);
+
 	protected:
-		RECT TransformMYC(const Math::Vector2& pos, const Math::Vector2& size);
 		GameObject* m_Owner;
+
 	};
 }
 

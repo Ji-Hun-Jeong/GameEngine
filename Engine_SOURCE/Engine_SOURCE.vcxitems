@@ -14,6 +14,7 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimationGenerator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Animator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGround.h" />
@@ -29,6 +30,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseDragTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PathMgr.h" />
@@ -46,6 +50,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimationGenerator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGround.cpp" />
@@ -60,7 +65,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseDragTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MyMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PathMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerTransform.cpp" />

@@ -12,8 +12,10 @@ namespace Game
 
 	public:
 		virtual void Render(HDC dc, const TransformComponent* const transform) = 0;
+		virtual void Render(HDC dc, const Math::Vector2& finalPos, const Math::Vector2& size) = 0;
 
 		void SetTexture(const std::string& textureName);
+		Math::Vector2 GetTextureSize();
 	protected:
 		Texture* m_Texture;
 	};

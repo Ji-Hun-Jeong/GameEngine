@@ -12,6 +12,9 @@ namespace Game
 		void EnterScene() override;
 		void ExitScene() override;
 		void DetectSceneEvent() override;
+		void Update(float dt) override;
+		void PostUpdate(float dt) override;
+		void Render(HDC dc) override;
 
 	private:
 

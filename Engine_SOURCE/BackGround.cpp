@@ -11,9 +11,7 @@ namespace Game
 	{
 		m_TransformComponent = new BackGroundTransform(this
 			, Math::Vector2()
-			, Math::Vector2(SceneMgr::GetInst().GetScreenWidth(), SceneMgr::GetInst().GetScreenHeight()));
-		m_RenderComponent = new BackGroundRenderer(this);
-		m_RenderComponent->SetTexture("BackGroundTexture");
+			, Math::Vector2());
 	}
 	BackGround::~BackGround()
 	{

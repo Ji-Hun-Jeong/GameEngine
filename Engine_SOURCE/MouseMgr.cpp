@@ -10,6 +10,10 @@ namespace Game
 	{
 
 	}
+	void MouseMgr::Initalize(HWND mainWindowHwnd)
+	{
+		m_MainWindowHwnd = mainWindowHwnd;
+	}
 	void MouseMgr::Update()
 	{
 		if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
@@ -28,6 +32,11 @@ namespace Game
 				m_MouseState = eButtonState::None;
 			m_PrevMouseClicked = false;
 		}
+		static POINT pos;
+		GetCursorPos(&pos);
+		ScreenToClient(m_MainWindowHwnd, &pos);
+		m_MousePos.x = static_cast<float>(pos.x);
+		m_MousePos.y = static_cast<float>(pos.y);
 	}
 }
 

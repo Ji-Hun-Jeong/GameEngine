@@ -11,7 +11,7 @@ namespace Game
 
 	public:
 		virtual void Update(float dt) = 0;
-		void PostUpdate(float dt, const TransformComponent* const curCameraTransform);
+		virtual void PostUpdate(float dt, const TransformComponent* const curCameraTransform);
 
 		void SetPos(const Math::Vector2& pos) { m_Pos = pos; }
 		void SetSize(const Math::Vector2& size) { m_Size = size; }

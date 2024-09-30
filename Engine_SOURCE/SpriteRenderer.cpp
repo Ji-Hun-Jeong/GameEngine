@@ -14,6 +14,7 @@ namespace Game
 
 	void SpriteRenderer::Render(HDC dc, const TransformComponent* const transform)
 	{
+		assert(m_Texture);
 		const Math::Vector2& pos = transform->GetPos();
 		const Math::Vector2& size = transform->GetSize();
 		UINT sizeX = static_cast<UINT>(size.x);
@@ -25,6 +26,18 @@ namespace Game
 			, 0, 0
 			, m_Texture->GetWidth(), m_Texture->GetHeight(), MAGENTA);
 
+	}
+	void SpriteRenderer::Render(HDC dc, const Math::Vector2& finalPos, const Math::Vector2& size)
+	{
+		assert(m_Texture);
+		UINT sizeX = static_cast<UINT>(size.x);
+		UINT sizeY = static_cast<UINT>(size.y);
+		RECT newRect = TransformMYC(finalPos, size);
+
+		TransparentBlt(dc, newRect.left, newRect.top, sizeX, sizeY
+			, m_Texture->GetBitmapDc()
+			, 0, 0
+			, m_Texture->GetWidth(), m_Texture->GetHeight(), MAGENTA);
 	}
 }
 
