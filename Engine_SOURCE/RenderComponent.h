@@ -15,8 +15,6 @@ namespace Game
 
 		void SetTexture(const std::string& textureName);
 	protected:
-		RECT GetRectangle(const Math::Vector2& pos, const Math::Vector2& size);
-
 		Texture* m_Texture;
 	};
 }

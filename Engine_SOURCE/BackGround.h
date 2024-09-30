@@ -7,8 +7,9 @@ namespace Game
 	public:
 		BackGround();
 		~BackGround();
-	private:
 
+	private:
+		static UINT s_numOfBackGround;
 	};
 }
 

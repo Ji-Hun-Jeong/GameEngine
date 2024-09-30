@@ -7,8 +7,9 @@
 
 namespace Game
 {
+	UINT Player::s_numOfPlayer = 0;
 	Player::Player()
-		: GameObject("Player")
+		: GameObject("Player"+std::to_string(s_numOfPlayer++))
 	{
 		m_TransformComponent = new PlayerTransform(this, Math::Vector2(0, 0)
 			,Math::Vector2(100.0f,100.0f));

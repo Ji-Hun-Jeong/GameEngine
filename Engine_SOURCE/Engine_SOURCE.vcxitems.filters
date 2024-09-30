@@ -79,6 +79,12 @@
     <Filter Include="Component\Transform\BackGroundTransform">
       <UniqueIdentifier>{2dbccd0a-fc9f-42d0-99cf-b87fedff262f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Camera">
+      <UniqueIdentifier>{9ea95bb0-76ff-4ac1-b49a-c3d598f738b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform\CameraTransform">
+      <UniqueIdentifier>{75f7be85-12ca-4e81-a94b-9791e2610d03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -160,6 +166,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundTransform.h">
       <Filter>Component\Transform\BackGroundTransform</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Camera.h">
+      <Filter>GameObject\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CameraTransform.h">
+      <Filter>Component\Transform\CameraTransform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h">
+      <Filter>Component\Transform\CameraTransform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -231,6 +246,15 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundTransform.cpp">
       <Filter>Component\Transform\BackGroundTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Camera.cpp">
+      <Filter>GameObject\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CameraTransform.cpp">
+      <Filter>Component\Transform\CameraTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp">
+      <Filter>Component\Transform\CameraTransform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

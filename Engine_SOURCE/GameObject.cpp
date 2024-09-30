@@ -1,6 +1,7 @@
 #include "GameObject.h"
 #include "TransformComponent.h"
 #include "RenderComponent.h"
+#include "Camera.h"
 
 namespace Game
 {
@@ -28,9 +29,14 @@ namespace Game
 		if (m_TransformComponent)
 			m_TransformComponent->Update(dt);
 	}
-	void GameObject::PostUpdate(float dt)
+	void GameObject::PostUpdate(float dt, Camera* const curCamera)
 	{
+		assert(curCamera);
 
+		GameObject* const p = curCamera;
+
+		if (m_TransformComponent)
+			m_TransformComponent->PostUpdate(dt, p->m_TransformComponent);
 	}
 	void GameObject::Render(HDC dc)
 	{

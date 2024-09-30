@@ -18,7 +18,7 @@ namespace Game
 		const Math::Vector2& size = transform->GetSize();
 		UINT sizeX = static_cast<UINT>(size.x);
 		UINT sizeY = static_cast<UINT>(size.y);
-		RECT newRect = GetRectangle(pos, size);
+		RECT newRect = TransformMYC(pos, size);
 
 		TransparentBlt(dc, newRect.left, newRect.top, sizeX, sizeY
 			, m_Texture->GetBitmapDc()

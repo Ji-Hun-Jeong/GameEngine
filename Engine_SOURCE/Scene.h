@@ -5,6 +5,7 @@
 #include "MouseMgr.h"
 #include "SceneMgr.h"
 #include "Bitmap.h"
+#include "Camera.h"
 
 namespace Game
 {
@@ -23,10 +24,14 @@ namespace Game
 		void PostUpdate(float dt);
 		void Render(HDC dc);
 		void AddGameObject(GameObject* const object);
+		void AddCamera(Camera* const camera);
 		void DeleteGameObject(const std::string& objectName);
+		void SetCurCamera(const std::string& cameraName);
 
 	protected:
 		std::map<std::string, GameObject*> m_MapGameObjects;
+		std::vector<Camera*> m_VecCameras;
+		Camera* m_CurCamera;
 		Bitmap m_BitmapSet;
 	};
 }

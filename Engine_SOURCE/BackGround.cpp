@@ -5,8 +5,9 @@
 
 namespace Game
 {
+	UINT BackGround::s_numOfBackGround = 0;
 	BackGround::BackGround()
-		: GameObject("BackGround")
+		: GameObject("BackGround"+std::to_string(s_numOfBackGround++))
 	{
 		m_TransformComponent = new BackGroundTransform(this
 			, Math::Vector2()

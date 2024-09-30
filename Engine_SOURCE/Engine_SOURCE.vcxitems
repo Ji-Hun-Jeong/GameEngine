@@ -20,9 +20,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Bitmap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Camera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CameraTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h" />
@@ -49,8 +52,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Bitmap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Camera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CameraTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp" />

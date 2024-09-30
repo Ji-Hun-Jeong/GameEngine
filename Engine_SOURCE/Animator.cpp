@@ -23,11 +23,11 @@ namespace Game
 			m_MeasureTime = 0.0f;
 		}
 
-		const Math::Vector2& pos = transform->GetPos();
+		const Math::Vector2& pos = transform->GetFinalPos();
 		const Math::Vector2& size = transform->GetSize();
 		UINT sizeX = static_cast<UINT>(size.x);
 		UINT sizeY = static_cast<UINT>(size.y);
-		RECT newRect = GetRectangle(pos, size);
+		RECT newRect = TransformMYC(pos, size);
 		const Gdiplus::Rect& cutInfo = m_VecTextureCutInfo[m_AnimateFrame];
 
 		TransparentBlt(dc, newRect.left, newRect.top, sizeX, sizeY

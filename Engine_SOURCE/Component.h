@@ -14,6 +14,7 @@ namespace Game
 		virtual ~Component() = 0;
 
 	protected:
+		RECT TransformMYC(const Math::Vector2& pos, const Math::Vector2& size);
 		GameObject* m_Owner;
 	};
 }

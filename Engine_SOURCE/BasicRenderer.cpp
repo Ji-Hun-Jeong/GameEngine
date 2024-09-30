@@ -11,10 +11,10 @@ namespace Game
 	}
 	void BasicRenderer::Render(HDC dc, const TransformComponent* const transform)
 	{
-		const Math::Vector2& ownerPos = transform->GetPos();
+		const Math::Vector2& ownerPos = transform->GetFinalPos();
 		const Math::Vector2& ownerSize = transform->GetSize();
 
-		RECT renderRect = GetRectangle(ownerPos, ownerSize);
+		RECT renderRect = TransformMYC(ownerPos, ownerSize);
 
 		Rectangle(dc, renderRect.left, renderRect.top, renderRect.right, renderRect.bottom);
 	}

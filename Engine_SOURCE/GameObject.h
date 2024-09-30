@@ -7,6 +7,7 @@ namespace Game
 	class Component;
 	class TransformComponent;
 	class RenderComponent;
+	class Camera;
 	class GameObject : public Entity
 	{
 	public:
@@ -15,7 +16,7 @@ namespace Game
 
 	public:
 		virtual void Update(float dt);
-		virtual void PostUpdate(float dt);
+		virtual void PostUpdate(float dt, Camera* const curCamera);
 		virtual void Render(HDC dc);
 		
 		void AddComponent(Component* const component);

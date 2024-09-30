@@ -1,7 +1,7 @@
 #include "TestScene.h"
-#include "Player.h"
 #include "BackGround.h"
-
+#include "Camera.h"
+#include "Player.h"
 
 namespace Game
 {
@@ -10,6 +10,9 @@ namespace Game
 	{
 		AddGameObject(new Player);
 		AddGameObject(new BackGround);
+		
+		AddCamera(new Camera);
+		SetCurCamera("Camera0");
 	}
 	TestScene::~TestScene()
 	{

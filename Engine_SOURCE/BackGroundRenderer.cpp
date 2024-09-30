@@ -11,11 +11,11 @@ namespace Game
 	}
 	void BackGroundRenderer::Render(HDC dc, const TransformComponent* const transform)
 	{
-		const Math::Vector2& pos = transform->GetPos();
+		const Math::Vector2& pos = transform->GetFinalPos();
 		const Math::Vector2& size = transform->GetSize();
 		UINT sizeX = static_cast<UINT>(size.x);
 		UINT sizeY = static_cast<UINT>(size.y);
-		RECT newRect = GetRectangle(pos, size);
+		RECT newRect = TransformMYC(pos, size);
 
 		BitBlt(dc, 0, 0, sizeX, sizeY
 			, m_Texture->GetBitmapDc(), 0, 0, SRCCOPY);

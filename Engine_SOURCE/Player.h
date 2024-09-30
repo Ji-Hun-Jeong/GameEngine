@@ -8,6 +8,8 @@ namespace Game
 		Player();
 		~Player();
 
+	private:
+		static UINT s_numOfPlayer;
 	};
 }
 
