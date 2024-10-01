@@ -15,10 +15,8 @@ namespace Game
 	void Layer::AddGameObject(GameObject* const object)
 	{
 		const std::string& objectName = object->GetName();
-		auto iter = m_MapGameObjects.find(objectName);
-		if (iter != m_MapGameObjects.end())
-			assert(0);
-		m_MapGameObjects.insert(std::make_pair(objectName, object));
+		auto pairIterBool = m_MapGameObjects.insert(std::make_pair(objectName, object));
+		assert(pairIterBool.second);
 	}
 	void Layer::DeleteGameObject(const std::string& objectName)
 	{

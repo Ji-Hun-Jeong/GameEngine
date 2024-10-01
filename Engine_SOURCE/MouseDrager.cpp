@@ -1,6 +1,7 @@
 #include "MouseDrager.h"
 #include "MouseDragTransform.h"
 #include "BasicRenderer.h"
+#include "Camera.h"
 
 namespace Game
 {
@@ -18,24 +19,28 @@ namespace Game
 	void MouseDrager::Update(float dt)
 	{
 		GameObject::Update(dt);
+	}
+	void MouseDrager::PostUpdate(float dt, Camera* const curCamera)
+	{
+		GameObject::PostUpdate(dt, curCamera);
 		MouseDragTransform* transform = static_cast<MouseDragTransform*>(m_TransformComponent);
 		m_CompleteMakeRect = transform->IsReleased();
 		if (m_CompleteMakeRect)
 		{
-			const Math::Vector2& pos = m_TransformComponent->GetPos();
+			const Math::Vector2& cameraPos = curCamera->GetPos();
+			const Math::Vector2& cameraSize = curCamera->GetSize();
+			RECT newRect = Component::TransformMYC(cameraPos, cameraSize);
+
+			const Math::Vector2& finalPos = m_TransformComponent->GetFinalPos();
 			const Math::Vector2& size = m_TransformComponent->GetSize();
-			m_DragedRect.X = static_cast<INT>(pos.x);
-			m_DragedRect.Y = static_cast<INT>(pos.y);
+			m_DragedRect.X = static_cast<INT>(finalPos.x + newRect.left);
+			m_DragedRect.Y = static_cast<INT>(finalPos.y + newRect.top);
 			m_DragedRect.Width = static_cast<INT>(size.x);
 			m_DragedRect.Height = static_cast<INT>(size.y);
 		}
 	}
 	void MouseDrager::Render(HDC dc)
 	{
-		MouseDragTransform* transform = static_cast<MouseDragTransform*>(m_TransformComponent);
-		if (transform->IsStartDraging())
-		{
-			GameObject::Render(dc);
-		}
+		GameObject::Render(dc);
 	}
 }

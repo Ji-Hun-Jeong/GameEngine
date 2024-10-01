@@ -23,16 +23,4 @@ namespace Game
 		BitBlt(dc, left, top, sizeX, sizeY
 			, m_Texture->GetBitmapDc(), 0, 0, SRCCOPY);
 	}
-	void BackGroundRenderer::Render(HDC dc, const Math::Vector2& finalPos, const Math::Vector2& size)
-	{
-		assert(m_Texture);
-		int left = static_cast<int>(finalPos.x);
-		int top = static_cast<int>(finalPos.y);
-		UINT sizeX = static_cast<UINT>(size.x);
-		UINT sizeY = static_cast<UINT>(size.y);
-		RECT newRect = TransformMYC(finalPos, size);
-
-		BitBlt(dc, left, top, sizeX, sizeY
-			, m_Texture->GetBitmapDc(), 0, 0, SRCCOPY);
-	}
 }

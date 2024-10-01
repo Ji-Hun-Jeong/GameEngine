@@ -33,15 +33,15 @@ namespace Game
 			m_FinishDrag = true;
 			m_StartDrag = false;
 		}
+		else
+		{
+			m_FirstClickPos = m_DragingPos;
+		}
 		m_Pos = (m_FirstClickPos + m_DragingPos) / 2.0f;
 		m_Size = (m_DragingPos - m_FirstClickPos).Abs();
 	}
 	void MouseDragTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
 	{
-		const Math::Vector2& cameraPos = curCameraTransform->GetPos();
-		const Math::Vector2& cameraSize = curCameraTransform->GetSize();
-		RECT newRect = TransformMYC(cameraPos, cameraSize);
-
 		m_FinalPos.x = m_Pos.x;
 		m_FinalPos.y = m_Pos.y;
 	}

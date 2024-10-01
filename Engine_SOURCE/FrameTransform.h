@@ -2,19 +2,16 @@
 #include "TransformComponent.h"
 namespace Game
 {
-	class PlayerTransform : public TransformComponent
+	class FrameTransform : public TransformComponent
 	{
 	public:
-		explicit PlayerTransform(GameObject* const owner
+		FrameTransform(GameObject* const owner
 			, const Math::Vector2& pos, const Math::Vector2& size);
-		~PlayerTransform();
-		
+		virtual ~FrameTransform();
+
 	public:
 		void Update(float dt) override;
 		void PostUpdate(float dt, const TransformComponent* const curCameraTransform) override;
-
-	private:
-
 	};
 }
 

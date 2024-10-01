@@ -10,7 +10,6 @@ namespace Game
 
 	public:
 		void Render(HDC dc, const TransformComponent* const transform) override;
-		void Render(HDC dc, const Math::Vector2& finalPos, const Math::Vector2& size) override;
 		void AddTextureCutInfo(const Gdiplus::Rect& cutInfo) { m_VecTextureCutInfo.push_back(cutInfo); }
 		void SetChangeTime(float changeTime) { m_ChangeTime = changeTime; }
 

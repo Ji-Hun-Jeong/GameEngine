@@ -23,7 +23,7 @@ namespace Game
 	Math::Vector2 RenderComponent::GetTextureSize()
 	{
 		assert(m_Texture);
-		return Math::Vector2(m_Texture->GetWidth(), m_Texture->GetHeight());
+		return Math::Vector2(float(m_Texture->GetWidth()), float(m_Texture->GetHeight()));
 	}
 
 }

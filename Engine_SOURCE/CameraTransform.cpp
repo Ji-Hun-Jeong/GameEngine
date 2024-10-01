@@ -31,4 +31,8 @@ namespace Game
 			m_Pos.y += dt * 100.0f;
 		}
 	}
+	void CameraTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	{
+		m_FinalPos = m_Pos;
+	}
 }

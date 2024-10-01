@@ -12,16 +12,5 @@ namespace Game
 	Camera::~Camera()
 	{
 	}
-	void Camera::Update(float dt)
-	{
-		GameObject::Update(dt);
-	}
-	void Camera::PostUpdate(float dt, Camera* const curCamera)
-	{
 
-	}
-	void Camera::Render(HDC dc)
-	{
-
-	}
 }

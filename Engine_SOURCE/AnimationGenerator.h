@@ -5,6 +5,7 @@
 namespace Game
 {
 	class RenderComponent;
+	class Frame;
 	class AnimationGenerator : public GameObject
 	{
 	public:
@@ -18,8 +19,8 @@ namespace Game
 
 	private:
 		MouseDrager m_MouseDrager;
-		std::vector<Gdiplus::Rect> m_VecAnimateFrames;
-		std::vector<Gdiplus::Rect> m_VecFinalFramesInfo;
+		std::vector<Frame*> m_VecFrames;
+		std::string m_AnimationName;
 	};
 }
 

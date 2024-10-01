@@ -13,4 +13,7 @@ namespace Game
 	void FollowTransform::Update(float dt)
 	{
 	}
+	void FollowTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	{
+	}
 }

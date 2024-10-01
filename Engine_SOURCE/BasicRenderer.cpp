@@ -22,10 +22,5 @@ namespace Game
 
 		Rectangle(dc, renderRect.left, renderRect.top, renderRect.right, renderRect.bottom);
 	}
-	void BasicRenderer::Render(HDC dc, const Math::Vector2& finalPos, const Math::Vector2& size)
-	{
-		RECT renderRect = TransformMYC(finalPos, size);
 
-		Rectangle(dc, renderRect.left, renderRect.top, renderRect.right, renderRect.bottom);
-	}
 }

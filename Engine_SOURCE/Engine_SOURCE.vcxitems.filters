@@ -97,6 +97,12 @@
     <Filter Include="Entity\Layer">
       <UniqueIdentifier>{ae9d1d38-af51-47f2-b10a-de0bc3aa35df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\AnimationGenerator\Frame">
+      <UniqueIdentifier>{5041106a-ea56-4f09-a578-02087527c05d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform\FrameTransform">
+      <UniqueIdentifier>{d324f3cc-0a2f-4ee2-8a5a-952d6e2ef38c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -199,6 +205,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h">
       <Filter>Entity\Layer</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Frame.h">
+      <Filter>GameObject\AnimationGenerator\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FrameTransform.h">
+      <Filter>Component\Transform\FrameTransform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -294,6 +306,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp">
       <Filter>Entity\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Frame.cpp">
+      <Filter>GameObject\AnimationGenerator\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FrameTransform.cpp">
+      <Filter>Component\Transform\FrameTransform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

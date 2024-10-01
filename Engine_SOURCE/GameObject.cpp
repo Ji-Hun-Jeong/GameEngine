@@ -27,6 +27,7 @@ namespace Game
 
 	void GameObject::SetTransformComponent(TransformComponent* const transformComponent)
 	{
+		assert(transformComponent);
 		if (m_TransformComponent)
 			delete m_TransformComponent;
 		m_TransformComponent = transformComponent;
@@ -34,6 +35,7 @@ namespace Game
 
 	void GameObject::SetRenderComponent(RenderComponent* const renderComponent)
 	{
+		assert(renderComponent);
 		if (m_RenderComponent)
 			delete m_RenderComponent;
 		m_RenderComponent = renderComponent;
@@ -41,42 +43,35 @@ namespace Game
 
 	void GameObject::SetTexture(const std::string& textureName)
 	{
-		assert(m_RenderComponent);
 		m_RenderComponent->SetTexture(textureName);
 	}
 
 	void GameObject::SetPos(const Math::Vector2& pos)
 	{
-		assert(m_TransformComponent);
 		m_TransformComponent->SetPos(pos);
 	}
 
 	void GameObject::SetSize(const Math::Vector2& size)
 	{
-		assert(m_TransformComponent);
 		m_TransformComponent->SetSize(size);
 	}
 
 	void GameObject::SetSizeFromTexture()
 	{
-		assert(m_RenderComponent);
 		this->SetSize(m_RenderComponent->GetTextureSize());
 	}
 	const Math::Vector2& GameObject::GetPos()
 	{
-		assert(m_TransformComponent);
 		return m_TransformComponent->GetPos();
 	}
 
 	const Math::Vector2& GameObject::GetFinalPos()
 	{
-		assert(m_TransformComponent);
 		return m_TransformComponent->GetFinalPos();
 	}
 
 	const Math::Vector2& GameObject::GetSize()
 	{
-		assert(m_TransformComponent);
 		return m_TransformComponent->GetSize();
 	}
 

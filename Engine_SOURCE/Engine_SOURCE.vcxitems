@@ -27,6 +27,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Frame.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FrameTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h" />
@@ -62,6 +64,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Frame.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FrameTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp" />

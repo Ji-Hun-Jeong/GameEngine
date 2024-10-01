@@ -1,19 +1,19 @@
-#include "BackGroundTransform.h"
+#include "FrameTransform.h"
 
 namespace Game
 {
-	BackGroundTransform::BackGroundTransform(GameObject* const owner
+	FrameTransform::FrameTransform(GameObject* const owner
 		, const Math::Vector2& pos, const Math::Vector2& size)
-		: TransformComponent("BackGroundTransform", owner, pos, size)
+		: TransformComponent("Frame", owner, pos, size)
 	{
 	}
-	BackGroundTransform::~BackGroundTransform()
+	FrameTransform::~FrameTransform()
 	{
 	}
-	void BackGroundTransform::Update(float dt)
+	void FrameTransform::Update(float dt)
 	{
 	}
-	void BackGroundTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	void FrameTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
 	{
 		const Math::Vector2& cameraPos = curCameraTransform->GetPos();
 		const Math::Vector2& cameraSize = curCameraTransform->GetSize();

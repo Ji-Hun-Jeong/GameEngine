@@ -36,10 +36,8 @@ namespace Game
 	void SceneMgr::AddScene(Scene* const scene)
 	{
 		const std::string& sceneName = scene->GetName();
-		auto iter = m_MapScenes.find(sceneName);
-		if (iter != m_MapScenes.end())
-			assert(0);
-		m_MapScenes.insert(std::make_pair(sceneName, scene));
+		auto pairIterBool = m_MapScenes.insert(std::make_pair(sceneName, scene));
+		assert(pairIterBool.second);
 	}
 	void SceneMgr::SetFirstScene(const std::string& sceneName)
 	{
