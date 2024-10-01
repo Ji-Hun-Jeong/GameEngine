@@ -42,7 +42,6 @@ namespace Game
 	}
 	void MouseDragTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
 	{
-		m_FinalPos.x = m_Pos.x;
-		m_FinalPos.y = m_Pos.y;
+		m_FinalPos = m_Pos;
 	}
 }

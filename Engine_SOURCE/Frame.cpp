@@ -8,7 +8,7 @@ namespace Game
 		: GameObject(name + std::to_string(numOfFrame))
 	{
 		SetTransformComponent(new FrameTransform(this
-			, Math::Vector2(rect.X, rect.Y), Math::Vector2(rect.Width, rect.Height)));
+			, Math::Vector2(float(rect.X), float(rect.Y)), Math::Vector2(float(rect.Width), float(rect.Height))));
 		SetRenderComponent(new BasicRenderer(this));
 	}
 	Frame::~Frame()

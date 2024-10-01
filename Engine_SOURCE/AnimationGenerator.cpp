@@ -33,7 +33,7 @@ namespace Game
 		m_MouseDrager.PostUpdate(dt, curCamera);
 		if (m_MouseDrager.IsCompleteMakeRect())
 		{
-			m_VecFrames.push_back(new Frame(m_AnimationName, m_VecFrames.size()
+			m_VecFrames.push_back(new Frame(m_AnimationName, UINT(m_VecFrames.size())
 				, m_MouseDrager.GetDragedRect()));
 		}
 	}
