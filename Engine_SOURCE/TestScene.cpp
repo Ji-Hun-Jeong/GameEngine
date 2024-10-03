@@ -11,15 +11,58 @@ namespace Game
 		GameObject* player = new Player;
 		player->SetPos(Math::Vector2(50.0f, 50.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
-		Animator* animator = new Animator(player, 1.0f);
-		animator->AddTextureCutInfo(Gdiplus::Rect(127 * 0, 127, 127, 127));
-		animator->AddTextureCutInfo(Gdiplus::Rect(127 * 1, 127, 127, 127));
-		animator->AddTextureCutInfo(Gdiplus::Rect(127 * 2, 127, 127, 127));
-		animator->AddTextureCutInfo(Gdiplus::Rect(127 * 3, 127, 127, 127));
+
+		Animator* animator = new Animator(player, 0.3f);
+		animator->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
 		AddGameObject(eLayerType::Player, player);
+		//////////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////////
+		player = new Player;
+		player->SetPos(Math::Vector2(100.0f, 100.0f));
+		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
+		animator = new Animator(player, 0.1f);
+		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
+		player->SetRenderComponent(animator);
+		player->SetTexture("PlayerTexture");
+		AddGameObject(eLayerType::Player, player);
+		//////////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////////
+		player = new Player;
+		player->SetPos(Math::Vector2(150.0f, 150.0f));
+		player->SetSize(Math::Vector2(100.0f, 100.0f));
+
+		animator = new Animator(player, 0.3f);
+		animator->AddTextureCutInfoByFile("Animation/PlayerDead.txt");
+		player->SetRenderComponent(animator);
+		player->SetTexture("PlayerTexture");
+		AddGameObject(eLayerType::Player, player);
+		//////////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////////
+		player = new Player;
+		player->SetPos(Math::Vector2(200.0f, 200.0f));
+		player->SetSize(Math::Vector2(100.0f, 100.0f));
+
+		animator = new Animator(player, 0.3f);
+		animator->AddTextureCutInfoByFile("Animation/PlayerIdle1.txt");
+		player->SetRenderComponent(animator);
+		player->SetTexture("PlayerTexture");
+		AddGameObject(eLayerType::Player, player);
+		//////////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////////
+		player = new Player;
+		player->SetPos(Math::Vector2(250.0f, 250.0f));
+		player->SetSize(Math::Vector2(100.0f, 100.0f));
+
+		animator = new Animator(player, 0.3f);
+		animator->AddTextureCutInfoByFile("Animation/PlayerIdle2.txt");
+		player->SetRenderComponent(animator);
+		player->SetTexture("PlayerTexture");
+		AddGameObject(eLayerType::Player, player);
+		//////////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////////
 		GameObject* backGround = new BackGround;
 		backGround->SetRenderComponent(new BackGroundRenderer(backGround));
 		backGround->SetTexture("BackGroundTexture");

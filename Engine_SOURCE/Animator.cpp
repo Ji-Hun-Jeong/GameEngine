@@ -1,5 +1,6 @@
 #include "Animator.h"
 #include "TimeMgr.h"
+#include "FileMgr.h"
 
 namespace Game
 {
@@ -31,5 +32,9 @@ namespace Game
 			, m_Texture->GetBitmapDc()
 			, cutInfo.X, cutInfo.Y
 			, cutInfo.Width, cutInfo.Height, MAGENTA);
+	}
+	void Animator::AddTextureCutInfoByFile(const std::string& fileName)
+	{
+		FileMgr::GetInst().SaveToVectorByFile<Gdiplus::Rect>(m_VecTextureCutInfo, fileName);
 	}
 }

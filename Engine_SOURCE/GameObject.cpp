@@ -70,6 +70,11 @@ namespace Game
 		return m_TransformComponent->GetSize();
 	}
 
+	Gdiplus::Rect GameObject::GetFinalRectInMYC() const
+	{
+		return m_TransformComponent->GetFinalRectInMYC();
+	}
+
 	void GameObject::Update(float dt)
 	{
 		if (m_TransformComponent)

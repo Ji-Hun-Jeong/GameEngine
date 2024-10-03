@@ -29,7 +29,7 @@ namespace Game
 		const Math::Vector2& GetPos();
 		const Math::Vector2& GetFinalPos();
 		const Math::Vector2& GetSize();
-
+		Gdiplus::Rect GetFinalRectInMYC() const;
 
 	protected:
 		TransformComponent* m_TransformComponent;

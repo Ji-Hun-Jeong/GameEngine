@@ -52,12 +52,15 @@ namespace Game
 			keyMgr.GetKeyState(eKeyType::S, eButtonState::Tap))
 		{
 			m_VecFramesInfo.resize(m_VecFrames.size());
-
+			const Gdiplus::Rect rect = curCamera->GetFinalRectInMYC();
 			for (size_t i = 0; i < m_VecFrames.size(); ++i)
 			{
-				m_VecFramesInfo[i] = Component::GetRectInMYC(m_VecFrames[i]->GetFinalPos(), m_VecFrames[i]->GetSize());
+				m_VecFramesInfo[i] = Component::GetRectInMYC(m_VecFrames[i]->GetFinalPos()
+					, m_VecFrames[i]->GetSize());
+				m_VecFramesInfo[i].X += rect.X;
+				m_VecFramesInfo[i].Y += rect.Y;
 			}
-			FileMgr::GetInst().SaveVector<Gdiplus::Rect>(m_VecFramesInfo);
+			FileMgr::GetInst().SaveToFileByVector<Gdiplus::Rect>(m_VecFramesInfo);
 			Utility::DeleteVector<Frame*>(m_VecFrames);
 			m_VecFramesInfo.clear();
 		}

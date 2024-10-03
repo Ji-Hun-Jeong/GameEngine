@@ -11,6 +11,7 @@ namespace Game
 	public:
 		void Render(HDC dc, const TransformComponent* const transform) override;
 		void AddTextureCutInfo(const Gdiplus::Rect& cutInfo) { m_VecTextureCutInfo.push_back(cutInfo); }
+		void AddTextureCutInfoByFile(const std::string& fileName);
 		void SetChangeTime(float changeTime) { m_ChangeTime = changeTime; }
 
 	private:
