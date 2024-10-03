@@ -19,6 +19,8 @@ namespace Game
 		const Math::Vector2& GetFinalPos() const { return m_FinalPos; }
 		const Math::Vector2& GetSize() const { return m_Size; }
 
+		Gdiplus::Rect GetFinalRectInMYC() const;
+
 	protected:
 		Math::Vector2 m_Pos;
 		Math::Vector2 m_FinalPos;

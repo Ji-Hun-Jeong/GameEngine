@@ -12,7 +12,6 @@ namespace Game
 	public:
 		void Update(float dt) override;
 		void PostUpdate(float dt, const TransformComponent* const curCameraTransform) override;
-
 	};
 }
 

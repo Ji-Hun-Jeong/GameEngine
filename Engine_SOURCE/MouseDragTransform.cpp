@@ -15,8 +15,8 @@ namespace Game
 	}
 	void MouseDragTransform::Update(float dt)
 	{
+		static MouseMgr& mouseMgr = MouseMgr::GetInst();
 		m_FinishDrag = false;
-		MouseMgr& mouseMgr = MouseMgr::GetInst();
 		if (mouseMgr.GetMouseState(eButtonState::Tap))
 		{
 			m_StartDrag = true;

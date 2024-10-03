@@ -9,6 +9,7 @@ namespace Game
 	{
 		// 생성자에 SetTexture있음
 		GameObject* player = new Player;
+		player->SetPos(Math::Vector2(50.0f, 50.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 		Animator* animator = new Animator(player, 1.0f);
 		animator->AddTextureCutInfo(Gdiplus::Rect(127 * 0, 127, 127, 127));
@@ -22,6 +23,7 @@ namespace Game
 		GameObject* backGround = new BackGround;
 		backGround->SetRenderComponent(new BackGroundRenderer(backGround));
 		backGround->SetTexture("BackGroundTexture");
+		backGround->SetPos(Math::Vector2(1024.0f, 1024.0f));
 		backGround->SetSizeFromTexture();
 		AddGameObject(eLayerType::BackGround, backGround);
 

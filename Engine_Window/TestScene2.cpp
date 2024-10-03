@@ -12,13 +12,14 @@ namespace Game
 		obj->SetRenderComponent(new BackGroundRenderer(obj));
 		obj->SetTexture("BackGroundTexture");
 		obj->SetSizeFromTexture();
+		obj->SetPos(Math::Vector2(Math::Vector2(1024.0f, 1024.0f)));
 		AddGameObject(eLayerType::BackGround, obj);
 		
 		obj = new AnimationGenerator;
 		AddGameObject(eLayerType::Entity, obj);
 
 		Camera* camera = new Camera;
-		camera->SetPos(Math::Vector2(640.0f, 360.0f));
+		camera->SetPos(Math::Vector2(0.0f, 0.0f));
 		AddCamera(camera);
 		SetCurCamera(camera);
 	}

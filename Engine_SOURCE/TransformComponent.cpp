@@ -13,4 +13,8 @@ namespace Game
 	TransformComponent::~TransformComponent()
 	{
 	}
+	Gdiplus::Rect TransformComponent::GetFinalRectInMYC() const
+	{
+		return TransformMYC(m_FinalPos, m_Size);
+	}
 }

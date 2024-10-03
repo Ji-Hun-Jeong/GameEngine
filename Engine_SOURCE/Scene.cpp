@@ -20,15 +20,17 @@ namespace Game
 	void Scene::Update(float dt)
 	{
 		DetectSceneEvent();
-		for (size_t i = 0; i < m_ArrLayers.size(); ++i)
-			m_ArrLayers[i].Update(dt);
-		
 		for (size_t i = 0; i < m_VecCameras.size(); ++i)
 			m_VecCameras[i]->Update(dt);
+		for (size_t i = 0; i < m_ArrLayers.size(); ++i)
+			m_ArrLayers[i].Update(dt);
 	}
 
 	void Scene::PostUpdate(float dt)
 	{
+		for (size_t i = 0; i < m_VecCameras.size(); ++i)
+			m_VecCameras[i]->PostUpdate(dt, m_CurCamera);
+
 		for (size_t i = 0; i < m_ArrLayers.size(); ++i)
 			m_ArrLayers[i].PostUpdate(dt, m_CurCamera);
 		

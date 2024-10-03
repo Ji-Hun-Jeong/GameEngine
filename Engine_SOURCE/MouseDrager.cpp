@@ -29,12 +29,12 @@ namespace Game
 		{
 			const Math::Vector2& cameraPos = curCamera->GetPos();
 			const Math::Vector2& cameraSize = curCamera->GetSize();
-			RECT newRect = Component::TransformMYC(cameraPos, cameraSize);
+			Gdiplus::Rect cameraScreen = Component::TransformMYC(cameraPos, cameraSize);
 
 			const Math::Vector2& finalPos = m_TransformComponent->GetFinalPos();
 			const Math::Vector2& size = m_TransformComponent->GetSize();
-			m_DragedRect.X = static_cast<INT>(finalPos.x + newRect.left);
-			m_DragedRect.Y = static_cast<INT>(finalPos.y + newRect.top);
+			m_DragedRect.X = static_cast<INT>(finalPos.x + cameraScreen.X);
+			m_DragedRect.Y = static_cast<INT>(finalPos.y + cameraScreen.Y);
 			m_DragedRect.Width = static_cast<INT>(size.x);
 			m_DragedRect.Height = static_cast<INT>(size.y);
 		}

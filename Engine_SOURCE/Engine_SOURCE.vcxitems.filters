@@ -22,9 +22,6 @@
     <Filter Include="Component\Transform">
       <UniqueIdentifier>{be3aaf8e-28c0-43a9-8142-7e80e958c026}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Transform\Transform">
-      <UniqueIdentifier>{f5423a25-29be-41ca-a612-a0b73b9e9482}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Component\Transform\PlayerTransform">
       <UniqueIdentifier>{9a0d244e-0e1d-48bc-a679-97197ae2ca9b}</UniqueIdentifier>
     </Filter>
@@ -127,9 +124,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)MyMath.h">
       <Filter>CommonInclude</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TransformComponent.h">
-      <Filter>Component\Transform\Transform</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerTransform.h">
       <Filter>Component\Transform\PlayerTransform</Filter>
     </ClInclude>
@@ -211,6 +205,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)FrameTransform.h">
       <Filter>Component\Transform\FrameTransform</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TransformComponent.h">
+      <Filter>Component\Transform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -228,9 +225,6 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp">
       <Filter>GameObject\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)TransformComponent.cpp">
-      <Filter>Component\Transform\Transform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerTransform.cpp">
       <Filter>Component\Transform\PlayerTransform</Filter>
@@ -312,6 +306,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)FrameTransform.cpp">
       <Filter>Component\Transform\FrameTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TransformComponent.cpp">
+      <Filter>Component\Transform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

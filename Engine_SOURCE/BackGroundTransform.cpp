@@ -12,14 +12,13 @@ namespace Game
 	}
 	void BackGroundTransform::Update(float dt)
 	{
+
 	}
 	void BackGroundTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
 	{
-		const Math::Vector2& cameraPos = curCameraTransform->GetPos();
-		const Math::Vector2& cameraSize = curCameraTransform->GetSize();
-		RECT newRect = TransformMYC(cameraPos, cameraSize);
+		Gdiplus::Rect cameraScreen = curCameraTransform->GetFinalRectInMYC();
 
-		m_FinalPos.x = m_Pos.x - newRect.left;
-		m_FinalPos.y = m_Pos.y - newRect.top;
+		m_FinalPos.x = m_Pos.x - cameraScreen.X;
+		m_FinalPos.y = m_Pos.y - cameraScreen.Y;
 	}
 }
