@@ -1,7 +1,7 @@
 #pragma once
 #include "Common.h"
 #include "Entity.h"
-
+// Test
 namespace Game
 {
 	class Component;
