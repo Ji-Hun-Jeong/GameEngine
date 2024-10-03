@@ -18,7 +18,7 @@ namespace Game
 			{
 				return std::sqrt(x * x + y * y);
 			}
-			Vector2& operator = (const Vector2& other)
+			Vector2& operator = (const Vector2& other) 
 			{
 				x = other.x; y = other.y;
 				return *this;
@@ -28,27 +28,39 @@ namespace Game
 				x += other.x; y += other.y;
 				return *this;
 			}
-			Vector2 operator+(const Vector2& other)
+			Vector2 operator+(const Vector2& other) const
 			{
 				return Vector2(x + other.x, y + other.y);
+			}
+			Vector2 operator+(float x) const
+			{
+				return Vector2(this->x + x, this->y + x);
 			}
 			Vector2& operator-=(const Vector2& other)
 			{
 				x -= other.x; y -= other.y;
 				return *this;
 			}
-			Vector2 operator-(const Vector2& other)
+			Vector2 operator-(const Vector2& other) const
 			{
 				return Vector2(x - other.x, y - other.y);
+			}
+			Vector2 operator-(float x) const
+			{
+				return Vector2(this->x - x, this->y - x);
 			}
 			Vector2& operator*=(const Vector2& other)
 			{
 				x *= other.x; y *= other.y;
 				return *this;
 			}
-			Vector2 operator*(const Vector2& other)
+			Vector2 operator*(const Vector2& other) const
 			{
 				return Vector2(x * other.x, y * other.y);
+			}
+			Vector2 operator*(float x) const
+			{
+				return Vector2(this->x * x, this->y * x);
 			}
 			Vector2& operator/=(const Vector2& other)
 			{
@@ -57,13 +69,13 @@ namespace Game
 				x /= other.x; y /= other.y;
 				return *this;
 			}
-			Vector2 operator/(const Vector2& other)
+			Vector2 operator/(const Vector2& other) const
 			{
 				if (other.x == 0 || other.y == 0)
 					assert(0);
 				return Vector2(x / other.x, y / other.y);
 			}
-			Vector2 operator/(float x)
+			Vector2 operator/(float x) const
 			{
 				assert(x);
 				return Vector2(this->x / x, this->y / x);
@@ -77,6 +89,14 @@ namespace Game
 			void Print() const
 			{
 				std::cout << "x : " << x << " y : " << y << '\n';
+			}
+			bool operator == (const Vector2& other) const
+			{
+				return (x == other.x && y == other.y);
+			}
+			bool operator !=(const Vector2& other) const
+			{
+				return !(*this == other);
 			}
 
 		public:

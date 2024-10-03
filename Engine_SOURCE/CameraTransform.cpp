@@ -11,7 +11,7 @@ namespace Game
 	CameraTransform::~CameraTransform()
 	{
 	}
-	void CameraTransform::Update(float dt)
+	void CameraTransform::Transform(float dt)
 	{
 		KeyMgr& keyMgr = KeyMgr::GetInst();
 		if (keyMgr.GetKeyState(eKeyType::A, eButtonState::Hold))
@@ -31,7 +31,7 @@ namespace Game
 			m_Pos.y += dt * 100.0f;
 		}
 	}
-	void CameraTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	void CameraTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
 		m_FinalPos = m_Pos;
 	}

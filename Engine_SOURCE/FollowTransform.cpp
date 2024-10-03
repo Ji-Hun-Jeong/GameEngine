@@ -10,10 +10,10 @@ namespace Game
 	FollowTransform::~FollowTransform()
 	{
 	}
-	void FollowTransform::Update(float dt)
+	void FollowTransform::Transform(float dt)
 	{
 	}
-	void FollowTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	void FollowTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
 	}
 }

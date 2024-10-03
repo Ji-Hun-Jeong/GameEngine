@@ -3,6 +3,9 @@
 #include "Camera.h"
 #include "Component.h"
 #include "Frame.h"
+#include "KeyMgr.h"
+#include "PathMgr.h"
+#include "FileMgr.h"
 
 namespace Game
 {
@@ -22,6 +25,13 @@ namespace Game
 	{
 		GameObject::Update(dt);
 		m_MouseDrager.Update(dt);
+		static KeyMgr& keyMgr = KeyMgr::GetInst();
+		if (keyMgr.GetKeyState(eKeyType::Ctrl, eButtonState::Hold) &&
+			keyMgr.GetKeyState(eKeyType::Z, eButtonState::Tap) && m_VecFrames.empty() == false)
+		{
+			delete m_VecFrames[m_VecFrames.size() - 1];
+			m_VecFrames.pop_back();
+		}
 	}
 	void AnimationGenerator::PostUpdate(float dt, Camera* const curCamera)
 	{
@@ -35,6 +45,21 @@ namespace Game
 		{
 			m_VecFrames.push_back(new Frame(m_AnimationName, UINT(m_VecFrames.size())
 				, m_MouseDrager.GetDragedRect()));
+		}
+
+		static KeyMgr& keyMgr = KeyMgr::GetInst();
+		if (keyMgr.GetKeyState(eKeyType::Ctrl, eButtonState::Hold) &&
+			keyMgr.GetKeyState(eKeyType::S, eButtonState::Tap))
+		{
+			m_VecFramesInfo.resize(m_VecFrames.size());
+
+			for (size_t i = 0; i < m_VecFrames.size(); ++i)
+			{
+				m_VecFramesInfo[i] = Component::GetRectInMYC(m_VecFrames[i]->GetFinalPos(), m_VecFrames[i]->GetSize());
+			}
+			FileMgr::GetInst().SaveVector<Gdiplus::Rect>(m_VecFramesInfo);
+			Utility::DeleteVector<Frame*>(m_VecFrames);
+			m_VecFramesInfo.clear();
 		}
 	}
 	void AnimationGenerator::Render(HDC dc)

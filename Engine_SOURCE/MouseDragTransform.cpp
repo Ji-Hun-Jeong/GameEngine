@@ -13,7 +13,7 @@ namespace Game
 	MouseDragTransform::~MouseDragTransform()
 	{
 	}
-	void MouseDragTransform::Update(float dt)
+	void MouseDragTransform::Transform(float dt)
 	{
 		static MouseMgr& mouseMgr = MouseMgr::GetInst();
 		m_FinishDrag = false;
@@ -30,7 +30,8 @@ namespace Game
 		else if (mouseMgr.GetMouseState(eButtonState::Released))
 		{
 			m_DragingPos = mouseMgr.GetMousePos();
-			m_FinishDrag = true;
+			if (m_FirstClickPos != m_DragingPos)
+				m_FinishDrag = true;
 			m_StartDrag = false;
 		}
 		else
@@ -40,7 +41,7 @@ namespace Game
 		m_Pos = (m_FirstClickPos + m_DragingPos) / 2.0f;
 		m_Size = (m_DragingPos - m_FirstClickPos).Abs();
 	}
-	void MouseDragTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	void MouseDragTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
 		m_FinalPos = m_Pos;
 	}

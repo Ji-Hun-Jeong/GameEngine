@@ -8,7 +8,7 @@ namespace Game
 	Component::~Component()
 	{
 	}
-	Gdiplus::Rect Component::TransformMYC(const Math::Vector2& pos, const Math::Vector2& size)
+	Gdiplus::Rect Component::GetRectInMYC(const Math::Vector2& pos, const Math::Vector2& size)
 	{
 		Gdiplus::Rect rect;
 		rect.X = static_cast<LONG>(pos.x - size.x / 2.0f);

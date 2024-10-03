@@ -10,8 +10,8 @@ namespace Game
 		~MouseDragTransform();
 
 	public:
-		void Update(float dt) override;
-		void PostUpdate(float dt, const TransformComponent* const curCameraTransform) override;
+		void Transform(float dt) override;
+		void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) override;
 		bool IsStartDraging() { return m_StartDrag; }
 		bool IsReleased() { return m_FinishDrag; }
 

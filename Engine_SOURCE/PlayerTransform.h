@@ -10,8 +10,8 @@ namespace Game
 		~PlayerTransform();
 		
 	public:
-		void Update(float dt) override;
-		void PostUpdate(float dt, const TransformComponent* const curCameraTransform) override;
+		void Transform(float dt) override;
+		void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) override;
 
 	private:
 

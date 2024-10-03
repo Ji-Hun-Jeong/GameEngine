@@ -11,6 +11,7 @@ namespace Game
 		, m_Width(0)
 		, m_Height(0)
 	{
+		std::cout << "Bitmap Constructor : Make " << fileName << "\n";
 		std::string abPath = PathMgr::GetInst().MakeAbsolutePath(fileName);
 
 		m_Bitmap = (HBITMAP)LoadImageA(nullptr, abPath.c_str(), IMAGE_BITMAP

@@ -26,6 +26,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FileMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Frame.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FrameTransform.h" />
@@ -63,6 +64,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)CameraTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FileMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Frame.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FrameTransform.cpp" />
@@ -73,7 +75,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDragTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)MyMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PathMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerTransform.cpp" />

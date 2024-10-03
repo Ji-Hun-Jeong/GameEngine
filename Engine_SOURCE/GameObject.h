@@ -30,9 +30,6 @@ namespace Game
 		const Math::Vector2& GetFinalPos();
 		const Math::Vector2& GetSize();
 
-		void AddComponent(Component* const component);
-		template <typename T>
-		T GetComponent(const std::string& componentName);
 
 	protected:
 		TransformComponent* m_TransformComponent;
@@ -40,10 +37,5 @@ namespace Game
 
 	};
 
-	template <typename T>
-	T GameObject::GetComponent(const std::string& componentName)
-	{
-		
-	}
 }
 

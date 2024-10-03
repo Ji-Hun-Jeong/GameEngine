@@ -5,7 +5,7 @@ namespace Game
 	enum class eKeyType
 	{
 		B1, B2, B3, B4, B5, B6, B7, B8, B9, B0,
-		Q, W, E, R, A, S, D, F,
+		Q, W, E, R, A, S, D, F, Z,
 		Left, Right, Up, Down, 
 		Ctrl, Alt, Shift, Esc, End,
 	};

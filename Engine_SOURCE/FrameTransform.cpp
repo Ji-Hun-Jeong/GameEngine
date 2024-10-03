@@ -10,10 +10,10 @@ namespace Game
 	FrameTransform::~FrameTransform()
 	{
 	}
-	void FrameTransform::Update(float dt)
+	void FrameTransform::Transform(float dt)
 	{
 	}
-	void FrameTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	void FrameTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
 		Gdiplus::Rect cameraScreen = curCameraTransform->GetFinalRectInMYC();
 

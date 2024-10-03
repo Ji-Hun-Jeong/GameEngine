@@ -12,7 +12,7 @@ namespace Game
 	PlayerTransform::~PlayerTransform()
 	{
 	}
-	void PlayerTransform::Update(float dt)
+	void PlayerTransform::Transform(float dt)
 	{
 		static KeyMgr& keyMgr = KeyMgr::GetInst();
 		if (keyMgr.GetKeyState(eKeyType::Left, eButtonState::Hold))
@@ -24,7 +24,7 @@ namespace Game
 		if (keyMgr.GetKeyState(eKeyType::Down, eButtonState::Hold))
 			m_Pos.y += 100.0f * dt;
 	}
-	void PlayerTransform::PostUpdate(float dt, const TransformComponent* const curCameraTransform)
+	void PlayerTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
 		Gdiplus::Rect cameraScreen = curCameraTransform->GetFinalRectInMYC();
 

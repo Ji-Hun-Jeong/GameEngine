@@ -20,11 +20,6 @@ namespace Game
 			delete m_RenderComponent;
 	}
 
-	void GameObject::AddComponent(Component* const component)
-	{
-		
-	}
-
 	void GameObject::SetTransformComponent(TransformComponent* const transformComponent)
 	{
 		assert(transformComponent);
@@ -78,17 +73,17 @@ namespace Game
 	void GameObject::Update(float dt)
 	{
 		if (m_TransformComponent)
-			m_TransformComponent->Update(dt);
+			m_TransformComponent->Transform(dt);
 	}
 
 	void GameObject::PostUpdate(float dt, Camera* const curCamera)
 	{
 		assert(curCamera);
-
+		
 		GameObject* const p = curCamera;
 
 		if (m_TransformComponent)
-			m_TransformComponent->PostUpdate(dt, p->m_TransformComponent);
+			m_TransformComponent->TransformByCamera(dt, p->m_TransformComponent);
 	}
 
 	void GameObject::Render(HDC dc)

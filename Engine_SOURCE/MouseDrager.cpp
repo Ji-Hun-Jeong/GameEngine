@@ -29,7 +29,7 @@ namespace Game
 		{
 			const Math::Vector2& cameraPos = curCamera->GetPos();
 			const Math::Vector2& cameraSize = curCamera->GetSize();
-			Gdiplus::Rect cameraScreen = Component::TransformMYC(cameraPos, cameraSize);
+			Gdiplus::Rect cameraScreen = Component::GetRectInMYC(cameraPos, cameraSize);
 
 			const Math::Vector2& finalPos = m_TransformComponent->GetFinalPos();
 			const Math::Vector2& size = m_TransformComponent->GetSize();

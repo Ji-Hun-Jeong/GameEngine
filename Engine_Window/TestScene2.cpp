@@ -19,7 +19,6 @@ namespace Game
 		AddGameObject(eLayerType::Entity, obj);
 
 		Camera* camera = new Camera;
-		camera->SetPos(Math::Vector2(0.0f, 0.0f));
 		AddCamera(camera);
 		SetCurCamera(camera);
 	}

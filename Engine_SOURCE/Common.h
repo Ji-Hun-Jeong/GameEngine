@@ -6,6 +6,7 @@
 #include <map>
 #include <string>
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <array>
 #include <algorithm>

@@ -14,7 +14,7 @@ namespace Game
 		virtual ~Component() = 0;
 
 	public:
-		static Gdiplus::Rect TransformMYC(const Math::Vector2& pos, const Math::Vector2& size);
+		static Gdiplus::Rect GetRectInMYC(const Math::Vector2& pos, const Math::Vector2& size);
 
 	protected:
 		GameObject* m_Owner;

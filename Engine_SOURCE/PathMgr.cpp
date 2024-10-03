@@ -29,6 +29,7 @@ namespace Game
 
 		size_t absolutePathLength = m_WorkingPath.size()
 			+ findResourceFilePath.size() + fileName.size();
+
 		std::wstring absolutePath;
 		absolutePath.reserve(absolutePathLength);
 
@@ -44,6 +45,7 @@ namespace Game
 
 		size_t absolutePathLength = m_WorkingPath.size()
 			+ findResourceFilePath.size() + fileName.size();
+
 		std::string absolutePath;
 		absolutePath.reserve(absolutePathLength);
 
