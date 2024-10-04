@@ -2,6 +2,8 @@
 #include "BackGroundTransform.h"
 #include "BackGroundRenderer.h"
 #include "SceneMgr.h"
+#include "Player.h"
+#include "Collider.h"
 
 namespace Game
 {
@@ -13,5 +15,17 @@ namespace Game
 	}
 	BackGround::~BackGround()
 	{
+	}
+	void BackGround::EnterCollision(GameObject* obj)
+	{
+		obj->GetCollider()->EnterCollision(this);
+	}
+	void BackGround::OnCollision(GameObject* obj)
+	{
+		obj->GetCollider()->OnCollision(this);
+	}
+	void BackGround::ExitCollision(GameObject* obj)
+	{
+		obj->GetCollider()->ExitCollision(this);
 	}
 }

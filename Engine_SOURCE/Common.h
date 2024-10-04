@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <vector>
 #include <map>
+#include <bitset>
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -42,3 +43,5 @@ namespace Game
 		Released,
 	};
 }
+
+using std::cout;

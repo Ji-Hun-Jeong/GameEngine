@@ -2,6 +2,7 @@
 #include "BackGroundRenderer.h"
 #include "MouseDrager.h"
 #include "AnimationGenerator.h"
+#include "CollisionMgr.h"
 
 namespace Game
 {
@@ -21,6 +22,7 @@ namespace Game
 		Camera* camera = new Camera;
 		AddCamera(camera);
 		SetCurCamera(camera);
+
 	}
 
 	TestScene2::~TestScene2()
@@ -30,11 +32,13 @@ namespace Game
 	void TestScene2::EnterScene()
 	{
 		std::cout << m_Name + "Enter\n";
+		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::Player, eLayerType::Monster, true);
 	}
 
 	void TestScene2::ExitScene()
 	{
 		std::cout << m_Name + "Exit\n";
+		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::Player, eLayerType::Monster, false);
 	}
 
 	void TestScene2::DetectSceneEvent()

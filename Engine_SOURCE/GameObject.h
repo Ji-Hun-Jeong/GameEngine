@@ -1,6 +1,7 @@
 #pragma once
 #include "Common.h"
 #include "Entity.h"
+#include "CollisionFunc.h"
 
 namespace Game
 {
@@ -34,11 +35,20 @@ namespace Game
 		const Math::Vector2& GetSize() const;
 		Gdiplus::Rect GetFinalRectInMYC() const;
 
+		uint32_t GetUniqueNumber() const { return m_ObjectUniqueNumber; }
+		Collider* GetCollider() const { return m_Collider; }
+
+		virtual void EnterCollision(GameObject* obj);
+		virtual void OnCollision(GameObject* obj);
+		virtual void ExitCollision(GameObject* obj);
+
 	protected:
 		TransformComponent* m_TransformComponent;
 		RenderComponent* m_RenderComponent;
 
 		Collider* m_Collider;
+
+		uint32_t m_ObjectUniqueNumber;
 	};
 
 }

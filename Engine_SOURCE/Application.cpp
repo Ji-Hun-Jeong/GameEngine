@@ -5,6 +5,7 @@
 #include "PathMgr.h"
 #include "SceneMgr.h"
 #include "TimeMgr.h"
+#include "CollisionMgr.h"
 
 namespace Game
 {
@@ -76,6 +77,8 @@ namespace Game
 		MouseMgr::GetInst().Update();
 		KeyMgr::GetInst().Update();
 		TimeMgr::GetInst().Update();
+		CollisionMgr::GetInst().Update();
+
 		SceneMgr::GetInst().Update();
 	}
 	void Application::postUpdate()

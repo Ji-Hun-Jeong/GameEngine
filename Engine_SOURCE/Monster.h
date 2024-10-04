@@ -2,11 +2,11 @@
 #include "GameObject.h"
 namespace Game
 {
-	class BackGround : public GameObject
+	class Monster : public GameObject
 	{
 	public:
-		BackGround();
-		~BackGround();
+		Monster();
+		~Monster();
 
 	public:
 		void EnterCollision(GameObject* obj) override;
@@ -14,7 +14,7 @@ namespace Game
 		void ExitCollision(GameObject* obj) override;
 
 	private:
-		static UINT s_numOfBackGround;
+		static UINT s_numOfMonster;
 	};
 }
 

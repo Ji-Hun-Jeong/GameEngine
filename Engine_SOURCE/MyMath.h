@@ -14,6 +14,10 @@ namespace Game
 				: x(x), y(y) {}
 			Vector2(const Vector2& other)
 				: Vector2(other.x, other.y) {}
+			Vector2 Normalize() const
+			{
+				return Vector2(x, y) / Length();
+			}
 			float Length() const
 			{
 				return std::sqrt(x * x + y * y);

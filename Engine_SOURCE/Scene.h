@@ -26,11 +26,16 @@ namespace Game
 		virtual void Update(float dt);
 		virtual void PostUpdate(float dt);
 		virtual void Render(HDC dc);
+
 		void AddGameObject(eLayerType layerType, GameObject* const object);
 		void AddCamera(Camera* const camera);
 		void DeleteGameObject(eLayerType layerType, const std::string& objectName);
+
 		void SetCurCamera(const std::string& cameraName);
 		void SetCurCamera(Camera* const camera);
+
+		std::map<std::string, GameObject*>& GetGameObject(eLayerType layer) 
+		{ return m_ArrLayers[(UINT)layer].GetGameObjects(); }
 
 	protected:
 		std::array<Layer, (size_t)eLayerType::End> m_ArrLayers;

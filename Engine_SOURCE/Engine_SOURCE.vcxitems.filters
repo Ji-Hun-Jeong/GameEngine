@@ -106,6 +106,24 @@
     <Filter Include="Component\TransformComponent\FrameTransform">
       <UniqueIdentifier>{d324f3cc-0a2f-4ee2-8a5a-952d6e2ef38c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Manager\CollisionMgr">
+      <UniqueIdentifier>{8cff11d2-43af-4f8c-a427-a498092bd943}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider\PlayerCollider">
+      <UniqueIdentifier>{2b3525ae-9f99-44e9-bffc-1c891927c73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider\CollisionFunc">
+      <UniqueIdentifier>{1ca4e36a-8753-4621-b2fb-9566c8bc4aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider\BackGroundCollider">
+      <UniqueIdentifier>{1733fa76-f768-4ab3-8192-ce065546a6c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Monster">
+      <UniqueIdentifier>{ef477088-51f9-458c-91c8-a12ea6a64731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider\MonsterCollider">
+      <UniqueIdentifier>{b54f6553-bdc6-48df-aee7-3a95e9155763}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -220,6 +238,24 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Collider.h">
       <Filter>Component\Collider</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CollisionMgr.h">
+      <Filter>Manager\CollisionMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerCollider.h">
+      <Filter>Component\Collider\PlayerCollider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CollisionFunc.h">
+      <Filter>Component\Collider\CollisionFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundCollider.h">
+      <Filter>Component\Collider\BackGroundCollider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Monster.h">
+      <Filter>GameObject\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MonsterCollider.h">
+      <Filter>Component\Collider\MonsterCollider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -324,6 +360,24 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Collider.cpp">
       <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CollisionMgr.cpp">
+      <Filter>Manager\CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerCollider.cpp">
+      <Filter>Component\Collider\PlayerCollider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CollisionFunc.cpp">
+      <Filter>Component\Collider\CollisionFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundCollider.cpp">
+      <Filter>Component\Collider\BackGroundCollider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Monster.cpp">
+      <Filter>GameObject\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MonsterCollider.cpp">
+      <Filter>Component\Collider\MonsterCollider</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

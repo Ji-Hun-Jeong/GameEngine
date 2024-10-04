@@ -11,9 +11,11 @@ namespace Game
 		void Update();
 		void PostUpdate();
 		void Render(HDC dc);
+
 		void AddScene(Scene* const scene);
 		void SetFirstScene(const std::string& sceneName);
 		void RequestChangeScene(const std::string& sceneName);
+
 		UINT GetScreenWidth() { return m_ScreenWidth; }
 		UINT GetScreenHeight() { return m_ScreenHeight; }
 		Scene* GetCurScene() { assert(m_CurScene); return m_CurScene; }

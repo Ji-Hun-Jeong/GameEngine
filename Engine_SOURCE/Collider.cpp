@@ -9,6 +9,7 @@ namespace Game
 		, m_TransformComponent(new BackGroundTransform(Math::Vector2(), Math::Vector2()))
 		, m_RenderComponent(new BasicRenderer)
 		, m_PermitRender(true)
+		, m_OnCollision(false)
 	{
 	}
 	Collider::~Collider()
@@ -24,5 +25,17 @@ namespace Game
 	{
 		if (m_PermitRender)
 			m_RenderComponent->Render(dc, m_TransformComponent);
+	}
+	const Math::Vector2& Collider::GetColliderPos() const
+	{
+		return m_TransformComponent->GetPos();
+	}
+	const Math::Vector2& Collider::GetColliderFinalPos() const
+	{
+		return m_TransformComponent->GetFinalPos();
+	}
+	const Math::Vector2& Collider::GetColliderSize() const
+	{
+		return m_TransformComponent->GetSize();
 	}
 }

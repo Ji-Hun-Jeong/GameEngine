@@ -10,7 +10,7 @@ namespace Game
 		Entity,
 		Monster,
 		Player,
-		End,
+		End = 16,
 	};
 	class Layer : public Entity
 	{
@@ -24,6 +24,8 @@ namespace Game
 		void Render(HDC dc);
 		void AddGameObject(GameObject* const object);
 		void DeleteGameObject(const std::string& objectName);
+
+		std::map< std::string, GameObject*>& GetGameObjects() { return m_MapGameObjects; }
 
 	private:
 		std::map<std::string, GameObject*> m_MapGameObjects;

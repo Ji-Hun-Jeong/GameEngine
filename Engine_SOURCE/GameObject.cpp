@@ -11,8 +11,10 @@ namespace Game
 		, m_TransformComponent(nullptr)
 		, m_RenderComponent(nullptr)
 		, m_Collider(nullptr)
+		, m_ObjectUniqueNumber(0)
 	{
-		
+		static uint32_t uniqueNumber = 0;
+		m_ObjectUniqueNumber = uniqueNumber++;
 	}
 
 	GameObject::~GameObject()
@@ -24,7 +26,15 @@ namespace Game
 		if (m_Collider)
 			delete m_Collider;
 	}
-
+	void GameObject::EnterCollision(GameObject* obj)
+	{
+	}
+	void GameObject::OnCollision(GameObject* obj)
+	{
+	}
+	void GameObject::ExitCollision(GameObject* obj)
+	{
+	}
 	void GameObject::SetTransformComponent(TransformComponent* const transformComponent)
 	{
 		assert(transformComponent);
@@ -100,7 +110,7 @@ namespace Game
 	void GameObject::PostUpdate(float dt, Camera* const curCamera)
 	{
 		assert(curCamera);
-		
+
 		GameObject* const p = curCamera;
 
 		if (m_TransformComponent)

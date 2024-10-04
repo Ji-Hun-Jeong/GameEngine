@@ -1,9 +1,13 @@
 #include "TestScene.h"
 #include "Animator.h"
 #include "BackGroundRenderer.h"
-#include "Collider.h"
+#include "PlayerCollider.h"
+#include "BackGroundCollider.h"
 #include "BackGroundTransform.h"
 #include "BasicRenderer.h"
+#include "CollisionMgr.h"
+#include "Monster.h"
+#include "MonsterCollider.h"
 
 namespace Game
 {
@@ -12,7 +16,7 @@ namespace Game
 	{
 		// 생성자에 SetTexture있음
 		GameObject* player = new Player;
-		player->SetPos(Math::Vector2(50.0f, 50.0f));
+		player->SetPos(Math::Vector2(-51.0f, -51.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
 		Animator* animator = new Animator(0.1f);
@@ -20,60 +24,31 @@ namespace Game
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
 
-		Collider* collider = new Collider;
+		Collider* collider = new PlayerCollider;
 		player->SetCollider(collider);
 		AddGameObject(eLayerType::Player, player);
-		//////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////
-		player = new Player;
-		player->SetPos(Math::Vector2(100.0f, 100.0f));
-		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		animator = new Animator(0.05f);
+		GameObject* monster = new Monster;
+		monster->SetPos(Math::Vector2(50.0f, 50.0f));
+		monster->SetSize(Math::Vector2(100.0f, 100.0f));
+
+		animator = new Animator(0.1f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
-		player->SetRenderComponent(animator);
-		player->SetTexture("PlayerTexture");
-		AddGameObject(eLayerType::Player, player);
-		//////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////
-		player = new Player;
-		player->SetPos(Math::Vector2(150.0f, 150.0f));
-		player->SetSize(Math::Vector2(100.0f, 100.0f));
+		monster->SetRenderComponent(animator);
+		monster->SetTexture("PlayerTexture");
 
-		animator = new Animator(0.3f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerDead.txt");
-		player->SetRenderComponent(animator);
-		player->SetTexture("PlayerTexture");
-		AddGameObject(eLayerType::Player, player);
-		//////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////
-		player = new Player;
-		player->SetPos(Math::Vector2(200.0f, 200.0f));
-		player->SetSize(Math::Vector2(100.0f, 100.0f));
+		collider = new MonsterCollider;
+		monster->SetCollider(collider);
+		AddGameObject(eLayerType::Monster, monster);
 
-		animator = new Animator(0.3f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerIdle1.txt");
-		player->SetRenderComponent(animator);
-		player->SetTexture("PlayerTexture");
-		AddGameObject(eLayerType::Player, player);
-		//////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////
-		player = new Player;
-		player->SetPos(Math::Vector2(250.0f, 250.0f));
-		player->SetSize(Math::Vector2(100.0f, 100.0f));
-
-		animator = new Animator(0.3f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerIdle2.txt");
-		player->SetRenderComponent(animator);
-		player->SetTexture("PlayerTexture");
-		AddGameObject(eLayerType::Player, player);
-		//////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////
 		GameObject* backGround = new BackGround;
 		backGround->SetRenderComponent(new BackGroundRenderer);
 		backGround->SetTexture("BackGroundTexture");
 		backGround->SetPos(Math::Vector2(1024.0f, 1024.0f));
 		backGround->SetSizeFromTexture();
+
+		collider = new BackGroundCollider;
+		backGround->SetCollider(collider);
 		AddGameObject(eLayerType::BackGround, backGround);
 
 		Camera* camera = new Camera;
@@ -86,10 +61,12 @@ namespace Game
 	}
 	void TestScene::EnterScene()
 	{
+		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::Monster, eLayerType::Player, true);
 		std::cout << m_Name + "Enter\n";
 	}
 	void TestScene::ExitScene()
 	{
+		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::Monster, eLayerType::Player, false);
 		std::cout << m_Name + "Exit\n";
 	}
 	void TestScene::DetectSceneEvent()

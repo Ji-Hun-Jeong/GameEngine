@@ -4,6 +4,8 @@
 #include "SpriteRenderer.h"
 #include "Animator.h"
 #include "ResourceMgr.h"
+#include "BackGround.h"
+#include "Collider.h"
 
 namespace Game
 {
@@ -16,5 +18,17 @@ namespace Game
 	Player::~Player()
 	{
 		
+	}
+	void Player::EnterCollision(GameObject* obj)
+	{
+		obj->GetCollider()->EnterCollision(this);
+	}
+	void Player::OnCollision(GameObject* obj)
+	{
+		obj->GetCollider()->OnCollision(this);
+	}
+	void Player::ExitCollision(GameObject* obj)
+	{
+		obj->GetCollider()->ExitCollision(this);
 	}
 }
