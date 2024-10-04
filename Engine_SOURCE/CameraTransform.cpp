@@ -3,9 +3,8 @@
 
 namespace Game
 {
-	CameraTransform::CameraTransform(GameObject* const owner
-		, const Math::Vector2& pos, const Math::Vector2& size)
-		: TransformComponent("CameraTransform", owner, pos, size)
+	CameraTransform::CameraTransform(const Math::Vector2& pos, const Math::Vector2& size)
+		: TransformComponent("CameraTransform", pos, size)
 	{
 	}
 	CameraTransform::~CameraTransform()

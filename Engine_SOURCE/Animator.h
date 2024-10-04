@@ -5,7 +5,7 @@ namespace Game
 	class Animator : public RenderComponent
 	{
 	public:
-		Animator(GameObject* const owner, float changeTime);
+		explicit Animator(float changeTime);
 		virtual ~Animator();
 
 	public:

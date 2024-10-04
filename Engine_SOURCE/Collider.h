@@ -7,8 +7,7 @@ namespace Game
 	class Collider : public Component
 	{
 	public:
-		Collider(GameObject* const owner, TransformComponent* const transformComponent
-		, RenderComponent* const renderComponent);
+		Collider();
 		~Collider();
 
 	public:

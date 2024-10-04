@@ -5,8 +5,7 @@ namespace Game
 	class MouseDragTransform : public TransformComponent
 	{
 	public:
-		MouseDragTransform(GameObject* const owner
-			, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit MouseDragTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		~MouseDragTransform();
 
 	public:

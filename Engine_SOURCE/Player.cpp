@@ -11,8 +11,7 @@ namespace Game
 	Player::Player()
 		: GameObject("Player"+std::to_string(s_numOfPlayer++))
 	{
-		m_TransformComponent = new PlayerTransform(this, Math::Vector2()
-			, Math::Vector2());
+		SetTransformComponent(new PlayerTransform(Math::Vector2(), Math::Vector2()));
 	}
 	Player::~Player()
 	{

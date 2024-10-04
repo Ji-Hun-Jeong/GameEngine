@@ -23,14 +23,15 @@ namespace Game
 		void SetTransformComponent(TransformComponent* const transformComponent);
 		void SetRenderComponent(RenderComponent* const renderComponent);
 		void SetCollider(Collider* const collider);
+
 		void SetTexture(const std::string& textureName);
 		void SetPos(const Math::Vector2& pos);
 		void SetSize(const Math::Vector2& size);
 		void SetSizeFromTexture();
 
-		const Math::Vector2& GetPos();
-		const Math::Vector2& GetFinalPos();
-		const Math::Vector2& GetSize();
+		const Math::Vector2& GetPos() const;
+		const Math::Vector2& GetFinalPos() const;
+		const Math::Vector2& GetSize() const;
 		Gdiplus::Rect GetFinalRectInMYC() const;
 
 	protected:

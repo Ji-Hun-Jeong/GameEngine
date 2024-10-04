@@ -1,13 +1,13 @@
 #include "Collider.h"
 #include "BackGroundTransform.h"
 #include "RenderComponent.h"
+#include "BasicRenderer.h"
 namespace Game
 {
-	Collider::Collider(GameObject* const owner, TransformComponent* const transformComponent
-		, RenderComponent* const renderComponent)
-		: Component("Collider", owner)
-		, m_TransformComponent(transformComponent)
-		, m_RenderComponent(renderComponent)
+	Collider::Collider()
+		: Component("Collider")
+		, m_TransformComponent(new BackGroundTransform(Math::Vector2(), Math::Vector2()))
+		, m_RenderComponent(new BasicRenderer)
 		, m_PermitRender(true)
 	{
 	}

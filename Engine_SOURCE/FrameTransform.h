@@ -5,8 +5,7 @@ namespace Game
 	class FrameTransform : public TransformComponent
 	{
 	public:
-		FrameTransform(GameObject* const owner
-			, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit FrameTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		virtual ~FrameTransform();
 
 	public:

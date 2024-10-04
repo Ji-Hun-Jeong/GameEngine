@@ -5,7 +5,7 @@ namespace Game
 	class BackGroundRenderer : public RenderComponent
 	{
 	public:
-		explicit BackGroundRenderer(GameObject* const owner);
+		explicit BackGroundRenderer();
 		~BackGroundRenderer();
 
 	public:

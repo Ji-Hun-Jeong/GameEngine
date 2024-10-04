@@ -15,13 +15,12 @@ namespace Game
 		player->SetPos(Math::Vector2(50.0f, 50.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		Animator* animator = new Animator(player, 0.1f);
+		Animator* animator = new Animator(0.1f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
 
-		Collider* collider = new Collider(player, new BackGroundTransform(player, Math::Vector2(), Math::Vector2())
-			, new BasicRenderer(player));
+		Collider* collider = new Collider;
 		player->SetCollider(collider);
 		AddGameObject(eLayerType::Player, player);
 		//////////////////////////////////////////////////////////////////
@@ -30,7 +29,7 @@ namespace Game
 		player->SetPos(Math::Vector2(100.0f, 100.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		animator = new Animator(player, 0.05f);
+		animator = new Animator(0.05f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
@@ -41,7 +40,7 @@ namespace Game
 		player->SetPos(Math::Vector2(150.0f, 150.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		animator = new Animator(player, 0.3f);
+		animator = new Animator(0.3f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerDead.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
@@ -52,7 +51,7 @@ namespace Game
 		player->SetPos(Math::Vector2(200.0f, 200.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		animator = new Animator(player, 0.3f);
+		animator = new Animator(0.3f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerIdle1.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
@@ -63,7 +62,7 @@ namespace Game
 		player->SetPos(Math::Vector2(250.0f, 250.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		animator = new Animator(player, 0.3f);
+		animator = new Animator(0.3f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerIdle2.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
@@ -71,7 +70,7 @@ namespace Game
 		//////////////////////////////////////////////////////////////////
 		//////////////////////////////////////////////////////////////////
 		GameObject* backGround = new BackGround;
-		backGround->SetRenderComponent(new BackGroundRenderer(backGround));
+		backGround->SetRenderComponent(new BackGroundRenderer);
 		backGround->SetTexture("BackGroundTexture");
 		backGround->SetPos(Math::Vector2(1024.0f, 1024.0f));
 		backGround->SetSizeFromTexture();

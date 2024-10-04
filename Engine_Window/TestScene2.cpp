@@ -9,7 +9,7 @@ namespace Game
 		: Scene("Test2", width, height)
 	{
 		GameObject* obj = new BackGround;
-		obj->SetRenderComponent(new BackGroundRenderer(obj));
+		obj->SetRenderComponent(new BackGroundRenderer);
 		obj->SetTexture("BackGroundTexture");
 		obj->SetSizeFromTexture();
 		obj->SetPos(Math::Vector2(Math::Vector2(1024.0f, 1024.0f)));

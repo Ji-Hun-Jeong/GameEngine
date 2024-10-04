@@ -70,17 +70,18 @@ namespace Game
 	{
 		this->SetSize(m_RenderComponent->GetTextureSize());
 	}
-	const Math::Vector2& GameObject::GetPos()
+
+	const Math::Vector2& GameObject::GetPos() const
 	{
 		return m_TransformComponent->GetPos();
 	}
 
-	const Math::Vector2& GameObject::GetFinalPos()
+	const Math::Vector2& GameObject::GetFinalPos() const
 	{
 		return m_TransformComponent->GetFinalPos();
 	}
 
-	const Math::Vector2& GameObject::GetSize()
+	const Math::Vector2& GameObject::GetSize() const
 	{
 		return m_TransformComponent->GetSize();
 	}

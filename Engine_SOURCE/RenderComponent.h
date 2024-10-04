@@ -7,7 +7,7 @@ namespace Game
 	class RenderComponent : public Component
 	{
 	public:
-		RenderComponent(const std::string& name, GameObject* const owner);
+		RenderComponent(const std::string& name);
 		virtual ~RenderComponent();
 
 	public:
