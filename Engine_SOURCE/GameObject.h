@@ -1,13 +1,14 @@
 #pragma once
 #include "Common.h"
 #include "Entity.h"
-// Test
+
 namespace Game
 {
 	class Component;
 	class TransformComponent;
 	class RenderComponent;
 	class Camera;
+	class Collider;
 	class GameObject : public Entity
 	{
 	public:
@@ -21,6 +22,7 @@ namespace Game
 		
 		void SetTransformComponent(TransformComponent* const transformComponent);
 		void SetRenderComponent(RenderComponent* const renderComponent);
+		void SetCollider(Collider* const collider);
 		void SetTexture(const std::string& textureName);
 		void SetPos(const Math::Vector2& pos);
 		void SetSize(const Math::Vector2& size);
@@ -35,6 +37,7 @@ namespace Game
 		TransformComponent* m_TransformComponent;
 		RenderComponent* m_RenderComponent;
 
+		Collider* m_Collider;
 	};
 
 }

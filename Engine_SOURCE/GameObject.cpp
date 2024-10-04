@@ -2,6 +2,7 @@
 #include "TransformComponent.h"
 #include "RenderComponent.h"
 #include "Camera.h"
+#include "Collider.h"
 
 namespace Game
 {
@@ -9,20 +10,25 @@ namespace Game
 		: Entity(name)
 		, m_TransformComponent(nullptr)
 		, m_RenderComponent(nullptr)
+		, m_Collider(nullptr)
 	{
 		
 	}
+
 	GameObject::~GameObject()
 	{
 		if (m_TransformComponent)
 			delete m_TransformComponent;
 		if (m_RenderComponent)
 			delete m_RenderComponent;
+		if (m_Collider)
+			delete m_Collider;
 	}
 
 	void GameObject::SetTransformComponent(TransformComponent* const transformComponent)
 	{
 		assert(transformComponent);
+
 		if (m_TransformComponent)
 			delete m_TransformComponent;
 		m_TransformComponent = transformComponent;
@@ -31,9 +37,18 @@ namespace Game
 	void GameObject::SetRenderComponent(RenderComponent* const renderComponent)
 	{
 		assert(renderComponent);
+
 		if (m_RenderComponent)
 			delete m_RenderComponent;
 		m_RenderComponent = renderComponent;
+	}
+	void GameObject::SetCollider(Collider* const collider)
+	{
+		assert(m_TransformComponent);
+
+		if (m_Collider)
+			delete m_Collider;
+		m_Collider = collider;
 	}
 
 	void GameObject::SetTexture(const std::string& textureName)
@@ -89,11 +104,17 @@ namespace Game
 
 		if (m_TransformComponent)
 			m_TransformComponent->TransformByCamera(dt, p->m_TransformComponent);
+
+		if (m_Collider)
+			m_Collider->Update(dt, m_TransformComponent);
 	}
 
 	void GameObject::Render(HDC dc)
 	{
 		if (m_RenderComponent && m_TransformComponent)
 			m_RenderComponent->Render(dc, m_TransformComponent);
+
+		if (m_Collider)
+			m_Collider->Render(dc);
 	}
 }

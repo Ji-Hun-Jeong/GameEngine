@@ -7,6 +7,11 @@ namespace Game
 		, m_NameW(name.begin(), name.end())
 	{}
 
+	Entity::Entity(const Entity& other)
+		: m_Name(other.m_Name)
+		, m_NameW(other.m_NameW)
+	{}
+
 	Entity::~Entity()
 	{
 	}

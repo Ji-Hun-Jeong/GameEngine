@@ -6,6 +6,7 @@ namespace Game
 	{
 	public:
 		Entity(const std::string& name);
+		Entity(const Entity& other);
 		virtual ~Entity();
 
 	public:

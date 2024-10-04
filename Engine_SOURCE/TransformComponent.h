@@ -7,6 +7,7 @@ namespace Game
 	public:
 		TransformComponent(const std::string& name, GameObject* const owner
 			, const Math::Vector2& pos, const Math::Vector2& size);
+		TransformComponent(const TransformComponent& other);
 		virtual ~TransformComponent();
 
 	public:
@@ -18,6 +19,7 @@ namespace Game
 		const Math::Vector2& GetPos() const { return m_Pos; }
 		const Math::Vector2& GetFinalPos() const { return m_FinalPos; }
 		const Math::Vector2& GetSize() const { return m_Size; }
+		void CopyValue(TransformComponent* const other) const;
 
 		Gdiplus::Rect GetFinalRectInMYC() const;
 

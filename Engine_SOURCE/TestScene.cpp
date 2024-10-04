@@ -1,6 +1,9 @@
 #include "TestScene.h"
 #include "Animator.h"
 #include "BackGroundRenderer.h"
+#include "Collider.h"
+#include "BackGroundTransform.h"
+#include "BasicRenderer.h"
 
 namespace Game
 {
@@ -12,10 +15,14 @@ namespace Game
 		player->SetPos(Math::Vector2(50.0f, 50.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		Animator* animator = new Animator(player, 0.3f);
+		Animator* animator = new Animator(player, 0.1f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
+
+		Collider* collider = new Collider(player, new BackGroundTransform(player, Math::Vector2(), Math::Vector2())
+			, new BasicRenderer(player));
+		player->SetCollider(collider);
 		AddGameObject(eLayerType::Player, player);
 		//////////////////////////////////////////////////////////////////
 		//////////////////////////////////////////////////////////////////
@@ -23,7 +30,7 @@ namespace Game
 		player->SetPos(Math::Vector2(100.0f, 100.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		animator = new Animator(player, 0.1f);
+		animator = new Animator(player, 0.05f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");

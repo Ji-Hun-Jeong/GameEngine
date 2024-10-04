@@ -10,8 +10,21 @@ namespace Game
 		, m_Size(size)
 	{
 	}
+	TransformComponent::TransformComponent(const TransformComponent& other)
+		: Component(other)
+		, m_Pos(other.m_Pos)
+		, m_FinalPos(other.m_FinalPos)
+		, m_Size(other.m_Size)
+	{
+	}
 	TransformComponent::~TransformComponent()
 	{
+	}
+	void TransformComponent::CopyValue(TransformComponent* const other) const
+	{
+		other->m_Pos = m_Pos;
+		other->m_FinalPos = m_FinalPos;
+		other->m_Size = m_Size;
 	}
 	Gdiplus::Rect TransformComponent::GetFinalRectInMYC() const
 	{
