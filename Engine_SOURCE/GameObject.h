@@ -23,7 +23,7 @@ namespace Game
 		
 		void SetTransformComponent(TransformComponent* const transformComponent);
 		void SetRenderComponent(RenderComponent* const renderComponent);
-		void SetCollider(Collider* const collider);
+		void AddCollider(Collider* const collider);
 
 		void SetTexture(const std::string& textureName);
 		void SetPos(const Math::Vector2& pos);
@@ -34,22 +34,24 @@ namespace Game
 		const Math::Vector2& GetFinalPos() const;
 		const Math::Vector2& GetSize() const;
 		Gdiplus::Rect GetFinalRectInMYC() const;
+		std::vector<Collider*>& GetColliders() { return m_VecColliders; }
 
-		uint32_t GetUniqueNumber() const { return m_ObjectUniqueNumber; }
-		Collider* GetCollider() const { return m_Collider; }
-
-		virtual void EnterCollision(GameObject* obj);
-		virtual void OnCollision(GameObject* obj);
-		virtual void ExitCollision(GameObject* obj);
+		template <typename T>
+		T GetComponent(const std::string& componentName) const;
 
 	protected:
+		std::map<std::string, Component*> m_MapComponents;
+		std::vector<Collider*> m_VecColliders;
 		TransformComponent* m_TransformComponent;
 		RenderComponent* m_RenderComponent;
-
-		Collider* m_Collider;
-
-		uint32_t m_ObjectUniqueNumber;
 	};
-
+	template <typename T>
+	T GameObject::GetComponent(const std::string& componentName) const
+	{
+		auto iter = m_MapComponents.find(componentName);
+		if (iter == m_MapComponents.end())
+			return nullptr;
+		return dynamic_cast<T>(iter->second);
+	}
 }
 

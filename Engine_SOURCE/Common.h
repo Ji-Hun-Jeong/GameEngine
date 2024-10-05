@@ -33,6 +33,14 @@
 							~Type();
 #define MAGENTA RGB(255,0,255)
 
+#define COLLIDERDEFINE public:\
+						void EnterCollisionDeliverOther(Collider* const otherCollider) override \
+						{otherCollider->EnterCollision(this);}\
+						void OnCollisionDeliverOther(Collider* const otherCollider) override\
+						{otherCollider->OnCollision(this);}\
+						void ExitCollisionDeliverOther(Collider* const otherCollider) override\
+						{otherCollider->ExitCollision(this);}
+
 namespace Game
 {
 	enum class eButtonState

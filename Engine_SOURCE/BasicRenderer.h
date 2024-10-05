@@ -5,7 +5,7 @@ namespace Game
 	class BasicRenderer : public RenderComponent
 	{
 	public:
-		explicit BasicRenderer();
+		explicit BasicRenderer(GameObject* owner);
 		~BasicRenderer();
 
 	public:

@@ -11,21 +11,9 @@ namespace Game
 	BackGround::BackGround()
 		: GameObject("BackGround"+std::to_string(s_numOfBackGround++))
 	{
-		SetTransformComponent(new BackGroundTransform(Math::Vector2(), Math::Vector2()));
+		SetTransformComponent(new BackGroundTransform(this, Math::Vector2(), Math::Vector2()));
 	}
 	BackGround::~BackGround()
 	{
-	}
-	void BackGround::EnterCollision(GameObject* obj)
-	{
-		obj->GetCollider()->EnterCollision(this);
-	}
-	void BackGround::OnCollision(GameObject* obj)
-	{
-		obj->GetCollider()->OnCollision(this);
-	}
-	void BackGround::ExitCollision(GameObject* obj)
-	{
-		obj->GetCollider()->ExitCollision(this);
 	}
 }

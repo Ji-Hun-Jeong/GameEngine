@@ -5,7 +5,7 @@ namespace Game
 	class BackGroundTransform :	public TransformComponent
 	{
 	public:
-		explicit BackGroundTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		explicit BackGroundTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
 		~BackGroundTransform();
 
 	public:

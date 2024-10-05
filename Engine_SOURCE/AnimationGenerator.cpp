@@ -13,7 +13,7 @@ namespace Game
 		: GameObject("AnimationGenerator")
 		, m_AnimationName("Attack")
 	{
-		SetRenderComponent(new BasicRenderer);
+		SetRenderComponent(new BasicRenderer(this));
 		m_VecFrames.reserve(10);
 		//m_VecAnimateFrames.reserve(10);
 	}

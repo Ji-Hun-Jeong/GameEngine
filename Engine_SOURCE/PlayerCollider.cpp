@@ -1,39 +1,40 @@
 #include "PlayerCollider.h"
 #include "Player.h"
 #include "BackGround.h"
+#include "MonsterCollider.h"
 
 namespace Game
 {
-	PlayerCollider::PlayerCollider()
-		: Collider()
+	PlayerCollider::PlayerCollider(GameObject* owner, UINT numOfCollider)
+		: Collider(owner, numOfCollider)
 	{
 	}
 	PlayerCollider::~PlayerCollider()
 	{
 	}
-	void PlayerCollider::EnterCollision(BackGround* const obj)
+	void PlayerCollider::EnterCollision(BackGroundCollider* const collider)
 	{
-		cout << "Enter Player -> Back\n";
+		cout << "Enter Player -> BackGroundCollider\n";
 	}
-	void PlayerCollider::OnCollision(BackGround* const obj)
+	void PlayerCollider::OnCollision(BackGroundCollider* const collider)
 	{
-		cout << "On Player -> Back\n";
+		cout << "On Player -> BackGroundCollider\n";
 	}
-	void PlayerCollider::ExitCollision(BackGround* const obj)
+	void PlayerCollider::ExitCollision(BackGroundCollider* const collider)
 	{
-		cout << "Exit Player -> Back\n";
+		cout << "Exit Player -> BackGroundCollider\n";
 	}
 
-	void PlayerCollider::EnterCollision(Monster* const obj)
+	void PlayerCollider::EnterCollision(MonsterCollider* const collider)
 	{
-		cout << "Enter Player -> Monster\n";
+		cout << "Enter Player -> MonsterCollider\n";
 	}
-	void PlayerCollider::OnCollision(Monster* const obj)
+	void PlayerCollider::OnCollision(MonsterCollider* const collider)
 	{
-		cout << "On Player -> Monster\n";
+		cout << "On Player -> MonsterCollider\n";
 	}
-	void PlayerCollider::ExitCollision(Monster* const obj)
+	void PlayerCollider::ExitCollision(MonsterCollider* const collider)
 	{
-		cout << "Exit Player -> Monster\n";
+		cout << "Exit Player -> MonsterCollider\n";
 	}
 }

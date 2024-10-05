@@ -19,36 +19,36 @@ namespace Game
 		player->SetPos(Math::Vector2(-51.0f, -51.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		Animator* animator = new Animator(0.1f);
+		Animator* animator = new Animator(player, 0.1f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
 		player->SetRenderComponent(animator);
 		player->SetTexture("PlayerTexture");
 
-		Collider* collider = new PlayerCollider;
-		player->SetCollider(collider);
+		Collider* collider = new PlayerCollider(player, 0);
+		player->AddCollider(collider);
 		AddGameObject(eLayerType::Player, player);
 
 		GameObject* monster = new Monster;
 		monster->SetPos(Math::Vector2(50.0f, 50.0f));
 		monster->SetSize(Math::Vector2(100.0f, 100.0f));
 
-		animator = new Animator(0.1f);
+		animator = new Animator(monster, 0.1f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
 		monster->SetRenderComponent(animator);
 		monster->SetTexture("PlayerTexture");
 
-		collider = new MonsterCollider;
-		monster->SetCollider(collider);
+		collider = new MonsterCollider(monster,0);
+		monster->AddCollider(collider);
 		AddGameObject(eLayerType::Monster, monster);
 
 		GameObject* backGround = new BackGround;
-		backGround->SetRenderComponent(new BackGroundRenderer);
+		backGround->SetRenderComponent(new BackGroundRenderer(backGround));
 		backGround->SetTexture("BackGroundTexture");
 		backGround->SetPos(Math::Vector2(1024.0f, 1024.0f));
 		backGround->SetSizeFromTexture();
 
-		collider = new BackGroundCollider;
-		backGround->SetCollider(collider);
+		collider = new BackGroundCollider(backGround, 0);
+		backGround->AddCollider(collider);
 		AddGameObject(eLayerType::BackGround, backGround);
 
 		Camera* camera = new Camera;
@@ -62,11 +62,13 @@ namespace Game
 	void TestScene::EnterScene()
 	{
 		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::Monster, eLayerType::Player, true);
+		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::BackGround, eLayerType::Player, true);
 		std::cout << m_Name + "Enter\n";
 	}
 	void TestScene::ExitScene()
 	{
 		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::Monster, eLayerType::Player, false);
+		CollisionMgr::GetInst().CheckInCollisionMatrix(eLayerType::BackGround, eLayerType::Player, false);
 		std::cout << m_Name + "Exit\n";
 	}
 	void TestScene::DetectSceneEvent()

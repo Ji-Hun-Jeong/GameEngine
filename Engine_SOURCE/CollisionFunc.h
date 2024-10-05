@@ -1,23 +1,24 @@
 #pragma once
+#include "Common.h"
 namespace Game
 {
-	class Player;
-	class BackGround;
-	class Monster;
+	class PlayerCollider;
+	class BackGroundCollider;
+	class MonsterCollider;
 	class CollisionFunc
 	{
 	public:
-		virtual void EnterCollision(Player* const obj);
-		virtual void OnCollision(Player* const obj);
-		virtual void ExitCollision(Player* const obj);
+		virtual void EnterCollision(PlayerCollider* const collider);
+		virtual void OnCollision(PlayerCollider* const collider);
+		virtual void ExitCollision(PlayerCollider* const collider);
 
-		virtual void EnterCollision(BackGround* const obj);
-		virtual void OnCollision(BackGround* const obj);
-		virtual void ExitCollision(BackGround* const obj);
+		virtual void EnterCollision(BackGroundCollider* const collider);
+		virtual void OnCollision(BackGroundCollider* const collider);
+		virtual void ExitCollision(BackGroundCollider* const collider);
 
-		virtual void EnterCollision(Monster* const obj);
-		virtual void OnCollision(Monster* const obj);
-		virtual void ExitCollision(Monster* const obj);
+		virtual void EnterCollision(MonsterCollider* const collider);
+		virtual void OnCollision(MonsterCollider* const collider);
+		virtual void ExitCollision(MonsterCollider* const collider);
 	};
 }
 

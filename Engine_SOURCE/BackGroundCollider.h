@@ -4,14 +4,16 @@ namespace Game
 {
 	class BackGroundCollider : public Collider
 	{
+		COLLIDERDEFINE;
 	public:
-		BackGroundCollider();
+		BackGroundCollider(GameObject* owner, UINT numOfCollider);
 		~BackGroundCollider();
 
 	public:
-		void EnterCollision(Player* const obj) override;
-		void OnCollision(Player* const obj) override;
-		void ExitCollision(Player* const obj) override;
+		void EnterCollision(PlayerCollider* const collider) override;
+		void OnCollision(PlayerCollider* const collider) override;
+		void ExitCollision(PlayerCollider* const collider) override;
+
 	};
 }
 

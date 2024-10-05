@@ -3,8 +3,8 @@
 
 namespace Game
 {
-	RenderComponent::RenderComponent(const std::string& name)
-		: Component(name)
+	RenderComponent::RenderComponent(GameObject* owner)
+		: Component(owner, "Render")
 		, m_Texture(nullptr)
 	{
 	}

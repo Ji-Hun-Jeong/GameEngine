@@ -4,8 +4,8 @@
 
 namespace Game
 {
-	Animator::Animator(float changeTime)
-		: RenderComponent("Animator")
+	Animator::Animator(GameObject* owner, float changeTime)
+		: RenderComponent(owner)
 		, m_ChangeTime(changeTime)
 		, m_MeasureTime(0.0f)
 	{

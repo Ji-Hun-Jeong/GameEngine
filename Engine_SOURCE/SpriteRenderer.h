@@ -5,7 +5,7 @@ namespace Game
 	class SpriteRenderer : public RenderComponent
 	{
 	public:
-		explicit SpriteRenderer();
+		explicit SpriteRenderer(GameObject* owner);
 		~SpriteRenderer();
 
 	public:

@@ -3,9 +3,9 @@
 
 namespace Game
 {
-	TransformComponent::TransformComponent(const std::string& name, const Math::Vector2& pos
-		, const Math::Vector2& size)
-		: Component(name)
+	TransformComponent::TransformComponent(GameObject* owner
+		, const Math::Vector2& pos, const Math::Vector2& size)
+		: Component(owner, "Transform")
 		, m_Pos(pos)
 		, m_Size(size)
 	{

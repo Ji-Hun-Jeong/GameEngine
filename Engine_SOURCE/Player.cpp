@@ -13,22 +13,10 @@ namespace Game
 	Player::Player()
 		: GameObject("Player"+std::to_string(s_numOfPlayer++))
 	{
-		SetTransformComponent(new PlayerTransform(Math::Vector2(), Math::Vector2()));
+		SetTransformComponent(new PlayerTransform(this, Math::Vector2(), Math::Vector2()));
 	}
 	Player::~Player()
 	{
 		
-	}
-	void Player::EnterCollision(GameObject* obj)
-	{
-		obj->GetCollider()->EnterCollision(this);
-	}
-	void Player::OnCollision(GameObject* obj)
-	{
-		obj->GetCollider()->OnCollision(this);
-	}
-	void Player::ExitCollision(GameObject* obj)
-	{
-		obj->GetCollider()->ExitCollision(this);
 	}
 }

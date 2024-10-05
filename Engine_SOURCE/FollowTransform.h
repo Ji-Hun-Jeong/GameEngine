@@ -5,7 +5,7 @@ namespace Game
 	class FollowTransform : public TransformComponent
 	{
 	public:
-		explicit FollowTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		explicit FollowTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
 		~FollowTransform();
 
 	public:

@@ -2,8 +2,9 @@
 
 namespace Game
 {
-	FrameTransform::FrameTransform(const Math::Vector2& pos, const Math::Vector2& size)
-		: TransformComponent("Frame", pos, size)
+	FrameTransform::FrameTransform(GameObject* owner
+		, const Math::Vector2& pos, const Math::Vector2& size)
+		: TransformComponent(owner, pos, size)
 	{
 	}
 	FrameTransform::~FrameTransform()

@@ -23,12 +23,12 @@ namespace Game
 			{
 				if (m_CollisionCheckMatrix[i][j] == false)
 					continue;
-				checkTwoGroupCollision(curScene, eLayerType(i), eLayerType(j));
+				checkTwoGroupObjectsCollision(curScene, eLayerType(i), eLayerType(j));
 			}
 		}
 	}
 
-	void CollisionMgr::checkTwoGroupCollision(Scene* const scene, eLayerType left, eLayerType right)
+	void CollisionMgr::checkTwoGroupObjectsCollision(Scene* const scene, eLayerType left, eLayerType right)
 	{
 		std::map<std::string, GameObject*>& mapObj1 = scene->GetGameObject(left);
 		std::map<std::string, GameObject*>& mapObj2 = scene->GetGameObject(right);
@@ -36,35 +36,48 @@ namespace Game
 		GameObject* obj1 = nullptr;
 		GameObject* obj2 = nullptr;
 
-		CollisionKey unionKey;
-
 		for (auto iter1 = mapObj1.begin(); iter1 != mapObj1.end(); ++iter1)
 		{
 			obj1 = iter1->second;
 			for (auto iter2 = mapObj2.begin(); iter2 != mapObj2.end(); ++iter2)
 			{
 				obj2 = iter2->second;
+				checkTwoObjectCollidersCollision(obj1, obj2);
+			}
+		}
+	}
 
-				unionKey.upBit = obj1->GetUniqueNumber();
-				unionKey.downBit = obj2->GetUniqueNumber();
+	void CollisionMgr::checkTwoObjectCollidersCollision(GameObject* obj1, GameObject* obj2)
+	{
+		std::vector<Collider*>& vecColliders1 = obj1->GetColliders();
+		std::vector<Collider*>& vecColliders2 = obj2->GetColliders();
+
+		CollisionKey unionKey;
+
+		for (Collider* collider1 : vecColliders1)
+		{
+			for (Collider* collider2 : vecColliders2)
+			{
+				unionKey.upBit = collider1->GetUniqueNumber();
+				unionKey.downBit = collider2->GetUniqueNumber();
 
 				auto iter = m_MapCollisionObjects.find(unionKey.key);
 
-				bool isCollision = checkCollision(obj1, obj2);
+				bool isCollision = checkCollidersCollision(collider1, collider2);
 				if (isCollision)
 				{
 					if (iter == m_MapCollisionObjects.end())	// 이번프레임에 처음 충돌
 					{
 						m_MapCollisionObjects.insert(std::make_pair(unionKey.key
-							, std::make_pair(obj1, obj2)));
+							, std::make_pair(collider1, collider2)));
 
-						obj1->EnterCollision(obj2);
-						obj2->EnterCollision(obj1);
+						collider1->EnterCollisionDeliverOther(collider2);
+						collider2->EnterCollisionDeliverOther(collider1);
 					}
 					else										// 계속 충돌 중
 					{
-						obj1->OnCollision(obj2);
-						obj2->OnCollision(obj1);
+						collider1->OnCollisionDeliverOther(collider2);
+						collider2->OnCollisionDeliverOther(collider1);
 					}
 				}
 				else
@@ -72,18 +85,16 @@ namespace Game
 					if (iter != m_MapCollisionObjects.end())	// 충돌 끝
 					{
 						m_MapCollisionObjects.erase(unionKey.key);
-						obj1->ExitCollision(obj2);
-						obj2->ExitCollision(obj1);
+						collider1->ExitCollisionDeliverOther(collider2);
+						collider2->ExitCollisionDeliverOther(collider1);
 					}
 				}
 			}
 		}
 	}
 
-	bool CollisionMgr::checkCollision(GameObject* obj1, GameObject* obj2)
+	bool CollisionMgr::checkCollidersCollision(Collider* collider1, Collider* collider2)
 	{
-		const Collider* collider1 = obj1->GetCollider();
-		const Collider* collider2 = obj2->GetCollider();
 		if (collider1 == nullptr || collider2 == nullptr)
 			return false;
 

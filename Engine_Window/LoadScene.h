@@ -15,7 +15,7 @@ namespace Game
 		inst.AddScene(new TestScene(screenWidth, screenHeight));
 		inst.AddScene(new TestScene2(screenWidth, screenHeight));
 
-		inst.SetFirstScene("Test2");
+		inst.SetFirstScene("Test");
 	}
 	void LoadResource()
 	{

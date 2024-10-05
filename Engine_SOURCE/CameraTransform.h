@@ -5,7 +5,7 @@ namespace Game
 	class CameraTransform : public TransformComponent
 	{
 	public:
-		explicit CameraTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		explicit CameraTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
 		~CameraTransform();
 
 	public:

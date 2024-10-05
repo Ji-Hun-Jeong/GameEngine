@@ -8,21 +8,9 @@ namespace Game
 	Monster::Monster()
 		: GameObject("Monster"+std::to_string(s_numOfMonster++))
 	{
-		SetTransformComponent(new BackGroundTransform(Math::Vector2(), Math::Vector2()));
+		SetTransformComponent(new BackGroundTransform(this, Math::Vector2(), Math::Vector2()));
 	}
 	Monster::~Monster()
 	{
-	}
-	void Monster::EnterCollision(GameObject* obj)
-	{
-		obj->GetCollider()->EnterCollision(this);
-	}
-	void Monster::OnCollision(GameObject* obj)
-	{
-		obj->GetCollider()->OnCollision(this);
-	}
-	void Monster::ExitCollision(GameObject* obj)
-	{
-		obj->GetCollider()->ExitCollision(this);
 	}
 }

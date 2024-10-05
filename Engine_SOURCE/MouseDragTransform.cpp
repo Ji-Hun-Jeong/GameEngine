@@ -3,8 +3,9 @@
 
 namespace Game
 {
-	MouseDragTransform::MouseDragTransform(const Math::Vector2& pos, const Math::Vector2& size)
-		: TransformComponent("MouseDrag", pos, size)
+	MouseDragTransform::MouseDragTransform(GameObject* owner
+		, const Math::Vector2& pos, const Math::Vector2& size)
+		: TransformComponent(owner, pos, size)
 		, m_FinishDrag(false)
 		, m_StartDrag(false)
 	{

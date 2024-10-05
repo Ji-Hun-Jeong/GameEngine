@@ -2,22 +2,23 @@
 
 namespace Game
 {
-	BackGroundCollider::BackGroundCollider()
+	BackGroundCollider::BackGroundCollider(GameObject* owner, UINT numOfCollider)
+		: Collider(owner, numOfCollider)
 	{
 	}
 	BackGroundCollider::~BackGroundCollider()
 	{
 	}
-	void BackGroundCollider::EnterCollision(Player* const obj)
+	void BackGroundCollider::EnterCollision(PlayerCollider* const collider)
 	{
-		cout << "Enter Back -> Player\n";
+		cout << "Enter Back -> PlayerCollider\n";
 	}
-	void BackGroundCollider::OnCollision(Player* const obj)
+	void BackGroundCollider::OnCollision(PlayerCollider* const collider)
 	{
-		cout << "On Back -> Player\n";
+		cout << "On Back -> PlayerCollider\n";
 	}
-	void BackGroundCollider::ExitCollision(Player* const obj)
+	void BackGroundCollider::ExitCollision(PlayerCollider* const collider)
 	{
-		cout << "Exit Back -> Player\n";
+		cout << "Exit Back -> PlayerCollider\n";
 	}
 }

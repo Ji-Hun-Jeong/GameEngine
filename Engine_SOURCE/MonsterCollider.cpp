@@ -2,23 +2,23 @@
 
 namespace Game
 {
-	MonsterCollider::MonsterCollider()
-		: Collider()
+	MonsterCollider::MonsterCollider(GameObject* owner, UINT numOfCollider)
+		: Collider(owner, numOfCollider)
 	{
 	}
 	MonsterCollider::~MonsterCollider()
 	{
 	}
-	void MonsterCollider::EnterCollision(Player* const obj)
+	void MonsterCollider::EnterCollision(PlayerCollider* const collider)
 	{
-		cout << "Enter Monster -> Player\n";
+		cout << "Enter Monster -> PlayerCollider\n";
 	}
-	void MonsterCollider::OnCollision(Player* const obj)
+	void MonsterCollider::OnCollision(PlayerCollider* const collider)
 	{
-		cout << "On Monster -> Player\n";
+		cout << "On Monster -> PlayerCollider\n";
 	}
-	void MonsterCollider::ExitCollision(Player* const obj)
+	void MonsterCollider::ExitCollision(PlayerCollider* const collider)
 	{
-		cout << "Exit Monster -> Player\n";
+		cout << "Exit Monster -> PlayerCollider\n";
 	}
 }

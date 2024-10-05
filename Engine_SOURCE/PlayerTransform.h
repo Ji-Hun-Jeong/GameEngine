@@ -5,7 +5,7 @@ namespace Game
 	class PlayerTransform : public TransformComponent
 	{
 	public:
-		explicit PlayerTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		explicit PlayerTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
 		~PlayerTransform();
 		
 	public:

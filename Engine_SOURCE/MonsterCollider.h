@@ -4,14 +4,16 @@ namespace Game
 {
 	class MonsterCollider : public Collider
 	{
+		COLLIDERDEFINE;
 	public:
-		MonsterCollider();
+		MonsterCollider(GameObject* owner, UINT numOfCollider);
 		~MonsterCollider();
 
 	public:
-		void EnterCollision(Player* const obj) override;
-		void OnCollision(Player* const obj) override;
-		void ExitCollision(Player* const obj) override;
+		void EnterCollision(PlayerCollider* const collider) override;
+		void OnCollision(PlayerCollider* const collider) override;
+		void ExitCollision(PlayerCollider* const collider) override;
+
 	};
 }
 
