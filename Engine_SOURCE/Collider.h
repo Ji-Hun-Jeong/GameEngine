@@ -13,9 +13,9 @@ namespace Game
 		~Collider();
 
 	public:
-		virtual void EnterCollisionDeliverOther(Collider* const otherCollider) = 0;
-		virtual void OnCollisionDeliverOther(Collider* const otherCollider) = 0;
-		virtual void ExitCollisionDeliverOther(Collider* const otherCollider) = 0;
+		virtual void EnterCollisionDeliverOther(Collider* const otherCollider) const = 0;
+		virtual void OnCollisionDeliverOther(Collider* const otherCollider) const = 0;
+		virtual void ExitCollisionDeliverOther(Collider* const otherCollider) const = 0;
 
 		void Update(float dt, const TransformComponent* const ownerTransformComponent);
 		void Render(HDC dc);
@@ -32,7 +32,6 @@ namespace Game
 		Math::Vector2 m_colliderSize;
 
 		bool m_PermitRender;
-		bool m_OnCollision;
 
 		uint32_t m_ColliderUniqueNumber;
 	};

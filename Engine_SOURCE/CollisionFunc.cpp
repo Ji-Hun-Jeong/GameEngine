@@ -2,39 +2,39 @@
 
 namespace Game
 {
-	void CollisionFunc::EnterCollision(PlayerCollider* const collider)
+	void CollisionFunc::EnterCollision(const PlayerCollider* const collider)
 	{
 		cout << "Basic Enter PlayerCollider!\n";
 	}
-	void CollisionFunc::OnCollision(PlayerCollider* const collider)
+	void CollisionFunc::OnCollision(const PlayerCollider* const collider)
 	{
 		cout << "Basic On PlayerCollider!\n";
 	}
-	void CollisionFunc::ExitCollision(PlayerCollider* const collider)
+	void CollisionFunc::ExitCollision(const PlayerCollider* const collider)
 	{
 		cout << "Basic Exit PlayerCollider!\n";
 	}
-	void CollisionFunc::EnterCollision(BackGroundCollider* const collider)
+	void CollisionFunc::EnterCollision(const BackGroundCollider* const collider)
 	{
 		cout << "Basic Enter BackGroundCollider\n";
 	}
-	void CollisionFunc::OnCollision(BackGroundCollider* const collider)
+	void CollisionFunc::OnCollision(const BackGroundCollider* const collider)
 	{
 		cout << "Basic On BackGroundCollider\n";
 	}
-	void CollisionFunc::ExitCollision(BackGroundCollider* const collider)
+	void CollisionFunc::ExitCollision(const BackGroundCollider* const collider)
 	{
 		cout << "Basic Exit BackGroundCollider\n";
 	}
-	void CollisionFunc::EnterCollision(MonsterCollider* const collider)
+	void CollisionFunc::EnterCollision(const MonsterCollider* const collider)
 	{
 		cout << "Basic Enter MonsterCollider\n";
 	}
-	void CollisionFunc::OnCollision(MonsterCollider* const collider)
+	void CollisionFunc::OnCollision(const MonsterCollider* const collider)
 	{
 		cout << "Basic On MonsterCollider\n";
 	}
-	void CollisionFunc::ExitCollision(MonsterCollider* const collider)
+	void CollisionFunc::ExitCollision(const MonsterCollider* const collider)
 	{
 		cout << "Basic Exit MonsterCollider\n";
 	}

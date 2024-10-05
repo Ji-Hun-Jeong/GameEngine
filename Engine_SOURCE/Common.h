@@ -34,11 +34,11 @@
 #define MAGENTA RGB(255,0,255)
 
 #define COLLIDERDEFINE public:\
-						void EnterCollisionDeliverOther(Collider* const otherCollider) override \
+						void EnterCollisionDeliverOther(Collider* const otherCollider) const override\
 						{otherCollider->EnterCollision(this);}\
-						void OnCollisionDeliverOther(Collider* const otherCollider) override\
+						void OnCollisionDeliverOther(Collider* const otherCollider) const override\
 						{otherCollider->OnCollision(this);}\
-						void ExitCollisionDeliverOther(Collider* const otherCollider) override\
+						void ExitCollisionDeliverOther(Collider* const otherCollider) const override\
 						{otherCollider->ExitCollision(this);}
 
 namespace Game

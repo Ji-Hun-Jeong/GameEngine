@@ -63,7 +63,7 @@ namespace Game
 
 				auto iter = m_MapCollisionObjects.find(unionKey.key);
 
-				bool isCollision = checkCollidersCollision(collider1, collider2);
+				bool isCollision = CheckCollidersCollision(collider1, collider2);
 				if (isCollision)
 				{
 					if (iter == m_MapCollisionObjects.end())	// 이번프레임에 처음 충돌
@@ -93,7 +93,7 @@ namespace Game
 		}
 	}
 
-	bool CollisionMgr::checkCollidersCollision(Collider* collider1, Collider* collider2)
+	bool CollisionMgr::CheckCollidersCollision(const Collider* const collider1, const Collider* const collider2)
 	{
 		if (collider1 == nullptr || collider2 == nullptr)
 			return false;
@@ -108,8 +108,26 @@ namespace Game
 
 		const Math::Vector2& vecOfBetweenColliders = collider1Pos - collider2Pos;
 
-		const float distOfX = vecOfBetweenColliders.x;
-		const float distOfY = vecOfBetweenColliders.y;
+		const float distOfX = std::abs(vecOfBetweenColliders.x);
+		const float distOfY = std::abs(vecOfBetweenColliders.y);
+
+		if (distOfX <= sumOfSizeX && distOfY < sumOfSizeY)
+			return true;
+		return false;
+	}
+
+	bool CollisionMgr::CheckCollidersCollision(const Math::Vector2& pos1, const Math::Vector2& size1
+		, const Math::Vector2& pos2, const Math::Vector2& size2)
+	{
+		const Math::Vector2& halfSize1 = size1 / 2.0f;
+		const Math::Vector2& halfSize2 = size2 / 2.0f;
+		const float sumOfSizeX = halfSize1.x + halfSize2.x;
+		const float sumOfSizeY = halfSize1.y + halfSize2.y;
+
+		const Math::Vector2& vecOfBetweenPos = pos1 - pos2;
+
+		const float distOfX = std::abs(vecOfBetweenPos.x);
+		const float distOfY = std::abs(vecOfBetweenPos.y);
 
 		if (distOfX <= sumOfSizeX && distOfY < sumOfSizeY)
 			return true;

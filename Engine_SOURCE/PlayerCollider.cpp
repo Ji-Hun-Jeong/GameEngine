@@ -1,7 +1,9 @@
 #include "PlayerCollider.h"
-#include "Player.h"
-#include "BackGround.h"
+#include "BackGroundCollider.h"
 #include "MonsterCollider.h"
+#include "TransformComponent.h"
+#include "CollisionMgr.h"
+#include "TimeMgr.h"
 
 namespace Game
 {
@@ -12,29 +14,45 @@ namespace Game
 	PlayerCollider::~PlayerCollider()
 	{
 	}
-	void PlayerCollider::EnterCollision(BackGroundCollider* const collider)
+
+
+	void PlayerCollider::EnterCollision(const BackGroundCollider* const collider)
 	{
-		cout << "Enter Player -> BackGroundCollider\n";
+		cout << "Enter Player <- BackGroundCollider\n";
 	}
-	void PlayerCollider::OnCollision(BackGroundCollider* const collider)
+	void PlayerCollider::OnCollision(const BackGroundCollider* const collider)
 	{
-		cout << "On Player -> BackGroundCollider\n";
+		cout << "On Player <- BackGroundCollider\n";
 	}
-	void PlayerCollider::ExitCollision(BackGroundCollider* const collider)
+	void PlayerCollider::ExitCollision(const BackGroundCollider* const collider)
 	{
-		cout << "Exit Player -> BackGroundCollider\n";
+		cout << "Exit Player <- BackGroundCollider\n";
 	}
 
-	void PlayerCollider::EnterCollision(MonsterCollider* const collider)
+
+	void PlayerCollider::EnterCollision(const MonsterCollider* const collider)
 	{
-		cout << "Enter Player -> MonsterCollider\n";
+		cout << "Enter Player <- MonsterCollider\n";
 	}
-	void PlayerCollider::OnCollision(MonsterCollider* const collider)
+	void PlayerCollider::OnCollision(const MonsterCollider* const collider)
 	{
-		cout << "On Player -> MonsterCollider\n";
+		cout << "On Player <- MonsterCollider\n";
+		const Math::Vector2& monsterColliderPos = collider->GetColliderPos();
+		const Math::Vector2& monsterColliderSize = collider->GetColliderSize();
+		TransformComponent* ownerTransform = m_Owner->GetComponent<TransformComponent*>("Transform");
+
+		const Math::Vector2 distVector = ownerTransform->GetPos() - monsterColliderPos;
+
+		ownerTransform->SetPos(monsterColliderPos + distVector * 1.01f);
+
+		if (CollisionMgr::CheckCollidersCollision(ownerTransform->GetPos(), ownerTransform->GetSize()
+			, monsterColliderPos, monsterColliderSize) == false)
+			return;
+
+		OnCollision(collider);
 	}
-	void PlayerCollider::ExitCollision(MonsterCollider* const collider)
+	void PlayerCollider::ExitCollision(const MonsterCollider* const collider)
 	{
-		cout << "Exit Player -> MonsterCollider\n";
+		cout << "Exit Player <- MonsterCollider\n";
 	}
 }

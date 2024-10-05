@@ -9,16 +9,16 @@ namespace Game
 	MonsterCollider::~MonsterCollider()
 	{
 	}
-	void MonsterCollider::EnterCollision(PlayerCollider* const collider)
+	void MonsterCollider::EnterCollision(const PlayerCollider* const collider)
 	{
-		cout << "Enter Monster -> PlayerCollider\n";
+		cout << "Enter Monster <- PlayerCollider\n";
 	}
-	void MonsterCollider::OnCollision(PlayerCollider* const collider)
+	void MonsterCollider::OnCollision(const PlayerCollider* const collider)
 	{
-		cout << "On Monster -> PlayerCollider\n";
+		cout << "On Monster <- PlayerCollider\n";
 	}
-	void MonsterCollider::ExitCollision(PlayerCollider* const collider)
+	void MonsterCollider::ExitCollision(const PlayerCollider* const collider)
 	{
-		cout << "Exit Monster -> PlayerCollider\n";
+		cout << "Exit Monster <- PlayerCollider\n";
 	}
 }

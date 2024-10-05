@@ -7,7 +7,6 @@ namespace Game
 	Collider::Collider(GameObject* owner, UINT numOfCollider)
 		: Component(owner, "Collider" + std::to_string(numOfCollider))
 		, m_PermitRender(true)
-		, m_OnCollision(false)
 		, m_ColliderUniqueNumber(0)
 	{
 		static uint32_t uniqueNumber = 0;

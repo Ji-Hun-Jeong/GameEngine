@@ -11,13 +11,13 @@ namespace Game
 		~PlayerCollider();
 
 	public:
-		void EnterCollision(BackGroundCollider* const collider) override;
-		void OnCollision(BackGroundCollider* const collider) override;
-		void ExitCollision(BackGroundCollider* const collider) override;
+		void EnterCollision(const BackGroundCollider* const collider) override;
+		void OnCollision(const BackGroundCollider* const collider) override;
+		void ExitCollision(const BackGroundCollider* const collider) override;
 
-		void EnterCollision(MonsterCollider* const collider) override;
-		void OnCollision(MonsterCollider* const collider) override;
-		void ExitCollision(MonsterCollider* const collider) override;
+		void EnterCollision(const MonsterCollider* const collider) override;
+		void OnCollision(const MonsterCollider* const collider) override;
+		void ExitCollision(const MonsterCollider* const collider) override;
 
 
 	};

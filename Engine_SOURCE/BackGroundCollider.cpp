@@ -9,16 +9,16 @@ namespace Game
 	BackGroundCollider::~BackGroundCollider()
 	{
 	}
-	void BackGroundCollider::EnterCollision(PlayerCollider* const collider)
+	void BackGroundCollider::EnterCollision(const PlayerCollider* const collider)
 	{
-		cout << "Enter Back -> PlayerCollider\n";
+		cout << "Enter BackGroundCollider <- PlayerCollider\n";
 	}
-	void BackGroundCollider::OnCollision(PlayerCollider* const collider)
+	void BackGroundCollider::OnCollision(const PlayerCollider* const collider)
 	{
-		cout << "On Back -> PlayerCollider\n";
+		cout << "On BackGroundCollider <- PlayerCollider\n";
 	}
-	void BackGroundCollider::ExitCollision(PlayerCollider* const collider)
+	void BackGroundCollider::ExitCollision(const PlayerCollider* const collider)
 	{
-		cout << "Exit Back -> PlayerCollider\n";
+		cout << "Exit BackGroundCollider <- PlayerCollider\n";
 	}
 }

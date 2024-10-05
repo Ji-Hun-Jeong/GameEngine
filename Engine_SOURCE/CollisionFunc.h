@@ -8,17 +8,17 @@ namespace Game
 	class CollisionFunc
 	{
 	public:
-		virtual void EnterCollision(PlayerCollider* const collider);
-		virtual void OnCollision(PlayerCollider* const collider);
-		virtual void ExitCollision(PlayerCollider* const collider);
+		virtual void EnterCollision(const PlayerCollider* const collider);
+		virtual void OnCollision(const PlayerCollider* const collider);
+		virtual void ExitCollision(const PlayerCollider* const collider);
 
-		virtual void EnterCollision(BackGroundCollider* const collider);
-		virtual void OnCollision(BackGroundCollider* const collider);
-		virtual void ExitCollision(BackGroundCollider* const collider);
+		virtual void EnterCollision(const BackGroundCollider* const collider);
+		virtual void OnCollision(const BackGroundCollider* const collider);
+		virtual void ExitCollision(const BackGroundCollider* const collider);
 
-		virtual void EnterCollision(MonsterCollider* const collider);
-		virtual void OnCollision(MonsterCollider* const collider);
-		virtual void ExitCollision(MonsterCollider* const collider);
+		virtual void EnterCollision(const MonsterCollider* const collider);
+		virtual void OnCollision(const MonsterCollider* const collider);
+		virtual void ExitCollision(const MonsterCollider* const collider);
 	};
 }
 
