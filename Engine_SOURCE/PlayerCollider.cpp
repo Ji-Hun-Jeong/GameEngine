@@ -45,7 +45,8 @@ namespace Game
 
 		ownerTransform->SetPos(monsterColliderPos + distVector * 1.01f);
 
-		if (CollisionMgr::CheckCollidersCollision(ownerTransform->GetPos(), ownerTransform->GetSize()
+		// gameobject와 collider의 충돌검사임 주의할 것
+		if (CollisionMgr::CheckBoxCollision(ownerTransform->GetPos(), ownerTransform->GetSize()
 			, monsterColliderPos, monsterColliderSize) == false)
 			return;
 

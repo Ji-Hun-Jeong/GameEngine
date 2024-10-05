@@ -53,23 +53,28 @@ namespace Game
 		std::vector<Collider*>& vecColliders2 = obj2->GetColliders();
 
 		CollisionKey unionKey;
+		Collider* collider1 = nullptr;
+		Collider* collider2 = nullptr;
 
-		for (Collider* collider1 : vecColliders1)
+		for (size_t i = 0; i < vecColliders1.size(); ++i)
 		{
-			for (Collider* collider2 : vecColliders2)
+			collider1 = vecColliders1[i];
+			for (size_t i = 0; i < vecColliders2.size(); ++i)
 			{
+				collider2 = vecColliders2[i];
+				assert(collider1 && collider2);
+
 				unionKey.upBit = collider1->GetUniqueNumber();
 				unionKey.downBit = collider2->GetUniqueNumber();
 
-				auto iter = m_MapCollisionObjects.find(unionKey.key);
+				auto iter = m_MapCollisionObjectsState.find(unionKey.key);
 
 				bool isCollision = CheckCollidersCollision(collider1, collider2);
 				if (isCollision)
 				{
-					if (iter == m_MapCollisionObjects.end())	// 이번프레임에 처음 충돌
+					if (iter == m_MapCollisionObjectsState.end())	// 이번프레임에 처음 충돌
 					{
-						m_MapCollisionObjects.insert(std::make_pair(unionKey.key
-							, std::make_pair(collider1, collider2)));
+						m_MapCollisionObjectsState.insert(unionKey.key);
 
 						collider1->EnterCollisionDeliverOther(collider2);
 						collider2->EnterCollisionDeliverOther(collider1);
@@ -82,9 +87,9 @@ namespace Game
 				}
 				else
 				{
-					if (iter != m_MapCollisionObjects.end())	// 충돌 끝
+					if (iter != m_MapCollisionObjectsState.end())	// 충돌 끝
 					{
-						m_MapCollisionObjects.erase(unionKey.key);
+						m_MapCollisionObjectsState.erase(unionKey.key);
 						collider1->ExitCollisionDeliverOther(collider2);
 						collider2->ExitCollisionDeliverOther(collider1);
 					}
@@ -116,7 +121,7 @@ namespace Game
 		return false;
 	}
 
-	bool CollisionMgr::CheckCollidersCollision(const Math::Vector2& pos1, const Math::Vector2& size1
+	bool CollisionMgr::CheckBoxCollision(const Math::Vector2& pos1, const Math::Vector2& size1
 		, const Math::Vector2& pos2, const Math::Vector2& size2)
 	{
 		const Math::Vector2& halfSize1 = size1 / 2.0f;

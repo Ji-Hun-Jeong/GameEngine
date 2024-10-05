@@ -21,7 +21,7 @@ namespace Game
 		void Update();
 		void CheckInCollisionMatrix(eLayerType left, eLayerType right, bool trueOrFalse);
 		static bool CheckCollidersCollision(const Collider* const collider1, const Collider* const collider2);
-		static bool CheckCollidersCollision(const Math::Vector2& pos1, const Math::Vector2& size1
+		static bool CheckBoxCollision(const Math::Vector2& pos1, const Math::Vector2& size1
 			, const Math::Vector2& pos2, const Math::Vector2& size2);
 
 	private:
@@ -31,6 +31,6 @@ namespace Game
 
 	private:
 		std::bitset<(size_t)eLayerType::End> m_CollisionCheckMatrix[(size_t)eLayerType::End];
-		std::map<uint64_t, std::pair<Collider*, Collider*>> m_MapCollisionObjects;
+		std::set<uint64_t> m_MapCollisionObjectsState;
 	};
 }

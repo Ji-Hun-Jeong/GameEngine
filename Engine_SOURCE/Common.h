@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <vector>
 #include <map>
+#include <set>
 #include <bitset>
 #include <string>
 #include <iostream>
