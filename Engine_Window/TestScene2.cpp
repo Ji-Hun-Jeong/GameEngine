@@ -3,6 +3,7 @@
 #include "MouseDrager.h"
 #include "AnimationGenerator.h"
 #include "CollisionMgr.h"
+#include "MouseDrag.h"
 
 namespace Game
 {
@@ -17,6 +18,7 @@ namespace Game
 		AddGameObject(eLayerType::BackGround, obj);
 		
 		obj = new AnimationGenerator;
+		obj->SetMoveComponent(new MouseDrag(obj));
 		AddGameObject(eLayerType::Entity, obj);
 
 		Camera* camera = new Camera;

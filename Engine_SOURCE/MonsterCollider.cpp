@@ -11,14 +11,14 @@ namespace Game
 	}
 	void MonsterCollider::EnterCollision(const PlayerCollider* const collider)
 	{
-		cout << "Enter Monster <- PlayerCollider\n";
+		//cout << "Enter Monster <- PlayerCollider\n";
 	}
 	void MonsterCollider::OnCollision(const PlayerCollider* const collider)
 	{
-		cout << "On Monster <- PlayerCollider\n";
+		//cout << "On Monster <- PlayerCollider\n";
 	}
 	void MonsterCollider::ExitCollision(const PlayerCollider* const collider)
 	{
-		cout << "Exit Monster <- PlayerCollider\n";
+		//cout << "Exit Monster <- PlayerCollider\n";
 	}
 }

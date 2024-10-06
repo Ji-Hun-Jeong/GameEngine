@@ -9,16 +9,8 @@ namespace Game
 		~MouseDragTransform();
 
 	public:
-		void Transform(float dt) override;
 		void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) override;
-		bool IsStartDraging() { return m_StartDrag; }
-		bool IsReleased() { return m_FinishDrag; }
-
-	private:
-		Math::Vector2 m_FirstClickPos;
-		Math::Vector2 m_DragingPos;
-		bool m_StartDrag;
-		bool m_FinishDrag;
+		
 	};
 }
 

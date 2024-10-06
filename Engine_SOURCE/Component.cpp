@@ -12,6 +12,7 @@ namespace Game
 	}
 	Component::~Component()
 	{
+		cout << "~Component\n";
 	}
 	Gdiplus::Rect Component::GetRectInMYC(const Math::Vector2& pos, const Math::Vector2& size)
 	{

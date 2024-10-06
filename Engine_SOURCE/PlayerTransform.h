@@ -9,11 +9,7 @@ namespace Game
 		~PlayerTransform();
 		
 	public:
-		void Transform(float dt) override;
 		void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) override;
-
-	private:
-
 	};
 }
 

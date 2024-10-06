@@ -67,14 +67,14 @@ namespace Game
 				unionKey.upBit = collider1->GetUniqueNumber();
 				unionKey.downBit = collider2->GetUniqueNumber();
 
-				auto iter = m_MapCollisionObjectsState.find(unionKey.key);
+				auto iter = m_SetCollisionObjectsState.find(unionKey.key);
 
 				bool isCollision = CheckCollidersCollision(collider1, collider2);
 				if (isCollision)
 				{
-					if (iter == m_MapCollisionObjectsState.end())	// 이번프레임에 처음 충돌
+					if (iter == m_SetCollisionObjectsState.end())	// 이번프레임에 처음 충돌
 					{
-						m_MapCollisionObjectsState.insert(unionKey.key);
+						m_SetCollisionObjectsState.insert(unionKey.key);
 
 						collider1->EnterCollisionDeliverOther(collider2);
 						collider2->EnterCollisionDeliverOther(collider1);
@@ -87,9 +87,9 @@ namespace Game
 				}
 				else
 				{
-					if (iter != m_MapCollisionObjectsState.end())	// 충돌 끝
+					if (iter != m_SetCollisionObjectsState.end())	// 충돌 끝
 					{
-						m_MapCollisionObjectsState.erase(unionKey.key);
+						m_SetCollisionObjectsState.erase(unionKey.key);
 						collider1->ExitCollisionDeliverOther(collider2);
 						collider2->ExitCollisionDeliverOther(collider1);
 					}

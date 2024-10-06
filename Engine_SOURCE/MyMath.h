@@ -22,6 +22,10 @@ namespace Game
 			{
 				return std::sqrt(x * x + y * y);
 			}
+			Vector2 operator-()
+			{
+				return Vector2(-x, -y);
+			}
 			Vector2& operator = (const Vector2& other) 
 			{
 				x = other.x; y = other.y;
@@ -84,11 +88,9 @@ namespace Game
 				assert(x);
 				return Vector2(this->x / x, this->y / x);
 			}
-			Vector2& Abs()
+			Vector2 Abs()
 			{
-				x = std::abs(x);
-				y = std::abs(y);
-				return *this;
+				return Vector2(std::abs(x), std::abs(y));
 			}
 			void Print() const
 			{

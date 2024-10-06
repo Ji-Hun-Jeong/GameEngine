@@ -4,6 +4,7 @@
 #include "TransformComponent.h"
 #include "CollisionMgr.h"
 #include "TimeMgr.h"
+#include "RigidBody.h"
 
 namespace Game
 {
@@ -32,28 +33,31 @@ namespace Game
 
 	void PlayerCollider::EnterCollision(const MonsterCollider* const collider)
 	{
-		cout << "Enter Player <- MonsterCollider\n";
+		//cout << "Enter Player <- MonsterCollider\n";
 	}
 	void PlayerCollider::OnCollision(const MonsterCollider* const collider)
 	{
-		cout << "On Player <- MonsterCollider\n";
+		//cout << "On Player <- MonsterCollider\n";
 		const Math::Vector2& monsterColliderPos = collider->GetColliderPos();
 		const Math::Vector2& monsterColliderSize = collider->GetColliderSize();
-		TransformComponent* ownerTransform = m_Owner->GetComponent<TransformComponent*>("Transform");
+		TransformComponent* const ownerTransform = m_Owner->GetComponent<TransformComponent*>("Transform");
 
-		const Math::Vector2 distVector = ownerTransform->GetPos() - monsterColliderPos;
-
-		ownerTransform->SetPos(monsterColliderPos + distVector * 1.01f);
-
-		// gameobject와 collider의 충돌검사임 주의할 것
-		if (CollisionMgr::CheckBoxCollision(ownerTransform->GetPos(), ownerTransform->GetSize()
-			, monsterColliderPos, monsterColliderSize) == false)
-			return;
-
-		OnCollision(collider);
+		const float dt = TimeMgr::GetInst().DeltaTime() * 1000.0f;
+		const float groundY = monsterColliderPos.y - monsterColliderSize.y / 2.0f + dt;
+		const float playerFoot = ownerTransform->GetPos().y + ownerTransform->GetSize().y / 2.0f;
+		Math::Vector2 ownerPos = ownerTransform->GetPos();
+		RigidBody* const rigidBody = m_Owner->GetComponent<RigidBody*>("RigidBody");
+		if (groundY > playerFoot)
+		{
+			Vector2 v = rigidBody->GetVelocity();
+			v.y = 0.0f;
+			rigidBody->SetVelocity(v);
+			ownerPos.y = monsterColliderPos.y - monsterColliderSize.y;
+		}
+		ownerTransform->SetPos(ownerPos);
 	}
 	void PlayerCollider::ExitCollision(const MonsterCollider* const collider)
 	{
-		cout << "Exit Player <- MonsterCollider\n";
+		//cout << "Exit Player <- MonsterCollider\n";
 	}
 }

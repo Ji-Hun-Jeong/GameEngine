@@ -17,8 +17,8 @@ namespace Game
 		virtual void OnCollisionDeliverOther(Collider* const otherCollider) const = 0;
 		virtual void ExitCollisionDeliverOther(Collider* const otherCollider) const = 0;
 
-		void Update(float dt, const TransformComponent* const ownerTransformComponent);
-		void Render(HDC dc);
+		virtual void Update(float dt, const TransformComponent* const ownerTransformComponent);
+		virtual void Render(HDC dc);
 
 		const Math::Vector2& GetColliderPos() const;
 		const Math::Vector2& GetColliderFinalPos() const;

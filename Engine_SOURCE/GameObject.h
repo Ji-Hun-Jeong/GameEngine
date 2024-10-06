@@ -6,6 +6,8 @@
 namespace Game
 {
 	class Component;
+	class MoveComponent;
+	class RigidBody;
 	class TransformComponent;
 	class RenderComponent;
 	class Camera;
@@ -21,6 +23,8 @@ namespace Game
 		virtual void PostUpdate(float dt, Camera* const curCamera);
 		virtual void Render(HDC dc);
 		
+		void SetMoveComponent(MoveComponent* const moveComponent);
+		void SetRigidBody(RigidBody* const rigidBody);
 		void SetTransformComponent(TransformComponent* const transformComponent);
 		void SetRenderComponent(RenderComponent* const renderComponent);
 		void AddCollider(Collider* const collider);
@@ -42,6 +46,8 @@ namespace Game
 	protected:
 		std::map<std::string, Component*> m_MapComponents;
 		std::vector<Collider*> m_VecColliders;
+		MoveComponent* m_MoveComponent;
+		RigidBody* m_RigidBody;
 		TransformComponent* m_TransformComponent;
 		RenderComponent* m_RenderComponent;
 	};

@@ -10,10 +10,6 @@ namespace Game
 	BackGroundTransform::~BackGroundTransform()
 	{
 	}
-	void BackGroundTransform::Transform(float dt)
-	{
-
-	}
 	void BackGroundTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
 		Gdiplus::Rect cameraScreen = curCameraTransform->GetFinalRectInMYC();

@@ -11,9 +11,6 @@ namespace Game
 	FollowTransform::~FollowTransform()
 	{
 	}
-	void FollowTransform::Transform(float dt)
-	{
-	}
 	void FollowTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
 	}

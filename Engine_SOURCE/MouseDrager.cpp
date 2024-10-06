@@ -1,5 +1,6 @@
 #include "MouseDrager.h"
 #include "MouseDragTransform.h"
+#include "MouseDrag.h"
 #include "BasicRenderer.h"
 #include "Camera.h"
 
@@ -23,8 +24,8 @@ namespace Game
 	void MouseDrager::PostUpdate(float dt, Camera* const curCamera)
 	{
 		GameObject::PostUpdate(dt, curCamera);
-		MouseDragTransform* transform = static_cast<MouseDragTransform*>(m_TransformComponent);
-		m_CompleteMakeRect = transform->IsReleased();
+		MouseDrag* const mouseMove = static_cast<MouseDrag*>(m_MoveComponent);
+		m_CompleteMakeRect = mouseMove->IsReleased();
 		if (m_CompleteMakeRect)
 		{
 			const Math::Vector2& cameraPos = curCamera->GetPos();

@@ -124,6 +124,24 @@
     <Filter Include="Component\Collider\MonsterCollider">
       <UniqueIdentifier>{b54f6553-bdc6-48df-aee7-3a95e9155763}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\MoveComponent">
+      <UniqueIdentifier>{2ef44c21-1fe6-4105-82aa-a178c3eeb7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\MoveComponent\PlayerMove">
+      <UniqueIdentifier>{20432e08-756e-472e-8cdf-c4deb5108dcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\MoveComponent\MouseDrag">
+      <UniqueIdentifier>{6eeb3e72-199a-4ea0-bb88-c11f5039145b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\MoveComponent\CameraMove">
+      <UniqueIdentifier>{e84d8238-8657-4e12-8a36-677164ec7391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\RigidBody">
+      <UniqueIdentifier>{d7309911-7a80-4f5b-a56e-63e0704bcc16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\RigidBody\BasicRigidBody">
+      <UniqueIdentifier>{b9bff92b-1bad-4af9-8c68-0ef748cdfc00}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -256,6 +274,24 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)MonsterCollider.h">
       <Filter>Component\Collider\MonsterCollider</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MoveComponent.h">
+      <Filter>Component\MoveComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerMove.h">
+      <Filter>Component\MoveComponent\PlayerMove</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrag.h">
+      <Filter>Component\MoveComponent\MouseDrag</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CameraMove.h">
+      <Filter>Component\MoveComponent\CameraMove</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)RigidBody.h">
+      <Filter>Component\RigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BasicRigidBody.h">
+      <Filter>Component\RigidBody\BasicRigidBody</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -378,6 +414,24 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MonsterCollider.cpp">
       <Filter>Component\Collider\MonsterCollider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MoveComponent.cpp">
+      <Filter>Component\MoveComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerMove.cpp">
+      <Filter>Component\MoveComponent\PlayerMove</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrag.cpp">
+      <Filter>Component\MoveComponent\MouseDrag</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CameraMove.cpp">
+      <Filter>Component\MoveComponent\CameraMove</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)RigidBody.cpp">
+      <Filter>Component\RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BasicRigidBody.cpp">
+      <Filter>Component\RigidBody\BasicRigidBody</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

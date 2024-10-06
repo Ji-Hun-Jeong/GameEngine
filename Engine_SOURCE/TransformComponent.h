@@ -10,7 +10,6 @@ namespace Game
 		virtual ~TransformComponent();
 
 	public:
-		virtual void Transform(float dt) = 0;
 		virtual void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) = 0;
 
 		void SetPos(const Math::Vector2& pos) { m_Pos = pos; }

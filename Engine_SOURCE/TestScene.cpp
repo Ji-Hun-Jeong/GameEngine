@@ -8,6 +8,9 @@
 #include "CollisionMgr.h"
 #include "Monster.h"
 #include "MonsterCollider.h"
+#include "PlayerMove.h"
+#include "CameraMove.h"
+#include "BasicRigidBody.h"
 
 namespace Game
 {
@@ -16,8 +19,14 @@ namespace Game
 	{
 		// 생성자에 SetTexture있음
 		GameObject* player = new Player;
-		player->SetPos(Math::Vector2(-51.0f, -51.0f));
+		player->SetPos(Math::Vector2(640.0f, 360.0f));
 		player->SetSize(Math::Vector2(100.0f, 100.0f));
+
+		MoveComponent* move = new PlayerMove(player);
+		player->SetMoveComponent(move);
+
+		RigidBody* rigidBody = new BasicRigidBody(player);
+		player->SetRigidBody(rigidBody);
 
 		Animator* animator = new Animator(player, 0.1f);
 		animator->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
@@ -29,7 +38,7 @@ namespace Game
 		AddGameObject(eLayerType::Player, player);
 
 		GameObject* monster = new Monster;
-		monster->SetPos(Math::Vector2(50.0f, 50.0f));
+		monster->SetPos(Math::Vector2(640.0f, 460.0f));
 		monster->SetSize(Math::Vector2(100.0f, 100.0f));
 
 		animator = new Animator(monster, 0.1f);
@@ -41,18 +50,35 @@ namespace Game
 		monster->AddCollider(collider);
 		AddGameObject(eLayerType::Monster, monster);
 
+		monster = new Monster;
+		monster->SetPos(Math::Vector2(740.0f, 460.0f));
+		monster->SetSize(Math::Vector2(100.0f, 100.0f));
+
+		animator = new Animator(monster, 0.1f);
+		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
+		monster->SetRenderComponent(animator);
+		monster->SetTexture("PlayerTexture");
+
+		collider = new MonsterCollider(monster, 0);
+		monster->AddCollider(collider);
+		AddGameObject(eLayerType::Monster, monster);
+
 		GameObject* backGround = new BackGround;
 		backGround->SetRenderComponent(new BackGroundRenderer(backGround));
 		backGround->SetTexture("BackGroundTexture");
 		backGround->SetPos(Math::Vector2(1024.0f, 1024.0f));
 		backGround->SetSizeFromTexture();
 
-		collider = new BackGroundCollider(backGround, 0);
-		backGround->AddCollider(collider);
+		//collider = new BackGroundCollider(backGround, 0);
+		//backGround->AddCollider(collider);
 		AddGameObject(eLayerType::BackGround, backGround);
 
 		Camera* camera = new Camera;
 		camera->SetPos(Math::Vector2(640.0f, 360.0f));
+
+		move = new CameraMove(camera);
+		camera->SetMoveComponent(move);
+
 		AddCamera(camera);
 		SetCurCamera(camera);
 	}

@@ -31,6 +31,6 @@ namespace Game
 
 	private:
 		std::bitset<(size_t)eLayerType::End> m_CollisionCheckMatrix[(size_t)eLayerType::End];
-		std::set<uint64_t> m_MapCollisionObjectsState;
+		std::set<uint64_t> m_SetCollisionObjectsState;
 	};
 }
