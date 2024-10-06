@@ -1,16 +1,13 @@
 #include "TestScene.h"
-#include "Animator.h"
 #include "BackGroundRenderer.h"
-#include "PlayerCollider.h"
 #include "BackGroundCollider.h"
 #include "BackGroundTransform.h"
 #include "BasicRenderer.h"
 #include "CollisionMgr.h"
-#include "Monster.h"
-#include "MonsterCollider.h"
-#include "PlayerMove.h"
-#include "CameraMove.h"
 #include "BasicRigidBody.h"
+#include "PlayerFactory.h"
+#include "MonsterFactory.h"
+#include "CameraFactory.h"
 
 namespace Game
 {
@@ -18,50 +15,17 @@ namespace Game
 		: Scene("Test", width, height)
 	{
 		// 생성자에 SetTexture있음
-		GameObject* player = new Player;
-		player->SetPos(Math::Vector2(640.0f, 360.0f));
-		player->SetSize(Math::Vector2(100.0f, 100.0f));
+		std::unique_ptr<Factory> factory = std::make_unique<PlayerFactory>();
 
-		MoveComponent* move = new PlayerMove(player);
-		player->SetMoveComponent(move);
+		AddGameObject(eLayerType::Player, factory->CreateObject(
+			Math::Vector2(640.0f, 360.0f), Math::Vector2(100.0f, 100.0f)));
+		
+		factory = std::make_unique<MonsterFactory>();
+		AddGameObject(eLayerType::Monster, factory->CreateObject(
+			Math::Vector2(640.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
+		AddGameObject(eLayerType::Monster, factory->CreateObject(
+			Math::Vector2(740.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
 
-		RigidBody* rigidBody = new BasicRigidBody(player);
-		player->SetRigidBody(rigidBody);
-
-		Animator* animator = new Animator(player, 0.1f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
-		player->SetRenderComponent(animator);
-		player->SetTexture("PlayerTexture");
-
-		Collider* collider = new PlayerCollider(player, 0);
-		player->AddCollider(collider);
-		AddGameObject(eLayerType::Player, player);
-
-		GameObject* monster = new Monster;
-		monster->SetPos(Math::Vector2(640.0f, 460.0f));
-		monster->SetSize(Math::Vector2(100.0f, 100.0f));
-
-		animator = new Animator(monster, 0.1f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
-		monster->SetRenderComponent(animator);
-		monster->SetTexture("PlayerTexture");
-
-		collider = new MonsterCollider(monster,0);
-		monster->AddCollider(collider);
-		AddGameObject(eLayerType::Monster, monster);
-
-		monster = new Monster;
-		monster->SetPos(Math::Vector2(740.0f, 460.0f));
-		monster->SetSize(Math::Vector2(100.0f, 100.0f));
-
-		animator = new Animator(monster, 0.1f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
-		monster->SetRenderComponent(animator);
-		monster->SetTexture("PlayerTexture");
-
-		collider = new MonsterCollider(monster, 0);
-		monster->AddCollider(collider);
-		AddGameObject(eLayerType::Monster, monster);
 
 		GameObject* backGround = new BackGround;
 		backGround->SetRenderComponent(new BackGroundRenderer(backGround));
@@ -73,12 +37,10 @@ namespace Game
 		//backGround->AddCollider(collider);
 		AddGameObject(eLayerType::BackGround, backGround);
 
-		Camera* camera = new Camera;
-		camera->SetPos(Math::Vector2(640.0f, 360.0f));
-
-		move = new CameraMove(camera);
-		camera->SetMoveComponent(move);
-
+		
+		factory = std::make_unique<CameraFactory>();
+		Camera* camera = static_cast<Camera*>(factory->CreateObject(
+			Math::Vector2(640.0f, 360.0f), Math::Vector2(1280.0f, 720.0f)));
 		AddCamera(camera);
 		SetCurCamera(camera);
 	}

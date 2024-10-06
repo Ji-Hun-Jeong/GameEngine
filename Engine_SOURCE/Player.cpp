@@ -13,7 +13,7 @@ namespace Game
 	Player::Player()
 		: GameObject("Player"+std::to_string(s_numOfPlayer++))
 	{
-		SetTransformComponent(new PlayerTransform(this, Math::Vector2(), Math::Vector2()));
+
 	}
 	Player::~Player()
 	{

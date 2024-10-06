@@ -65,6 +65,7 @@ namespace Game
 
 	void Scene::AddCamera(Camera* const camera)
 	{
+		assert(camera);
 		for (size_t i = 0; i < m_VecCameras.size(); ++i)
 		{
 			if (m_VecCameras[i]->GetName() == camera->GetName())

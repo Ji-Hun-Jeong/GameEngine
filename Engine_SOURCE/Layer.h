@@ -28,6 +28,8 @@ namespace Game
 		std::map< std::string, GameObject*>& GetGameObjects() { return m_MapGameObjects; }
 
 	private:
+		// 일단 요소 별로 없으니까 map으로 하고 나중에 요소가 많아질 것 같다 싶으면 unordered_map으로 바꾸자
+		// 아니근데 해시충돌도 그만큼 많이 일어날텐데 그냥 map이 낫지않나... 일단 나중에 다시 생각합시다
 		std::map<std::string, GameObject*> m_MapGameObjects;
 	};
 }

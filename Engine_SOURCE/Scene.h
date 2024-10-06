@@ -1,12 +1,12 @@
 #pragma once
+#include <memory>
+
 #include "BackGround.h"
 #include "Bitmap.h"
 #include "Camera.h"
-#include "Entity.h"
 #include "GameObject.h"
 #include "KeyMgr.h"
 #include "MouseMgr.h"
-#include "Player.h"
 #include "SceneMgr.h"
 #include "Layer.h"
 

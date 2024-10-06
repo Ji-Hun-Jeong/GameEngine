@@ -46,7 +46,10 @@ namespace Game
 		const float groundY = monsterColliderPos.y - monsterColliderSize.y / 2.0f + dt;
 		const float playerFoot = ownerTransform->GetPos().y + ownerTransform->GetSize().y / 2.0f;
 		Math::Vector2 ownerPos = ownerTransform->GetPos();
+
 		RigidBody* const rigidBody = m_Owner->GetComponent<RigidBody*>("RigidBody");
+		rigidBody->SetCoeff(Vector2(1000.0f, 10.0f));
+
 		if (groundY > playerFoot)
 		{
 			Vector2 v = rigidBody->GetVelocity();
@@ -58,6 +61,9 @@ namespace Game
 	}
 	void PlayerCollider::ExitCollision(const MonsterCollider* const collider)
 	{
+		RigidBody* const rigidBody = m_Owner->GetComponent<RigidBody*>("RigidBody");
+		Vector2 c = rigidBody->GetCoeff();
+		rigidBody->SetCoeff(Vector2(700.0f, 10.0f));
 		//cout << "Exit Player <- MonsterCollider\n";
 	}
 }

@@ -1,437 +1,473 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="CommonInclude">
+    <Filter Include="1. CommonInclude">
       <UniqueIdentifier>{5bc0050c-d82e-4f9c-902e-fa7f2538942b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject">
-      <UniqueIdentifier>{56659890-c0be-45f2-8c9b-f2d8935cd014}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component">
-      <UniqueIdentifier>{e05a3603-f3c5-4924-9888-2901fa99d16d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entity">
-      <UniqueIdentifier>{8cb449ff-eae7-466b-9577-e0eef8669842}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{3d24dea4-bf81-4bea-ad5f-2b0596618aa9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\Player">
-      <UniqueIdentifier>{6bd357c0-7bc3-430f-81a0-5f20c6bdea5c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager">
+    <Filter Include="2. Manager">
       <UniqueIdentifier>{3f2b444b-73f9-4801-8aae-d81ed25059e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager\SceneMgr">
+    <Filter Include="2. Manager\SceneMgr">
       <UniqueIdentifier>{0e187777-caee-4d05-98dc-3ebe272a7444}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager\KeyMgr">
+    <Filter Include="2. Manager\KeyMgr">
       <UniqueIdentifier>{9542921c-0eb0-4e23-9103-93ef7bde182e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager\MouseMgr">
+    <Filter Include="2. Manager\MouseMgr">
       <UniqueIdentifier>{68ca8c92-0186-44c2-9703-1e6f582950b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager\TimeMgr">
+    <Filter Include="2. Manager\TimeMgr">
       <UniqueIdentifier>{01dfabd1-a061-4554-aab6-16e08050a252}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Bitmap">
-      <UniqueIdentifier>{2accad72-ca93-42b3-911c-cec3b9b94c29}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\RenderComponent">
-      <UniqueIdentifier>{a689af2b-be7d-4836-af8e-cf281ea70398}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\RenderComponent\BasicRederer">
-      <UniqueIdentifier>{20e4fa30-04dd-462f-bc2a-20633b09f904}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\RenderComponent\SpriteRenderer">
-      <UniqueIdentifier>{3bc9c42a-993e-40d2-a912-c17e6f0a6d27}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\PathMgr">
+    <Filter Include="2. Manager\PathMgr">
       <UniqueIdentifier>{bca345c0-f7d6-4ce3-8179-fd6a53429ca4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager\ResourceMgr">
+    <Filter Include="2. Manager\ResourceMgr">
       <UniqueIdentifier>{f4762990-9412-41f1-97e3-e87e71ae8c75}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource">
-      <UniqueIdentifier>{02dc3129-4d1e-45b6-977f-fd5c13be660d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource\Texture">
-      <UniqueIdentifier>{99e81e00-b47f-49bb-bff7-c9ea4c5ed29c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\RenderComponent\Animator">
-      <UniqueIdentifier>{0b08627f-f4f2-48e7-965e-9f6e1c3e4ffd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\RenderComponent\BackGroundRenderer">
-      <UniqueIdentifier>{ba336eab-ab51-4030-9f92-bd9686cb9be8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\BackGround">
-      <UniqueIdentifier>{ebf9a405-00b4-415c-bb56-7ddd4922358d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\Camera">
-      <UniqueIdentifier>{9ea95bb0-76ff-4ac1-b49a-c3d598f738b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\MouseDrager">
-      <UniqueIdentifier>{29410a45-625a-4d00-84ff-be8f5e637f82}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\AnimationGenerator">
-      <UniqueIdentifier>{20f69a34-eb11-450e-9fc0-5ef5e3f2a745}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entity\Layer">
-      <UniqueIdentifier>{ae9d1d38-af51-47f2-b10a-de0bc3aa35df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\AnimationGenerator\Frame">
-      <UniqueIdentifier>{5041106a-ea56-4f09-a578-02087527c05d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\FileMgr">
+    <Filter Include="2. Manager\FileMgr">
       <UniqueIdentifier>{ebc07914-96e1-4a92-b09b-2e78808cce2d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Collider">
-      <UniqueIdentifier>{db651cee-9454-4acd-b646-c2b3d2ad6084}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\TransformComponent">
-      <UniqueIdentifier>{be3aaf8e-28c0-43a9-8142-7e80e958c026}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\TransformComponent\PlayerTransform">
-      <UniqueIdentifier>{9a0d244e-0e1d-48bc-a679-97197ae2ca9b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\TransformComponent\BackGroundTransform">
-      <UniqueIdentifier>{2dbccd0a-fc9f-42d0-99cf-b87fedff262f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\TransformComponent\CameraTransform">
-      <UniqueIdentifier>{75f7be85-12ca-4e81-a94b-9791e2610d03}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\TransformComponent\MouseDragTransform">
-      <UniqueIdentifier>{f634403b-482d-4c85-bac5-4b53b176efd0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component\TransformComponent\FrameTransform">
-      <UniqueIdentifier>{d324f3cc-0a2f-4ee2-8a5a-952d6e2ef38c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\CollisionMgr">
+    <Filter Include="2. Manager\CollisionMgr">
       <UniqueIdentifier>{8cff11d2-43af-4f8c-a427-a498092bd943}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Collider\PlayerCollider">
-      <UniqueIdentifier>{2b3525ae-9f99-44e9-bffc-1c891927c73f}</UniqueIdentifier>
+    <Filter Include="3. GameObject">
+      <UniqueIdentifier>{56659890-c0be-45f2-8c9b-f2d8935cd014}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Collider\CollisionFunc">
-      <UniqueIdentifier>{1ca4e36a-8753-4621-b2fb-9566c8bc4aea}</UniqueIdentifier>
+    <Filter Include="3. GameObject\Player">
+      <UniqueIdentifier>{6bd357c0-7bc3-430f-81a0-5f20c6bdea5c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Collider\BackGroundCollider">
-      <UniqueIdentifier>{1733fa76-f768-4ab3-8192-ce065546a6c6}</UniqueIdentifier>
+    <Filter Include="3. GameObject\BackGround">
+      <UniqueIdentifier>{ebf9a405-00b4-415c-bb56-7ddd4922358d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject\Monster">
+    <Filter Include="3. GameObject\Camera">
+      <UniqueIdentifier>{9ea95bb0-76ff-4ac1-b49a-c3d598f738b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3. GameObject\MouseDrager">
+      <UniqueIdentifier>{29410a45-625a-4d00-84ff-be8f5e637f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3. GameObject\AnimationGenerator">
+      <UniqueIdentifier>{20f69a34-eb11-450e-9fc0-5ef5e3f2a745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3. GameObject\AnimationGenerator\Frame">
+      <UniqueIdentifier>{5041106a-ea56-4f09-a578-02087527c05d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3. GameObject\Monster">
       <UniqueIdentifier>{ef477088-51f9-458c-91c8-a12ea6a64731}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Collider\MonsterCollider">
+    <Filter Include="5. Scene">
+      <UniqueIdentifier>{3d24dea4-bf81-4bea-ad5f-2b0596618aa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component">
+      <UniqueIdentifier>{e05a3603-f3c5-4924-9888-2901fa99d16d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\RenderComponent">
+      <UniqueIdentifier>{a689af2b-be7d-4836-af8e-cf281ea70398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\RenderComponent\BasicRederer">
+      <UniqueIdentifier>{20e4fa30-04dd-462f-bc2a-20633b09f904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\RenderComponent\SpriteRenderer">
+      <UniqueIdentifier>{3bc9c42a-993e-40d2-a912-c17e6f0a6d27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\RenderComponent\Animator">
+      <UniqueIdentifier>{0b08627f-f4f2-48e7-965e-9f6e1c3e4ffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\RenderComponent\BackGroundRenderer">
+      <UniqueIdentifier>{ba336eab-ab51-4030-9f92-bd9686cb9be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\Collider">
+      <UniqueIdentifier>{db651cee-9454-4acd-b646-c2b3d2ad6084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\Collider\PlayerCollider">
+      <UniqueIdentifier>{2b3525ae-9f99-44e9-bffc-1c891927c73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\Collider\CollisionFunc">
+      <UniqueIdentifier>{1ca4e36a-8753-4621-b2fb-9566c8bc4aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\Collider\BackGroundCollider">
+      <UniqueIdentifier>{1733fa76-f768-4ab3-8192-ce065546a6c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\Collider\MonsterCollider">
       <UniqueIdentifier>{b54f6553-bdc6-48df-aee7-3a95e9155763}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\MoveComponent">
+    <Filter Include="4. Component\TransformComponent">
+      <UniqueIdentifier>{be3aaf8e-28c0-43a9-8142-7e80e958c026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\TransformComponent\PlayerTransform">
+      <UniqueIdentifier>{9a0d244e-0e1d-48bc-a679-97197ae2ca9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\TransformComponent\BackGroundTransform">
+      <UniqueIdentifier>{2dbccd0a-fc9f-42d0-99cf-b87fedff262f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\TransformComponent\CameraTransform">
+      <UniqueIdentifier>{75f7be85-12ca-4e81-a94b-9791e2610d03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\TransformComponent\MouseDragTransform">
+      <UniqueIdentifier>{f634403b-482d-4c85-bac5-4b53b176efd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\TransformComponent\FrameTransform">
+      <UniqueIdentifier>{d324f3cc-0a2f-4ee2-8a5a-952d6e2ef38c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Component\MoveComponent">
       <UniqueIdentifier>{2ef44c21-1fe6-4105-82aa-a178c3eeb7bc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\MoveComponent\PlayerMove">
+    <Filter Include="4. Component\MoveComponent\PlayerMove">
       <UniqueIdentifier>{20432e08-756e-472e-8cdf-c4deb5108dcb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\MoveComponent\MouseDrag">
+    <Filter Include="4. Component\MoveComponent\MouseDrag">
       <UniqueIdentifier>{6eeb3e72-199a-4ea0-bb88-c11f5039145b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\MoveComponent\CameraMove">
+    <Filter Include="4. Component\MoveComponent\CameraMove">
       <UniqueIdentifier>{e84d8238-8657-4e12-8a36-677164ec7391}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\RigidBody">
+    <Filter Include="4. Component\RigidBody">
       <UniqueIdentifier>{d7309911-7a80-4f5b-a56e-63e0704bcc16}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\RigidBody\BasicRigidBody">
+    <Filter Include="4. Component\RigidBody\BasicRigidBody">
       <UniqueIdentifier>{b9bff92b-1bad-4af9-8c68-0ef748cdfc00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="6. Resource">
+      <UniqueIdentifier>{02dc3129-4d1e-45b6-977f-fd5c13be660d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="6. Resource\Texture">
+      <UniqueIdentifier>{99e81e00-b47f-49bb-bff7-c9ea4c5ed29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8. Entity">
+      <UniqueIdentifier>{8cb449ff-eae7-466b-9577-e0eef8669842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8. Entity\Layer">
+      <UniqueIdentifier>{ae9d1d38-af51-47f2-b10a-de0bc3aa35df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9. Bitmap">
+      <UniqueIdentifier>{2accad72-ca93-42b3-911c-cec3b9b94c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="7. Factory">
+      <UniqueIdentifier>{e397638b-3392-45a6-869e-5e78e14e7bf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="7. Factory\PlayerFactory">
+      <UniqueIdentifier>{8aa9f54c-5903-4293-8963-881ced406677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="7. Factory\MonsterFactory">
+      <UniqueIdentifier>{a8e5b3a0-aefb-46d9-8b4f-c867dcd2162e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="7. Factory\CameraFactory">
+      <UniqueIdentifier>{fd8451ba-a9d6-4f92-896e-3872ca3e28b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
-      <Filter>CommonInclude</Filter>
+      <Filter>1. CommonInclude</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h">
-      <Filter>Entity</Filter>
+      <Filter>8. Entity</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h">
-      <Filter>Manager\MouseMgr</Filter>
+      <Filter>2. Manager\MouseMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h">
-      <Filter>Manager\KeyMgr</Filter>
+      <Filter>2. Manager\KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneMgr.h">
-      <Filter>Manager\SceneMgr</Filter>
+      <Filter>2. Manager\SceneMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Player.h">
-      <Filter>GameObject\Player</Filter>
+      <Filter>3. GameObject\Player</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MyMath.h">
-      <Filter>CommonInclude</Filter>
+      <Filter>1. CommonInclude</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerTransform.h">
-      <Filter>Component\TransformComponent\PlayerTransform</Filter>
+      <Filter>4. Component\TransformComponent\PlayerTransform</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRenderer.h">
-      <Filter>Component\RenderComponent\BasicRederer</Filter>
+      <Filter>4. Component\RenderComponent\BasicRederer</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h">
-      <Filter>CommonInclude</Filter>
+      <Filter>1. CommonInclude</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)TimeMgr.h">
-      <Filter>Manager\TimeMgr</Filter>
+      <Filter>2. Manager\TimeMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h">
-      <Filter>Scene</Filter>
+      <Filter>5. Scene</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Bitmap.h">
-      <Filter>Bitmap</Filter>
+      <Filter>9. Bitmap</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SpriteRenderer.h">
-      <Filter>Component\RenderComponent\SpriteRenderer</Filter>
+      <Filter>4. Component\RenderComponent\SpriteRenderer</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)PathMgr.h">
-      <Filter>Manager\PathMgr</Filter>
+      <Filter>2. Manager\PathMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceMgr.h">
-      <Filter>Manager\ResourceMgr</Filter>
+      <Filter>2. Manager\ResourceMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h">
-      <Filter>GameObject</Filter>
+      <Filter>3. GameObject</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
-      <Filter>Component</Filter>
+      <Filter>4. Component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Resource.h">
-      <Filter>Resource</Filter>
+      <Filter>6. Resource</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)RenderComponent.h">
-      <Filter>Component\RenderComponent</Filter>
+      <Filter>4. Component\RenderComponent</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h">
-      <Filter>Resource\Texture</Filter>
+      <Filter>6. Resource\Texture</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Animator.h">
-      <Filter>Component\RenderComponent\Animator</Filter>
+      <Filter>4. Component\RenderComponent\Animator</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h">
-      <Filter>Component\RenderComponent\BackGroundRenderer</Filter>
+      <Filter>4. Component\RenderComponent\BackGroundRenderer</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGround.h">
-      <Filter>GameObject\BackGround</Filter>
+      <Filter>3. GameObject\BackGround</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundTransform.h">
-      <Filter>Component\TransformComponent\BackGroundTransform</Filter>
+      <Filter>4. Component\TransformComponent\BackGroundTransform</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Camera.h">
-      <Filter>GameObject\Camera</Filter>
+      <Filter>3. GameObject\Camera</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)CameraTransform.h">
-      <Filter>Component\TransformComponent\CameraTransform</Filter>
+      <Filter>4. Component\TransformComponent\CameraTransform</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h">
-      <Filter>Component\TransformComponent\CameraTransform</Filter>
+      <Filter>4. Component\TransformComponent\CameraTransform</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrager.h">
-      <Filter>GameObject\MouseDrager</Filter>
+      <Filter>3. GameObject\MouseDrager</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseDragTransform.h">
-      <Filter>Component\TransformComponent\MouseDragTransform</Filter>
+      <Filter>4. Component\TransformComponent\MouseDragTransform</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimationGenerator.h">
-      <Filter>GameObject\AnimationGenerator</Filter>
+      <Filter>3. GameObject\AnimationGenerator</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h">
-      <Filter>Entity\Layer</Filter>
+      <Filter>8. Entity\Layer</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Frame.h">
-      <Filter>GameObject\AnimationGenerator\Frame</Filter>
+      <Filter>3. GameObject\AnimationGenerator\Frame</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)FrameTransform.h">
-      <Filter>Component\TransformComponent\FrameTransform</Filter>
+      <Filter>4. Component\TransformComponent\FrameTransform</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)TransformComponent.h">
-      <Filter>Component\TransformComponent</Filter>
+      <Filter>4. Component\TransformComponent</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileMgr.h">
-      <Filter>Manager\FileMgr</Filter>
+      <Filter>2. Manager\FileMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Collider.h">
-      <Filter>Component\Collider</Filter>
+      <Filter>4. Component\Collider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)CollisionMgr.h">
-      <Filter>Manager\CollisionMgr</Filter>
+      <Filter>2. Manager\CollisionMgr</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerCollider.h">
-      <Filter>Component\Collider\PlayerCollider</Filter>
+      <Filter>4. Component\Collider\PlayerCollider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)CollisionFunc.h">
-      <Filter>Component\Collider\CollisionFunc</Filter>
+      <Filter>4. Component\Collider\CollisionFunc</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundCollider.h">
-      <Filter>Component\Collider\BackGroundCollider</Filter>
+      <Filter>4. Component\Collider\BackGroundCollider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Monster.h">
-      <Filter>GameObject\Monster</Filter>
+      <Filter>3. GameObject\Monster</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MonsterCollider.h">
-      <Filter>Component\Collider\MonsterCollider</Filter>
+      <Filter>4. Component\Collider\MonsterCollider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MoveComponent.h">
-      <Filter>Component\MoveComponent</Filter>
+      <Filter>4. Component\MoveComponent</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerMove.h">
-      <Filter>Component\MoveComponent\PlayerMove</Filter>
+      <Filter>4. Component\MoveComponent\PlayerMove</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrag.h">
-      <Filter>Component\MoveComponent\MouseDrag</Filter>
+      <Filter>4. Component\MoveComponent\MouseDrag</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)CameraMove.h">
-      <Filter>Component\MoveComponent\CameraMove</Filter>
+      <Filter>4. Component\MoveComponent\CameraMove</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)RigidBody.h">
-      <Filter>Component\RigidBody</Filter>
+      <Filter>4. Component\RigidBody</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRigidBody.h">
-      <Filter>Component\RigidBody\BasicRigidBody</Filter>
+      <Filter>4. Component\RigidBody\BasicRigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Factory.h">
+      <Filter>7. Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerFactory.h">
+      <Filter>7. Factory\PlayerFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MonsterFactory.h">
+      <Filter>7. Factory\MonsterFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CameraFactory.h">
+      <Filter>7. Factory\CameraFactory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp">
-      <Filter>Entity</Filter>
+      <Filter>8. Entity</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp">
-      <Filter>Manager\MouseMgr</Filter>
+      <Filter>2. Manager\MouseMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp">
-      <Filter>Manager\KeyMgr</Filter>
+      <Filter>2. Manager\KeyMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneMgr.cpp">
-      <Filter>Manager\SceneMgr</Filter>
+      <Filter>2. Manager\SceneMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp">
-      <Filter>GameObject\Player</Filter>
+      <Filter>3. GameObject\Player</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerTransform.cpp">
-      <Filter>Component\TransformComponent\PlayerTransform</Filter>
+      <Filter>4. Component\TransformComponent\PlayerTransform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRenderer.cpp">
-      <Filter>Component\RenderComponent\BasicRederer</Filter>
+      <Filter>4. Component\RenderComponent\BasicRederer</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TimeMgr.cpp">
-      <Filter>Manager\TimeMgr</Filter>
+      <Filter>2. Manager\TimeMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp">
-      <Filter>Scene</Filter>
+      <Filter>5. Scene</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Bitmap.cpp">
-      <Filter>Bitmap</Filter>
+      <Filter>9. Bitmap</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SpriteRenderer.cpp">
-      <Filter>Component\RenderComponent\SpriteRenderer</Filter>
+      <Filter>4. Component\RenderComponent\SpriteRenderer</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PathMgr.cpp">
-      <Filter>Manager\PathMgr</Filter>
+      <Filter>2. Manager\PathMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ResourceMgr.cpp">
-      <Filter>Manager\ResourceMgr</Filter>
+      <Filter>2. Manager\ResourceMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp">
-      <Filter>GameObject</Filter>
+      <Filter>3. GameObject</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
-      <Filter>Component</Filter>
+      <Filter>4. Component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Resource.cpp">
-      <Filter>Resource</Filter>
+      <Filter>6. Resource</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)RenderComponent.cpp">
-      <Filter>Component\RenderComponent</Filter>
+      <Filter>4. Component\RenderComponent</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp">
-      <Filter>Resource\Texture</Filter>
+      <Filter>6. Resource\Texture</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp">
-      <Filter>Component\RenderComponent\Animator</Filter>
+      <Filter>4. Component\RenderComponent\Animator</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp">
-      <Filter>Component\RenderComponent\BackGroundRenderer</Filter>
+      <Filter>4. Component\RenderComponent\BackGroundRenderer</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGround.cpp">
-      <Filter>GameObject\BackGround</Filter>
+      <Filter>3. GameObject\BackGround</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundTransform.cpp">
-      <Filter>Component\TransformComponent\BackGroundTransform</Filter>
+      <Filter>4. Component\TransformComponent\BackGroundTransform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Camera.cpp">
-      <Filter>GameObject\Camera</Filter>
+      <Filter>3. GameObject\Camera</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)CameraTransform.cpp">
-      <Filter>Component\TransformComponent\CameraTransform</Filter>
+      <Filter>4. Component\TransformComponent\CameraTransform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp">
-      <Filter>Component\TransformComponent\CameraTransform</Filter>
+      <Filter>4. Component\TransformComponent\CameraTransform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrager.cpp">
-      <Filter>GameObject\MouseDrager</Filter>
+      <Filter>3. GameObject\MouseDrager</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDragTransform.cpp">
-      <Filter>Component\TransformComponent\MouseDragTransform</Filter>
+      <Filter>4. Component\TransformComponent\MouseDragTransform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimationGenerator.cpp">
-      <Filter>GameObject\AnimationGenerator</Filter>
+      <Filter>3. GameObject\AnimationGenerator</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp">
-      <Filter>Entity\Layer</Filter>
+      <Filter>8. Entity\Layer</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Frame.cpp">
-      <Filter>GameObject\AnimationGenerator\Frame</Filter>
+      <Filter>3. GameObject\AnimationGenerator\Frame</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)FrameTransform.cpp">
-      <Filter>Component\TransformComponent\FrameTransform</Filter>
+      <Filter>4. Component\TransformComponent\FrameTransform</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TransformComponent.cpp">
-      <Filter>Component\TransformComponent</Filter>
+      <Filter>4. Component\TransformComponent</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)FileMgr.cpp">
-      <Filter>Manager\FileMgr</Filter>
+      <Filter>2. Manager\FileMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Collider.cpp">
-      <Filter>Component\Collider</Filter>
+      <Filter>4. Component\Collider</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)CollisionMgr.cpp">
-      <Filter>Manager\CollisionMgr</Filter>
+      <Filter>2. Manager\CollisionMgr</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerCollider.cpp">
-      <Filter>Component\Collider\PlayerCollider</Filter>
+      <Filter>4. Component\Collider\PlayerCollider</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)CollisionFunc.cpp">
-      <Filter>Component\Collider\CollisionFunc</Filter>
+      <Filter>4. Component\Collider\CollisionFunc</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundCollider.cpp">
-      <Filter>Component\Collider\BackGroundCollider</Filter>
+      <Filter>4. Component\Collider\BackGroundCollider</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Monster.cpp">
-      <Filter>GameObject\Monster</Filter>
+      <Filter>3. GameObject\Monster</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MonsterCollider.cpp">
-      <Filter>Component\Collider\MonsterCollider</Filter>
+      <Filter>4. Component\Collider\MonsterCollider</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MoveComponent.cpp">
-      <Filter>Component\MoveComponent</Filter>
+      <Filter>4. Component\MoveComponent</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerMove.cpp">
-      <Filter>Component\MoveComponent\PlayerMove</Filter>
+      <Filter>4. Component\MoveComponent\PlayerMove</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrag.cpp">
-      <Filter>Component\MoveComponent\MouseDrag</Filter>
+      <Filter>4. Component\MoveComponent\MouseDrag</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)CameraMove.cpp">
-      <Filter>Component\MoveComponent\CameraMove</Filter>
+      <Filter>4. Component\MoveComponent\CameraMove</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)RigidBody.cpp">
-      <Filter>Component\RigidBody</Filter>
+      <Filter>4. Component\RigidBody</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRigidBody.cpp">
-      <Filter>Component\RigidBody\BasicRigidBody</Filter>
+      <Filter>4. Component\RigidBody\BasicRigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Factory.cpp">
+      <Filter>7. Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerFactory.cpp">
+      <Filter>7. Factory\PlayerFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MonsterFactory.cpp">
+      <Filter>7. Factory\MonsterFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CameraFactory.cpp">
+      <Filter>7. Factory\CameraFactory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

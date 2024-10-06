@@ -24,6 +24,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)BasicRigidBody.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Bitmap.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Camera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CameraFactory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CameraMove.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CameraTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Collider.h" />
@@ -32,6 +33,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Factory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FileMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Frame.h" />
@@ -42,6 +44,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Monster.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MonsterCollider.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MonsterFactory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrag.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseDragTransform.h" />
@@ -51,6 +54,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)PathMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Player.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerCollider.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerFactory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerMove.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PlayerTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)RenderComponent.h" />
@@ -76,6 +80,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)BasicRigidBody.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Bitmap.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Camera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CameraFactory.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CameraMove.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CameraTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Collider.cpp" />
@@ -83,6 +88,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)CollisionMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Factory.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FileMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Frame.cpp" />
@@ -93,6 +99,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Monster.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MonsterCollider.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MonsterFactory.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrag.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDragTransform.cpp" />
@@ -101,6 +108,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)PathMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerCollider.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerFactory.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerMove.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PlayerTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)RenderComponent.cpp" />
