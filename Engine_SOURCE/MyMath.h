@@ -88,7 +88,7 @@ namespace Game
 				assert(x);
 				return Vector2(this->x / x, this->y / x);
 			}
-			Vector2 Abs()
+			Vector2 Abs() const
 			{
 				return Vector2(std::abs(x), std::abs(y));
 			}

@@ -1,40 +1,37 @@
 #include "Animator.h"
 #include "TimeMgr.h"
 #include "FileMgr.h"
+#include "StateController.h"
+#include "State.h"
+#include "Animation.h"
 
 namespace Game
 {
-	Animator::Animator(GameObject* owner, float changeTime)
+	Animator::Animator(GameObject* owner)
 		: RenderComponent(owner)
-		, m_ChangeTime(changeTime)
-		, m_MeasureTime(0.0f)
 	{
-		m_VecTextureCutInfo.reserve(10);
+		
 	}
 	Animator::~Animator()
 	{
+		Utility::DeleteMap<std::string, Animation*>(m_MapAnimations);
 	}
 	void Animator::Render(HDC dc, const TransformComponent* const transform)
 	{
-		assert(m_Texture);
-		m_MeasureTime += TimeMgr::GetInst().DeltaTime();
-		if (m_ChangeTime < m_MeasureTime)
-		{
-			m_AnimateFrame += 1;
-			m_AnimateFrame = m_AnimateFrame >= m_VecTextureCutInfo.size() ? 0 : m_AnimateFrame;
-			m_MeasureTime = 0.0f;
-		}
+		const StateController* const stateController = m_Owner->GetComponent<StateController*>("StateController");
+		State* curState = stateController->GetCurState();
 
-		Gdiplus::Rect finalRect = transform->GetFinalRectInMYC();
-		const Gdiplus::Rect& cutInfo = m_VecTextureCutInfo[m_AnimateFrame];
+		auto iter = m_MapAnimations.find(curState->GetName());
+		assert(iter->second);
 
-		TransparentBlt(dc, finalRect.X, finalRect.Y, finalRect.Width, finalRect.Height
-			, m_Texture->GetBitmapDc()
-			, cutInfo.X, cutInfo.Y
-			, cutInfo.Width, cutInfo.Height, MAGENTA);
+		Animation* const curAnimation = iter->second;
+
+		curAnimation->Render(dc, transform);
 	}
-	void Animator::AddTextureCutInfoByFile(const std::string& fileName)
+	void Animator::AddAnimation(Animation* const animation)
 	{
-		FileMgr::GetInst().SaveToVectorByFile<Gdiplus::Rect>(m_VecTextureCutInfo, fileName);
+		assert(animation);
+		auto pair = m_MapAnimations.insert(std::make_pair(animation->GetName(), animation));
+		assert(pair.second);
 	}
 }

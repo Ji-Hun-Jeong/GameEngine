@@ -16,10 +16,9 @@ namespace Game
 		monster->SetPos(pos);
 		monster->SetSize(size);
 
-		Animator* animator = new Animator(monster, 0.1f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerRun.txt");
+		/*Animator* animator = new Animator(monster);
 		monster->SetRenderComponent(animator);
-		monster->SetTexture("PlayerTexture");
+		monster->SetTexture("PlayerTexture");*/
 
 		MonsterCollider* collider = new MonsterCollider(monster, 0);
 		monster->AddCollider(collider);

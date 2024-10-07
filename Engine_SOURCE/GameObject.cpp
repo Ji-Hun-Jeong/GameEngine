@@ -5,12 +5,15 @@
 #include "Camera.h"
 #include "Collider.h"
 #include "RigidBody.h"
+#include "StateController.h"
 
 namespace Game
 {
 	GameObject::GameObject(const std::string& name)
 		: Entity(name)
 		, m_MoveComponent(nullptr)
+		, m_RigidBody(nullptr)
+		, m_StateController(nullptr)
 		, m_TransformComponent(nullptr)
 		, m_RenderComponent(nullptr)
 	{
@@ -37,6 +40,15 @@ namespace Game
 			delete m_RigidBody;
 		m_RigidBody = rigidBody;
 		m_MapComponents.insert_or_assign(m_RigidBody->GetName(), m_RigidBody);
+	}
+
+	void GameObject::SetStateController(StateController* const stateController)
+	{
+		assert(stateController);
+		if (m_StateController)
+			delete m_StateController;
+		m_StateController = stateController;
+		m_MapComponents.insert_or_assign(m_StateController->GetName(), m_StateController);
 	}
 
 	void GameObject::SetTransformComponent(TransformComponent* const transformComponent)
@@ -125,6 +137,8 @@ namespace Game
 			m_MoveComponent->Move(dt);
 		if (m_RigidBody)
 			m_RigidBody->Update(dt);
+		if (m_StateController)
+			m_StateController->Update();
 	}
 
 	void GameObject::PostUpdate(float dt, Camera* const curCamera)

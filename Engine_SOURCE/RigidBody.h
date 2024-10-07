@@ -25,11 +25,14 @@ namespace Game
 		void SetCoeff(const Vector2& coeff) { m_Coeff = coeff; }
 		void AddCoeff(const Vector2& coeff) { m_Coeff += coeff; }
 
+		void OnGround(bool onGround);
+
 		const Vector2& GetForce() const { return m_Force; }
 		const Vector2& GetActionForce() const { return m_ActionForce; }
 		const Vector2& GetAccel() const { return m_Accel; }
 		const Vector2& GetVelocity() const  { return m_Velocity; }
 		const Vector2& GetCoeff() const  { return m_Coeff; }
+		bool IsOnGround() const { return m_Ground; }
 
 	protected:
 		Vector2 m_Force;
@@ -41,6 +44,8 @@ namespace Game
 		float m_MaxSpeed;
 		float m_Mass;
 		float m_Gravity;	// 이건 나중에 게임 전체적인 클래스로 만드는게..?
+
+		bool m_Ground;
 	};
 }
 

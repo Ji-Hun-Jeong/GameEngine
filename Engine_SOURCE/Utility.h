@@ -19,9 +19,10 @@ namespace Game
 		{
 			for (size_t i = 0; i < vec.size(); ++i)
 			{
-				if (vec[i] == nullptr)
-					assert(0);
-				delete vec[i];
+				if (vec[i])
+					delete vec[i];
+				else
+					std::cout << "Vec[i] == nullptr\n";
 			}
 			vec.clear();
 		}

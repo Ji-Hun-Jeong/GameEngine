@@ -26,7 +26,10 @@ namespace Game
 		if (keyMgr.GetKeyState(eKeyType::Right, eButtonState::Hold))
 			f.x += 1000000.0f;
 		if (keyMgr.GetKeyState(eKeyType::Up, eButtonState::Tap))
+		{
+			ownerRigidBody->OnGround(false);
 			f.y += -1000000.0f;
+		}
 
 		ownerRigidBody->AddForce(f);
 	}

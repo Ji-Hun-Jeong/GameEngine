@@ -9,6 +9,7 @@ namespace Game
 	class MoveComponent;
 	class RigidBody;
 	class TransformComponent;
+	class StateController;
 	class RenderComponent;
 	class Camera;
 	class Collider;
@@ -25,6 +26,7 @@ namespace Game
 		
 		void SetMoveComponent(MoveComponent* const moveComponent);
 		void SetRigidBody(RigidBody* const rigidBody);
+		void SetStateController(StateController* const stateController);
 		void SetTransformComponent(TransformComponent* const transformComponent);
 		void SetRenderComponent(RenderComponent* const renderComponent);
 		void AddCollider(Collider* const collider);
@@ -48,6 +50,7 @@ namespace Game
 		std::vector<Collider*> m_VecColliders;
 		MoveComponent* m_MoveComponent;
 		RigidBody* m_RigidBody;
+		StateController* m_StateController;
 		TransformComponent* m_TransformComponent;
 		RenderComponent* m_RenderComponent;
 	};

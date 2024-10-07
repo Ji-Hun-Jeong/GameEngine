@@ -15,8 +15,10 @@ namespace Game
 
 		void SetTexture(const std::string& textureName);
 		Math::Vector2 GetTextureSize();
+
 	protected:
 		Texture* m_Texture;
+
 	};
 }
 

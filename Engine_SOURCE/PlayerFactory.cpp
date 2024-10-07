@@ -4,7 +4,12 @@
 #include "PlayerMove.h"
 #include "PlayerTransform.h"
 #include "BasicRigidBody.h"
+#include "StateController.h"
 #include "Animator.h"
+#include "IdleState.h"
+#include "JumpState.h"
+#include "WalkState.h"
+#include "Animation.h"
 
 namespace Game
 {
@@ -24,10 +29,34 @@ namespace Game
 		RigidBody* rigidBody = new BasicRigidBody(player);
 		player->SetRigidBody(rigidBody);
 
-		Animator* animator = new Animator(player, 0.1f);
-		animator->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
+		StateController* stateController = new StateController(player);
+		player->SetStateController(stateController);
+
+		Animator* animator = new Animator(player);
 		player->SetRenderComponent(animator);
-		player->SetTexture("PlayerTexture");
+
+		State* state = new IdleState(stateController);
+		Animation* animation = new Animation(state->GetName(), 0.1f);
+		animation->SetTexture("PlayerTexture");
+		animation->AddTextureCutInfoByFile("Animation/PlayerIdle1.txt");
+		animator->AddAnimation(animation);
+		stateController->AddState(state);
+
+		state = new JumpState(stateController);
+		animation = new Animation(state->GetName(), 0.1f);
+		animation->SetTexture("PlayerTexture");
+		animation->AddTextureCutInfoByFile("Animation/PlayerDead.txt");
+		animator->AddAnimation(animation);
+		stateController->AddState(state);
+
+		state = new WalkState(stateController);
+		animation = new Animation(state->GetName(), 0.1f);
+		animation->SetTexture("PlayerTexture");
+		animation->AddTextureCutInfoByFile("Animation/PlayerWalk.txt");
+		animator->AddAnimation(animation);
+		stateController->AddState(state);
+
+		stateController->ChangeState("Idle");
 
 		Collider* collider = new PlayerCollider(player, 0);
 		player->AddCollider(collider);

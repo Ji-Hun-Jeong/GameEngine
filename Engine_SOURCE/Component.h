@@ -11,6 +11,7 @@ namespace Game
 
 	public:
 		static Gdiplus::Rect GetRectInMYC(const Math::Vector2& pos, const Math::Vector2& size);
+		GameObject* GetOwner() const { return m_Owner; }
 
 	protected:
 		GameObject* m_Owner;
