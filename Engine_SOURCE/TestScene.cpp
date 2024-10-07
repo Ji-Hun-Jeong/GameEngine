@@ -22,17 +22,11 @@ namespace Game
 			Math::Vector2(640.0f, 360.0f), Math::Vector2(100.0f, 100.0f)));
 		
 		factory = std::make_unique<MonsterFactory>();
-		GameObject* monster = factory->CreateObject(
-			Math::Vector2(640.0f, 460.0f), Math::Vector2(100.0f, 100.0f));
-		AddGameObject(eLayerType::Monster, monster);
+
+		AddGameObject(eLayerType::Monster, factory->CreateObject(
+			Math::Vector2(640.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
 		AddGameObject(eLayerType::Monster, factory->CreateObject(
 			Math::Vector2(740.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
-		monster = monster->GetClone();
-		monster->SetPos(Math::Vector2(100.0f, 100.0f));
-		AddGameObject(eLayerType::Monster, monster);
-		monster = monster->GetClone();
-		monster->SetPos(Math::Vector2(200.0f, 100.0f));
-		AddGameObject(eLayerType::Monster, monster);
 
 		GameObject* backGround = new BackGround;
 		backGround->SetRenderComponent(new BackGroundRenderer);

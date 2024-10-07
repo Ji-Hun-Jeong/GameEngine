@@ -4,6 +4,8 @@
 #include "AnimationGenerator.h"
 #include "CollisionMgr.h"
 #include "MouseDrag.h"
+#include "MouseDragTransform.h"
+#include "CameraFactory.h"
 
 namespace Game
 {
@@ -18,10 +20,13 @@ namespace Game
 		AddGameObject(eLayerType::BackGround, obj);
 		
 		obj = new AnimationGenerator;
+		obj->SetTransformComponent(new MouseDragTransform(Math::Vector2(), Math::Vector2()));
 		obj->SetMoveComponent(new MouseDrag);
 		AddGameObject(eLayerType::Entity, obj);
 
-		Camera* camera = new Camera;
+		std::unique_ptr<Factory> factory = std::make_unique<CameraFactory>();
+		Camera* camera = static_cast<Camera*>(factory->CreateObject(
+			Math::Vector2(640.0f, 360.0f), Math::Vector2(1280.0f, 720.0f)));
 		AddCamera(camera);
 		SetCurCamera(camera);
 

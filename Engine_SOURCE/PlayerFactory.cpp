@@ -43,9 +43,9 @@ namespace Game
 		stateController->AddState(state);
 
 		state = new JumpState(stateController);
-		animation = new Animation(state->GetName(), 0.1f);
+		animation = new Animation(state->GetName(), 0.2f);
 		animation->SetTexture("PlayerTexture");
-		animation->AddTextureCutInfoByFile("Animation/PlayerDead.txt");
+		animation->AddTextureCutInfoByFile("Animation/PlayerJump.txt");
 		animator->AddAnimation(animation);
 		stateController->AddState(state);
 

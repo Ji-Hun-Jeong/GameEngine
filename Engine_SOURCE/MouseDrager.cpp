@@ -11,6 +11,7 @@ namespace Game
 		, m_CompleteMakeRect(false)
 	{
 		SetTransformComponent(new MouseDragTransform(Math::Vector2(), Math::Vector2()));
+		SetMoveComponent(new MouseDrag);
 		SetRenderComponent(new BasicRenderer);
 	}
 
