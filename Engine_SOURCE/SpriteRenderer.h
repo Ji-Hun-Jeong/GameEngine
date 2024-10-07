@@ -4,8 +4,10 @@ namespace Game
 {
 	class SpriteRenderer : public RenderComponent
 	{
+		CLONE(RenderComponent, SpriteRenderer)
 	public:
-		explicit SpriteRenderer(GameObject* owner);
+		SpriteRenderer();
+		SpriteRenderer(const SpriteRenderer&) = default;
 		~SpriteRenderer();
 
 	public:

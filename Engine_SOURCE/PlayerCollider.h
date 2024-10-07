@@ -6,8 +6,10 @@ namespace Game
 	class PlayerCollider : public Collider
 	{
 		COLLIDERDEFINE;
+		CLONE(Collider, PlayerCollider)
 	public:
-		PlayerCollider(GameObject* owner, UINT numOfCollider);
+		PlayerCollider(UINT numOfCollider);
+		PlayerCollider(const PlayerCollider&) = default;
 		~PlayerCollider();
 
 	public:

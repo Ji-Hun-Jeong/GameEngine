@@ -6,6 +6,7 @@ namespace Game
 	{
 	public:
 		explicit TestScene(UINT width, UINT height);
+		TestScene(const TestScene&) = delete;
 		~TestScene();
 
 	public:

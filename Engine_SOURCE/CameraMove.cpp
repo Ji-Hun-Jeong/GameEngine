@@ -4,12 +4,8 @@
 
 namespace Game
 {
-	CameraMove::CameraMove(GameObject* owner)
-		: MoveComponent(owner)
-	{
-	}
-	CameraMove::CameraMove(const CameraMove& other)
-		: MoveComponent(other)
+	CameraMove::CameraMove()
+		: MoveComponent()
 	{
 	}
 	CameraMove::~CameraMove()

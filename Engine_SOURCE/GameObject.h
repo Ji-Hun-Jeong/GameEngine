@@ -17,9 +17,11 @@ namespace Game
 	{
 	public:
 		GameObject(const std::string& name);
+		GameObject(const GameObject& other);
 		virtual ~GameObject() = 0;
 
 	public:
+		virtual GameObject* GetClone() const = 0;
 		virtual void Update(float dt);
 		virtual void PostUpdate(float dt, Camera* const curCamera);
 		virtual void Render(HDC dc);

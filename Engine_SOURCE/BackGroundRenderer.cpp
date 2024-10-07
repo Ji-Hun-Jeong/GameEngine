@@ -2,8 +2,8 @@
 
 namespace Game
 {
-	BackGroundRenderer::BackGroundRenderer(GameObject* owner)
-		: RenderComponent(owner)
+	BackGroundRenderer::BackGroundRenderer()
+		: RenderComponent()
 	{
 	}
 	BackGroundRenderer::~BackGroundRenderer()

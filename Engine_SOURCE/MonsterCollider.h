@@ -5,8 +5,10 @@ namespace Game
 	class MonsterCollider : public Collider
 	{
 		COLLIDERDEFINE;
+		CLONE(Collider, MonsterCollider)
 	public:
-		MonsterCollider(GameObject* owner, UINT numOfCollider);
+		MonsterCollider(UINT numOfCollider);
+		MonsterCollider(const MonsterCollider&) = default;
 		~MonsterCollider();
 
 	public:

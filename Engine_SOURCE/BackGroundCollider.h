@@ -5,8 +5,10 @@ namespace Game
 	class BackGroundCollider : public Collider
 	{
 		COLLIDERDEFINE;
+		CLONE(Collider, BackGroundCollider)
 	public:
-		BackGroundCollider(GameObject* owner, UINT numOfCollider);
+		BackGroundCollider(UINT numOfCollider);
+		BackGroundCollider(const BackGroundCollider&) = default;
 		~BackGroundCollider();
 
 	public:

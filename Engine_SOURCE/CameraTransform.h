@@ -4,8 +4,10 @@ namespace Game
 {
 	class CameraTransform : public TransformComponent
 	{
+		CLONE(TransformComponent, CameraTransform)
 	public:
-		explicit CameraTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit CameraTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		CameraTransform(const CameraTransform&) = default;
 		~CameraTransform();
 
 	public:

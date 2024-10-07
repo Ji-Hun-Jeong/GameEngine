@@ -4,12 +4,8 @@
 
 namespace Game
 {
-	PlayerMove::PlayerMove(GameObject* owner)
-		: MoveComponent(owner)
-	{
-	}
-	PlayerMove::PlayerMove(const PlayerMove& other)
-		: MoveComponent(other)
+	PlayerMove::PlayerMove()
+		: MoveComponent()
 	{
 	}
 	PlayerMove::~PlayerMove()

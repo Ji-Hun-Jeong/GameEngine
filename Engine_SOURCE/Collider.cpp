@@ -4,8 +4,8 @@
 #include "BasicRenderer.h"
 namespace Game
 {
-	Collider::Collider(GameObject* owner, UINT numOfCollider)
-		: Component(owner, "Collider" + std::to_string(numOfCollider))
+	Collider::Collider(UINT numOfCollider)
+		: Component("Collider" + std::to_string(numOfCollider))
 		, m_PermitRender(true)
 		, m_ColliderUniqueNumber(0)
 	{

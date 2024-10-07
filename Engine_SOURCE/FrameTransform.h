@@ -4,8 +4,10 @@ namespace Game
 {
 	class FrameTransform : public TransformComponent
 	{
+		CLONE(TransformComponent, FrameTransform)
 	public:
-		explicit FrameTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit FrameTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		FrameTransform(const FrameTransform&) = default;
 		virtual ~FrameTransform();
 
 	public:

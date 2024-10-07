@@ -3,8 +3,8 @@
 
 namespace Game
 {
-	SpriteRenderer::SpriteRenderer(GameObject* owner)
-		: RenderComponent(owner)
+	SpriteRenderer::SpriteRenderer()
+		: RenderComponent()
 	{
 	}
 

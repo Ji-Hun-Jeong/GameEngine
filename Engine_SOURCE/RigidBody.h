@@ -6,11 +6,12 @@ namespace Game
 	class RigidBody : public Component
 	{
 	public:
-		RigidBody(GameObject* owner);
-		RigidBody(const RigidBody& other);
+		RigidBody();
+		RigidBody(const RigidBody&) = default;
 		virtual ~RigidBody();
 
 	public:
+		virtual RigidBody* GetClone() const = 0;
 		virtual void Update(float dt) = 0;
 
 		void SetForce(const Vector2& force) { m_Force = force; }

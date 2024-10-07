@@ -4,8 +4,10 @@ namespace Game
 {
 	class MouseDragTransform : public TransformComponent
 	{
+		CLONE(TransformComponent, MouseDragTransform)
 	public:
-		explicit MouseDragTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit MouseDragTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		MouseDragTransform(const MouseDragTransform&) = default;
 		~MouseDragTransform();
 
 	public:

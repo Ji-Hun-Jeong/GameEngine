@@ -1,11 +1,11 @@
 #include "Component.h"
 namespace Game
 {
-	Component::Component(GameObject* owner, const std::string& name)
+	Component::Component(const std::string& name)
 		: Entity(name)
-		, m_Owner(owner)
+		, m_Owner(nullptr)
 	{}
-	Component::Component(const Component & other)
+	Component::Component(const Component& other)
 		: Entity(other)
 		, m_Owner(other.m_Owner)
 	{

@@ -4,8 +4,10 @@ namespace Game
 {
 	class BasicRenderer : public RenderComponent
 	{
+		CLONE(RenderComponent, BasicRenderer)
 	public:
-		explicit BasicRenderer(GameObject* owner);
+		BasicRenderer();
+		BasicRenderer(const BasicRenderer&) = default;
 		~BasicRenderer();
 
 	public:

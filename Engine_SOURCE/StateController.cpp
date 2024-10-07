@@ -3,10 +3,24 @@
 
 namespace Game
 {
-	StateController::StateController(GameObject* owner)
-		: Component(owner, "StateController")
+	StateController::StateController()
+		: Component("StateController")
 		, m_CurState(nullptr)
 	{
+	}
+	StateController::StateController(const StateController& other)
+		: Component(other)
+		, m_CurState(nullptr)
+	{
+		const std::map<std::string, State*>& om = other.m_MapStates;
+		State* state = nullptr;
+		for (auto iter = om.begin(); iter != om.end(); ++iter)
+		{
+			state = iter->second->GetClone();
+			state->SetOwnerController(this);
+			m_MapStates.insert(std::make_pair(state->GetName(), state));
+		}
+		m_CurState = m_MapStates.find(other.m_CurState->GetName())->second;
 	}
 	StateController::~StateController()
 	{

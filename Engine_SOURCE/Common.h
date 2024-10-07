@@ -43,6 +43,9 @@
 						void ExitCollisionDeliverOther(Collider* const otherCollider) const override\
 						{otherCollider->ExitCollision(this);}
 
+#define CLONE(Parent, Type) public:\
+						Parent* GetClone() const {return new Type(*this);}
+
 namespace Game
 {
 	enum class eButtonState

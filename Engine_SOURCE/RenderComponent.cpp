@@ -3,9 +3,14 @@
 
 namespace Game
 {
-	RenderComponent::RenderComponent(GameObject* owner)
-		: Component(owner, "Render")
+	RenderComponent::RenderComponent()
+		: Component("Render")
 		, m_Texture(nullptr)
+	{
+	}
+	RenderComponent::RenderComponent(const RenderComponent& other)
+		: Component(other)
+		, m_Texture(other.m_Texture)
 	{
 	}
 	RenderComponent::~RenderComponent()

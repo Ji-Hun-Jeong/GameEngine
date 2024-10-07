@@ -3,12 +3,8 @@
 
 namespace Game
 {
-	BasicRigidBody::BasicRigidBody(GameObject* owner)
-		: RigidBody(owner)
-	{
-	}
-	BasicRigidBody::BasicRigidBody(const BasicRigidBody& other)
-		: RigidBody(other)
+	BasicRigidBody::BasicRigidBody()
+		: RigidBody()
 	{
 	}
 	BasicRigidBody::~BasicRigidBody()

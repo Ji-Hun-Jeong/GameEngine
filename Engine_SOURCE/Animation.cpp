@@ -19,6 +19,7 @@ namespace Game
 
 	Animation::Animation(const Animation& other)
 		: Entity(other)
+		, m_VecTextureCutInfo(other.m_VecTextureCutInfo)
 		, m_AnimateFrame(other.m_AnimateFrame)
 		, m_ChangeTime(other.m_ChangeTime)
 		, m_MeasureTime(other.m_MeasureTime)

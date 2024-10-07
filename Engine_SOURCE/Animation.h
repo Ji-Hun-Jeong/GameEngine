@@ -7,7 +7,7 @@ namespace Game
 	class Animation : public Entity
 	{
 	public:
-		Animation(const std::string& name, float changeTime);
+		explicit Animation(const std::string& name, float changeTime);
 		Animation(const Animation& other);
 		~Animation();
 

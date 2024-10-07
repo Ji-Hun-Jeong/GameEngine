@@ -5,11 +5,12 @@ namespace Game
 	class TransformComponent : public Component
 	{
 	public:
-		TransformComponent(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
-		TransformComponent(const TransformComponent& other);
+		TransformComponent(const Math::Vector2& pos, const Math::Vector2& size);
+		TransformComponent(const TransformComponent&) = default;
 		virtual ~TransformComponent();
 
 	public:
+		virtual TransformComponent* GetClone() const = 0;
 		virtual void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) = 0;
 
 		void SetPos(const Math::Vector2& pos) { m_Pos = pos; }
@@ -27,7 +28,6 @@ namespace Game
 		Math::Vector2 m_Pos;
 		Math::Vector2 m_FinalPos;
 		Math::Vector2 m_Size;
-
 
 	};
 }

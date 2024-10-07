@@ -4,8 +4,9 @@ namespace Game
 {
 	class MouseDrag : public MoveComponent
 	{
+		CLONE(MoveComponent, MouseDrag)
 	public:
-		explicit MouseDrag(GameObject* owner);
+		MouseDrag();
 		MouseDrag(const MouseDrag& other);
 		~MouseDrag();
 

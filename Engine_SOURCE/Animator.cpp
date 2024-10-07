@@ -7,10 +7,21 @@
 
 namespace Game
 {
-	Animator::Animator(GameObject* owner)
-		: RenderComponent(owner)
+	Animator::Animator()
+		: RenderComponent()
 	{
 		
+	}
+	Animator::Animator(const Animator& other)
+		: RenderComponent(other)
+	{
+		const std::map<std::string, Animation*>& om = other.m_MapAnimations;
+		Animation* animation = nullptr;
+		for (auto iter = om.begin(); iter != om.end(); ++iter)
+		{
+			animation = new Animation(*iter->second);
+			m_MapAnimations.insert(std::make_pair(animation->GetName(), animation));
+		}
 	}
 	Animator::~Animator()
 	{

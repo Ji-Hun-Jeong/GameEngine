@@ -4,8 +4,10 @@ namespace Game
 {
 	class Camera : public GameObject
 	{
+		CLONE(GameObject, Camera)
 	public:
 		Camera();
+		Camera(const Camera&) = default;
 		~Camera();
 
 	private:

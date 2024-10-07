@@ -3,18 +3,10 @@
 
 namespace Game
 {
-	TransformComponent::TransformComponent(GameObject* owner
-		, const Math::Vector2& pos, const Math::Vector2& size)
-		: Component(owner, "Transform")
+	TransformComponent::TransformComponent(const Math::Vector2& pos, const Math::Vector2& size)
+		: Component("Transform")
 		, m_Pos(pos)
 		, m_Size(size)
-	{
-	}
-	TransformComponent::TransformComponent(const TransformComponent& other)
-		: Component(other)
-		, m_Pos(other.m_Pos)
-		, m_FinalPos(other.m_FinalPos)
-		, m_Size(other.m_Size)
 	{
 	}
 	TransformComponent::~TransformComponent()

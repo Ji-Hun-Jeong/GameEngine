@@ -7,6 +7,7 @@ namespace Game
 	{
 	public:
 		explicit Texture(const std::string& textureName, const std::string& fileName);
+		Texture(const Texture&) = default;
 		~Texture();
 
 	public:

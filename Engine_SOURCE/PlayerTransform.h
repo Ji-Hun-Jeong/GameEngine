@@ -4,8 +4,10 @@ namespace Game
 {
 	class PlayerTransform : public TransformComponent
 	{
+		CLONE(TransformComponent, PlayerTransform)
 	public:
-		explicit PlayerTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit PlayerTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		PlayerTransform(const PlayerTransform&) = default;
 		~PlayerTransform();
 		
 	public:

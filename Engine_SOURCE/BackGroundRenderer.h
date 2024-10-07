@@ -4,8 +4,10 @@ namespace Game
 {
 	class BackGroundRenderer : public RenderComponent
 	{
+		CLONE(RenderComponent, BackGroundRenderer)
 	public:
-		explicit BackGroundRenderer(GameObject* owner);
+		explicit BackGroundRenderer();
+		BackGroundRenderer(const BackGroundRenderer&) = default;
 		~BackGroundRenderer();
 
 	public:

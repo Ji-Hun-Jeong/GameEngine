@@ -9,14 +9,14 @@ namespace Game
 	{
 		Camera* camera = new Camera;
 
-		CameraTransform* cameraTransform = new CameraTransform(camera, Math::Vector2(), Math::Vector2());
+		CameraTransform* cameraTransform = new CameraTransform(Math::Vector2(), Math::Vector2());
 
 		camera->SetTransformComponent(cameraTransform);
 
 		camera->SetPos(pos);
 		camera->SetSize(size);
 
-		MoveComponent* move = new CameraMove(camera);
+		MoveComponent* move = new CameraMove;
 		camera->SetMoveComponent(move);
 		return camera;
 	}

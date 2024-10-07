@@ -4,9 +4,10 @@ namespace Game
 {
 	class BasicRigidBody : public RigidBody
 	{
+		CLONE(RigidBody, BasicRigidBody)
 	public:
-		BasicRigidBody(GameObject* owner);
-		BasicRigidBody(const BasicRigidBody& other);
+		BasicRigidBody();
+		BasicRigidBody(const BasicRigidBody&) = default;
 		~BasicRigidBody();
 
 	public:

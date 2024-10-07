@@ -5,12 +5,14 @@ namespace Game
 	class MoveComponent : public Component
 	{
 	public:
-		MoveComponent(GameObject* owner);
-		MoveComponent(const MoveComponent& other);
+		MoveComponent();
+		MoveComponent(const MoveComponent& other) = default;
 		virtual ~MoveComponent();
 
 	public:
+		virtual MoveComponent* GetClone() const = 0;
 		virtual void Move(float dt) = 0;
+
 	};
 }
 

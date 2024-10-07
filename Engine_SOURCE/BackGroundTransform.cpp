@@ -2,9 +2,8 @@
 
 namespace Game
 {
-	BackGroundTransform::BackGroundTransform(GameObject* owner
-		, const Math::Vector2& pos, const Math::Vector2& size)
-		: TransformComponent(owner, pos, size)
+	BackGroundTransform::BackGroundTransform(const Math::Vector2& pos, const Math::Vector2& size)
+		: TransformComponent(pos, size)
 	{
 	}
 	BackGroundTransform::~BackGroundTransform()

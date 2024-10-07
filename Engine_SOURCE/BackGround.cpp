@@ -11,7 +11,7 @@ namespace Game
 	BackGround::BackGround()
 		: GameObject("BackGround"+std::to_string(s_numOfBackGround++))
 	{
-		SetTransformComponent(new BackGroundTransform(this, Math::Vector2(), Math::Vector2()));
+		SetTransformComponent(new BackGroundTransform(Math::Vector2(), Math::Vector2()));
 	}
 	BackGround::~BackGround()
 	{

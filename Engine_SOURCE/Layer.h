@@ -16,6 +16,7 @@ namespace Game
 	{
 	public:
 		Layer();
+		Layer(const Layer& other) = delete;
 		~Layer();
 
 	public:

@@ -2,8 +2,8 @@
 
 namespace Game
 {
-	BackGroundCollider::BackGroundCollider(GameObject* owner, UINT numOfCollider)
-		: Collider(owner, numOfCollider)
+	BackGroundCollider::BackGroundCollider(UINT numOfCollider)
+		: Collider(numOfCollider)
 	{
 	}
 	BackGroundCollider::~BackGroundCollider()

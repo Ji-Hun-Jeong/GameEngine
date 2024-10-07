@@ -7,6 +7,7 @@ namespace Game
 	public:
 		explicit Bitmap(const std::string& fileName);
 		explicit Bitmap(UINT width, UINT height);
+		Bitmap(const Bitmap& other) = default;
 		~Bitmap();
 
 	public:

@@ -4,8 +4,10 @@ namespace Game
 {
 	class MouseDrager :	public GameObject
 	{
+		CLONE(GameObject, MouseDrager)
 	public:
 		MouseDrager();
+		MouseDrager(const MouseDrager&) = default;
 		~MouseDrager();
 
 	public:

@@ -9,16 +9,19 @@ namespace Game
 	class Collider : public Component, public CollisionFunc
 	{
 	public:
-		Collider(GameObject* owner, UINT numOfCollider);
-		~Collider();
+		Collider(UINT numOfCollider);
+		Collider(const Collider&) = default;
+		virtual ~Collider();
 
 	public:
+		virtual Collider* GetClone() const = 0;
 		virtual void EnterCollisionDeliverOther(Collider* const otherCollider) const = 0;
 		virtual void OnCollisionDeliverOther(Collider* const otherCollider) const = 0;
 		virtual void ExitCollisionDeliverOther(Collider* const otherCollider) const = 0;
 
 		virtual void Update(float dt, const TransformComponent* const ownerTransformComponent);
 		virtual void Render(HDC dc);
+
 
 		const Math::Vector2& GetColliderPos() const;
 		const Math::Vector2& GetColliderFinalPos() const;

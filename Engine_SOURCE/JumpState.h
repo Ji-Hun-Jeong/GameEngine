@@ -4,6 +4,7 @@ namespace Game
 {
 	class JumpState : public State
 	{
+		CLONE(State, JumpState)
 	public:
 		JumpState(StateController* owner);
 		JumpState(const JumpState& other);

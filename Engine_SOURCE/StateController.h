@@ -5,9 +5,10 @@ namespace Game
 	class State;
 	class StateController : public Component
 	{
+		CLONE(StateController, StateController)
 	public:
-		explicit StateController(GameObject* owner);
-		StateController(const StateController& other) = delete;
+		StateController();
+		StateController(const StateController& other);
 		virtual ~StateController();
 
 	public:

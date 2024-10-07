@@ -17,22 +17,22 @@ namespace Game
 	{
 		Player* player = new Player;
 
-		PlayerTransform* playerTransform = new PlayerTransform(player, Math::Vector2(), Math::Vector2());
+		PlayerTransform* playerTransform = new PlayerTransform(Math::Vector2(), Math::Vector2());
 		player->SetTransformComponent(playerTransform);
 
 		player->SetPos(pos);
 		player->SetSize(size);
 
-		MoveComponent* move = new PlayerMove(player);
+		MoveComponent* move = new PlayerMove;
 		player->SetMoveComponent(move);
 
-		RigidBody* rigidBody = new BasicRigidBody(player);
+		RigidBody* rigidBody = new BasicRigidBody;
 		player->SetRigidBody(rigidBody);
 
-		StateController* stateController = new StateController(player);
+		StateController* stateController = new StateController;
 		player->SetStateController(stateController);
 
-		Animator* animator = new Animator(player);
+		Animator* animator = new Animator;
 		player->SetRenderComponent(animator);
 
 		State* state = new IdleState(stateController);
@@ -58,9 +58,9 @@ namespace Game
 
 		stateController->ChangeState("Idle");
 
-		Collider* collider = new PlayerCollider(player, 0);
+		Collider* collider = new PlayerCollider(0);
 		player->AddCollider(collider);
-
+		
 		return player;
 	}
 }

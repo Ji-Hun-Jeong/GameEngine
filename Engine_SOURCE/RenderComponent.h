@@ -7,10 +7,12 @@ namespace Game
 	class RenderComponent : public Component
 	{
 	public:
-		RenderComponent(GameObject* owner);
+		RenderComponent();
+		RenderComponent(const RenderComponent& other);
 		virtual ~RenderComponent();
 
 	public:
+		virtual RenderComponent* GetClone() const = 0;
 		virtual void Render(HDC dc, const TransformComponent* const transform) = 0;
 
 		void SetTexture(const std::string& textureName);

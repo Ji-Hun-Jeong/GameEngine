@@ -10,7 +10,7 @@ namespace Game
 	{
 		Monster* monster = new Monster;
 
-		BackGroundTransform* transform = new BackGroundTransform(monster, Math::Vector2(), Math::Vector2());
+		BackGroundTransform* transform = new BackGroundTransform(Math::Vector2(), Math::Vector2());
 		monster->SetTransformComponent(transform);
 
 		monster->SetPos(pos);
@@ -20,7 +20,7 @@ namespace Game
 		monster->SetRenderComponent(animator);
 		monster->SetTexture("PlayerTexture");*/
 
-		MonsterCollider* collider = new MonsterCollider(monster, 0);
+		MonsterCollider* collider = new MonsterCollider(0);
 		monster->AddCollider(collider);
 		return monster;
 	}

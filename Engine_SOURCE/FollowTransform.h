@@ -4,15 +4,17 @@ namespace Game
 {
 	class FollowTransform : public TransformComponent
 	{
+		CLONE(TransformComponent, FollowTransform)
 	public:
-		explicit FollowTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit FollowTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		FollowTransform(const FollowTransform&) = default;
 		~FollowTransform();
 
 	public:
 		void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) override;
 
 	private:
-		const TransformComponent* m_FollowObjectTransform;
+		// const TransformComponent* m_FollowObjectTransform;
 	};
 }
 

@@ -4,9 +4,10 @@ namespace Game
 {
 	class CameraMove : public MoveComponent
 	{
+		CLONE(MoveComponent, CameraMove)
 	public:
-		explicit CameraMove(GameObject* owner);
-		CameraMove(const CameraMove& other);
+		CameraMove();
+		CameraMove(const CameraMove& other) = default;
 		~CameraMove();
 
 	public:

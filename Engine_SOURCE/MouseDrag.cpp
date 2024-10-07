@@ -5,8 +5,8 @@
 
 namespace Game
 {
-	MouseDrag::MouseDrag(GameObject* owner)
-		: MoveComponent(owner)
+	MouseDrag::MouseDrag()
+		: MoveComponent()
 		, m_FinishDrag(false)
 		, m_StartDrag(false)
 	{

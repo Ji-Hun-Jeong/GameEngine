@@ -5,9 +5,11 @@ namespace Game
 	class Animation;
 	class Animator : public RenderComponent
 	{
+		CLONE(RenderComponent, Animator)
 	public:
-		explicit Animator(GameObject* owner);
-		virtual ~Animator();
+		explicit Animator();
+		Animator(const Animator& other);
+		~Animator();
 
 	public:
 		void Render(HDC dc, const TransformComponent* const transform) override;

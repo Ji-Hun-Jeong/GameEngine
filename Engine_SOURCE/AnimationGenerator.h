@@ -8,8 +8,10 @@ namespace Game
 	class Frame;
 	class AnimationGenerator : public GameObject
 	{
+		CLONE(GameObject, AnimationGenerator)
 	public:
 		AnimationGenerator();
+		AnimationGenerator(const AnimationGenerator& other);
 		~AnimationGenerator();
 
 	public:

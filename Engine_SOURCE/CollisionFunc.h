@@ -19,6 +19,7 @@ namespace Game
 		virtual void EnterCollision(const MonsterCollider* const collider);
 		virtual void OnCollision(const MonsterCollider* const collider);
 		virtual void ExitCollision(const MonsterCollider* const collider);
+
 	};
 }
 

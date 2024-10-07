@@ -4,9 +4,10 @@ namespace Game
 {
 	class PlayerMove : public MoveComponent
 	{
+		CLONE(MoveComponent, PlayerMove)
 	public:
-		explicit PlayerMove(GameObject* owner);
-		PlayerMove(const PlayerMove& other);
+		PlayerMove();
+		PlayerMove(const PlayerMove& other) = default;
 		~PlayerMove();
 
 	public:

@@ -10,8 +10,8 @@ namespace Game
 		: GameObject("MouseDrager")
 		, m_CompleteMakeRect(false)
 	{
-		SetTransformComponent(new MouseDragTransform(this, Math::Vector2(), Math::Vector2()));
-		SetRenderComponent(new BasicRenderer(this));
+		SetTransformComponent(new MouseDragTransform(Math::Vector2(), Math::Vector2()));
+		SetRenderComponent(new BasicRenderer);
 	}
 
 	MouseDrager::~MouseDrager()

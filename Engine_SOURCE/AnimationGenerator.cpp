@@ -13,9 +13,21 @@ namespace Game
 		: GameObject("AnimationGenerator")
 		, m_AnimationName("Attack")
 	{
-		SetRenderComponent(new BasicRenderer(this));
+		SetRenderComponent(new BasicRenderer);
 		m_VecFrames.reserve(10);
 		//m_VecAnimateFrames.reserve(10);
+	}
+	AnimationGenerator::AnimationGenerator(const AnimationGenerator& other)
+		: GameObject(other)
+		, m_MouseDrager(other.m_MouseDrager)
+		, m_VecFramesInfo(other.m_VecFramesInfo)
+		, m_AnimationName(other.m_AnimationName)
+	{
+		m_VecFrames.resize(other.m_VecFrames.size(), nullptr);
+		for (size_t i = 0; i < other.m_VecFrames.size(); ++i)
+		{
+			m_VecFrames[i] = new Frame(*other.m_VecFrames[i]);
+		}
 	}
 	AnimationGenerator::~AnimationGenerator()
 	{

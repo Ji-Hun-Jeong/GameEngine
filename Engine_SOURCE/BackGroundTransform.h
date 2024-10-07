@@ -4,8 +4,10 @@ namespace Game
 {
 	class BackGroundTransform :	public TransformComponent
 	{
+		CLONE(TransformComponent, BackGroundTransform)
 	public:
-		explicit BackGroundTransform(GameObject* owner, const Math::Vector2& pos, const Math::Vector2& size);
+		explicit BackGroundTransform(const Math::Vector2& pos, const Math::Vector2& size);
+		BackGroundTransform(const BackGroundTransform&) = default;
 		~BackGroundTransform();
 
 	public:

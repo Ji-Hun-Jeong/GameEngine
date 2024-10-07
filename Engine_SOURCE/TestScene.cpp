@@ -8,6 +8,7 @@
 #include "PlayerFactory.h"
 #include "MonsterFactory.h"
 #include "CameraFactory.h"
+#include "Monster.h"
 
 namespace Game
 {
@@ -21,14 +22,20 @@ namespace Game
 			Math::Vector2(640.0f, 360.0f), Math::Vector2(100.0f, 100.0f)));
 		
 		factory = std::make_unique<MonsterFactory>();
-		AddGameObject(eLayerType::Monster, factory->CreateObject(
-			Math::Vector2(640.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
+		GameObject* monster = factory->CreateObject(
+			Math::Vector2(640.0f, 460.0f), Math::Vector2(100.0f, 100.0f));
+		AddGameObject(eLayerType::Monster, monster);
 		AddGameObject(eLayerType::Monster, factory->CreateObject(
 			Math::Vector2(740.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
-
+		monster = monster->GetClone();
+		monster->SetPos(Math::Vector2(100.0f, 100.0f));
+		AddGameObject(eLayerType::Monster, monster);
+		monster = monster->GetClone();
+		monster->SetPos(Math::Vector2(200.0f, 100.0f));
+		AddGameObject(eLayerType::Monster, monster);
 
 		GameObject* backGround = new BackGround;
-		backGround->SetRenderComponent(new BackGroundRenderer(backGround));
+		backGround->SetRenderComponent(new BackGroundRenderer);
 		backGround->SetTexture("BackGroundTexture");
 		backGround->SetPos(Math::Vector2(1024.0f, 1024.0f));
 		backGround->SetSizeFromTexture();

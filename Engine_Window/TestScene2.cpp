@@ -11,14 +11,14 @@ namespace Game
 		: Scene("Test2", width, height)
 	{
 		GameObject* obj = new BackGround;
-		obj->SetRenderComponent(new BackGroundRenderer(obj));
+		obj->SetRenderComponent(new BackGroundRenderer);
 		obj->SetTexture("BackGroundTexture");
 		obj->SetSizeFromTexture();
 		obj->SetPos(Math::Vector2(Math::Vector2(1024.0f, 1024.0f)));
 		AddGameObject(eLayerType::BackGround, obj);
 		
 		obj = new AnimationGenerator;
-		obj->SetMoveComponent(new MouseDrag(obj));
+		obj->SetMoveComponent(new MouseDrag);
 		AddGameObject(eLayerType::Entity, obj);
 
 		Camera* camera = new Camera;

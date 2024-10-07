@@ -3,8 +3,8 @@
 
 namespace Game
 {
-	BasicRenderer::BasicRenderer(GameObject* owner)
-		: RenderComponent(owner)
+	BasicRenderer::BasicRenderer()
+		: RenderComponent()
 	{}
 	BasicRenderer::~BasicRenderer()
 	{

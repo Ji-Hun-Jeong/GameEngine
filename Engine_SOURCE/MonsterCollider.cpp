@@ -2,8 +2,8 @@
 
 namespace Game
 {
-	MonsterCollider::MonsterCollider(GameObject* owner, UINT numOfCollider)
-		: Collider(owner, numOfCollider)
+	MonsterCollider::MonsterCollider(UINT numOfCollider)
+		: Collider(numOfCollider)
 	{
 	}
 	MonsterCollider::~MonsterCollider()
