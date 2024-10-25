@@ -36,6 +36,7 @@ namespace Game
 		void SetTexture(const std::string& textureName);
 		void SetPos(const Math::Vector2& pos);
 		void SetSize(const Math::Vector2& size);
+		void SetOffset(const Math::Vector2& offset);
 		void SetSizeFromTexture();
 
 		const Math::Vector2& GetPos() const;

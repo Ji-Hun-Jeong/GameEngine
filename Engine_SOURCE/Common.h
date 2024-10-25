@@ -32,7 +32,11 @@
 								static Type inst;\
 								return inst;\
 							}\
-							~Type();
+							~Type();\
+							Type(const Type&) = delete;\
+							Type(Type&&) = delete;\
+							Type& operator = (const Type&) = delete;
+
 #define MAGENTA RGB(255,0,255)
 
 #define COLLIDERDEFINE public:\

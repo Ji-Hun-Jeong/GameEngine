@@ -133,7 +133,10 @@ namespace Game
 	{
 		m_TransformComponent->SetSize(size);
 	}
-
+	void GameObject::SetOffset(const Math::Vector2& offset)
+	{
+		m_TransformComponent->SetOffset(offset);
+	}
 	void GameObject::SetSizeFromTexture()
 	{
 		this->SetSize(m_RenderComponent->GetTextureSize());
@@ -161,6 +164,8 @@ namespace Game
 
 	void GameObject::Update(float dt)
 	{
+		if (m_TransformComponent)
+			m_TransformComponent->Update();
 		if (m_MoveComponent)
 			m_MoveComponent->Move(dt);
 		if (m_RigidBody)
@@ -174,8 +179,6 @@ namespace Game
 		assert(curCamera);
 
 		TransformComponent* const cameraTransform = curCamera->GetComponent<TransformComponent*>("Transform");
-
-		assert(cameraTransform);
 
 		if (m_TransformComponent)
 			m_TransformComponent->TransformByCamera(dt, cameraTransform);

@@ -17,11 +17,8 @@ namespace Game
 	{
 		Player* player = new Player;
 
-		PlayerTransform* playerTransform = new PlayerTransform(Math::Vector2(), Math::Vector2());
+		PlayerTransform* playerTransform = new PlayerTransform(pos, size);
 		player->SetTransformComponent(playerTransform);
-
-		player->SetPos(pos);
-		player->SetSize(size);
 
 		MoveComponent* move = new PlayerMove;
 		player->SetMoveComponent(move);

@@ -6,6 +6,7 @@
 #include "SceneMgr.h"
 #include "TimeMgr.h"
 #include "CollisionMgr.h"
+#include "UIMgr.h"
 
 namespace Game
 {
@@ -77,6 +78,7 @@ namespace Game
 		MouseMgr::GetInst().Update();
 		KeyMgr::GetInst().Update();
 		TimeMgr::GetInst().Update();
+		UIMgr::GetInst().Update();
 
 		CollisionMgr::GetInst().Update();
 		SceneMgr::GetInst().Update();

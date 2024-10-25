@@ -10,6 +10,9 @@
     <Filter Include="Scene\TestScene2">
       <UniqueIdentifier>{6c38a05c-f2b2-4874-84f4-8553092f69ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\TestScene3">
+      <UniqueIdentifier>{a6c4b942-4b82-45af-a832-440e8ece5037}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Engine_SOURCE\TestScene.cpp">
@@ -17,6 +20,9 @@
     </ClCompile>
     <ClCompile Include="TestScene2.cpp">
       <Filter>Scene\TestScene2</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene3.cpp">
+      <Filter>Scene\TestScene3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="TestScene2.h">
       <Filter>Scene\TestScene2</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene3.h">
+      <Filter>Scene\TestScene3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

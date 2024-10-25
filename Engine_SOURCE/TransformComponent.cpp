@@ -12,10 +12,15 @@ namespace Game
 	TransformComponent::~TransformComponent()
 	{
 	}
+	void TransformComponent::Update()
+	{
+		m_Pos += m_Offset;
+	}
 	void TransformComponent::CopyValue(TransformComponent* const other) const
 	{
 		other->m_Pos = m_Pos;
 		other->m_FinalPos = m_FinalPos;
+		other->m_Offset = m_Offset;
 		other->m_Size = m_Size;
 	}
 	Gdiplus::Rect TransformComponent::GetFinalRectInMYC() const

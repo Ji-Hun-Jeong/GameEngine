@@ -10,6 +10,7 @@ namespace Game
 		Entity,
 		Monster,
 		Player,
+		UI,
 		End = 16,
 	};
 	class Layer : public Entity
