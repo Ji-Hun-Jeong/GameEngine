@@ -6,7 +6,7 @@ namespace Game
 	{
 		CLONE(State, WalkState)
 	public:
-		WalkState(StateController* owner);
+		explicit WalkState(StateController* owner);
 		WalkState(const WalkState& other);
 		~WalkState();
 

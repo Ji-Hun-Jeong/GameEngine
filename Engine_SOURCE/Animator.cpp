@@ -33,7 +33,6 @@ namespace Game
 		State* curState = stateController->GetCurState();
 
 		auto iter = m_MapAnimations.find(curState->GetName());
-		assert(iter->second);
 
 		Animation* const curAnimation = iter->second;
 

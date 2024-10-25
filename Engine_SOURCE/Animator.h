@@ -7,7 +7,7 @@ namespace Game
 	{
 		CLONE(RenderComponent, Animator)
 	public:
-		explicit Animator();
+		Animator();
 		Animator(const Animator& other);
 		~Animator();
 

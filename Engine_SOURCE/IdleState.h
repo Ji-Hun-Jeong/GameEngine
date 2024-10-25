@@ -6,7 +6,7 @@ namespace Game
 	{
 		CLONE(State, IdleState)
 	public:
-		IdleState(StateController* owner);
+		explicit IdleState(StateController* owner);
 		IdleState(const IdleState& other);
 		~IdleState();
 

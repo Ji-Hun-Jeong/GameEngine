@@ -6,7 +6,7 @@ namespace Game
 	class State : public Entity
 	{
 	public:
-		explicit State(const std::string& name, StateController* owner);
+		State(const std::string& name, StateController* owner);
 		State(const State& other);
 		virtual ~State();
 
@@ -19,8 +19,16 @@ namespace Game
 		void SetOwnerController(StateController* const owner) { m_OwnerController = owner; }
 
 	protected:
+		template <typename T>
+		T GetOwnerComponent(const std::string& componentName) const;
+	protected:
 		StateController* m_OwnerController;
 	};
+	template<typename T>
+	inline T State::GetOwnerComponent(const std::string& componentName) const
+	{
+		return m_OwnerController->GetOwner()->GetComponent<T>(componentName);
+	}
 }
 
 

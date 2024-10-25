@@ -22,7 +22,7 @@ namespace Game
 	void JumpState::Update()
 	{
 		cout << "Jump\n";
-		RigidBody* const rigidBody = m_OwnerController->GetOwner()->GetComponent<RigidBody*>("RigidBody");
+		RigidBody* const rigidBody = GetOwnerComponent<RigidBody*>("RigidBody");
 		const Math::Vector2& velocity = rigidBody->GetVelocity();
 		const Math::Vector2& absVelocity = velocity.Abs();
 

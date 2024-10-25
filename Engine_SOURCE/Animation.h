@@ -24,6 +24,7 @@ namespace Game
 		size_t m_AnimateFrame;
 		float m_ChangeTime;
 		float m_MeasureTime;
+		bool m_FinishAnimation;
 
 		Texture* m_Texture;
 	};

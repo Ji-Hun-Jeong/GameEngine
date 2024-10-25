@@ -40,8 +40,12 @@ namespace Game
 	}
 	void Animation::Render(HDC dc, const TransformComponent* const transform)
 	{
-		assert(m_Texture);
+		m_FinishAnimation = false;
 		m_MeasureTime += TimeMgr::GetInst().DeltaTime();
+
+		if (m_AnimateFrame == m_VecTextureCutInfo.size())
+			m_FinishAnimation = true;
+
 		if (m_ChangeTime < m_MeasureTime)
 		{
 			m_AnimateFrame += 1;

@@ -54,7 +54,6 @@ namespace Game
 
 	void GameObject::SetMoveComponent(MoveComponent* const moveComponent)
 	{
-		assert(moveComponent);
 		if (m_MoveComponent)
 			delete m_MoveComponent;
 		m_MoveComponent = moveComponent;
@@ -64,7 +63,6 @@ namespace Game
 
 	void GameObject::SetRigidBody(RigidBody* const rigidBody)
 	{
-		assert(rigidBody);
 		if (m_RigidBody)
 			delete m_RigidBody;
 		m_RigidBody = rigidBody;
@@ -74,7 +72,6 @@ namespace Game
 
 	void GameObject::SetStateController(StateController* const stateController)
 	{
-		assert(stateController);
 		if (m_StateController)
 			delete m_StateController;
 		m_StateController = stateController;
@@ -84,7 +81,6 @@ namespace Game
 
 	void GameObject::SetTransformComponent(TransformComponent* const transformComponent)
 	{
-		assert(transformComponent);
 		if (m_TransformComponent)
 			delete m_TransformComponent;
 		m_TransformComponent = transformComponent;
@@ -94,7 +90,6 @@ namespace Game
 
 	void GameObject::SetRenderComponent(RenderComponent* const renderComponent)
 	{
-		assert(renderComponent);
 		if (m_RenderComponent)
 			delete m_RenderComponent;
 		m_RenderComponent = renderComponent;
@@ -104,7 +99,6 @@ namespace Game
 	void GameObject::AddCollider(Collider* const collider)
 	{
 		assert(m_TransformComponent);
-		assert(collider);
 		collider->SetOwner(this);
 		auto iter = m_MapComponents.find(collider->GetName());
 		if (iter != m_MapComponents.end())
