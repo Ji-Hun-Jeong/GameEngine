@@ -12,8 +12,7 @@ namespace Game
 	public:
 		virtual TransformComponent* GetClone() const = 0;
 		virtual void TransformByCamera(float dt, const TransformComponent* const curCameraTransform) = 0;
-
-		void Update();
+		void AdjustByOffset();
 
 		void SetPos(const Math::Vector2& pos) { m_Pos = pos; }
 		void SetSize(const Math::Vector2& size) { m_Size = size; }

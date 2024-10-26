@@ -10,7 +10,8 @@ namespace Game
 		virtual ~Factory() = default;
 
 	public:
-		virtual GameObject* CreateObject(const Math::Vector2& pos = Math::Vector2()
+		virtual GameObject* CreateObject(GameObject* obj
+			, const Math::Vector2& pos = Math::Vector2()
 			, const Math::Vector2& size = Math::Vector2()) = 0;
 
 	};

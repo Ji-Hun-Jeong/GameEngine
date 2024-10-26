@@ -9,6 +9,7 @@
 #include "MonsterFactory.h"
 #include "CameraFactory.h"
 #include "Monster.h"
+#include "Player.h"
 
 namespace Game
 {
@@ -18,14 +19,14 @@ namespace Game
 		// 생성자에 SetTexture있음
 		std::unique_ptr<Factory> factory = std::make_unique<PlayerFactory>();
 
-		AddGameObject(eLayerType::Player, factory->CreateObject(
+		AddGameObject(eLayerType::Player, factory->CreateObject(new Player,
 			Math::Vector2(640.0f, 360.0f), Math::Vector2(100.0f, 100.0f)));
 		
 		factory = std::make_unique<MonsterFactory>();
 
-		AddGameObject(eLayerType::Monster, factory->CreateObject(
+		AddGameObject(eLayerType::Monster, factory->CreateObject(new Monster,
 			Math::Vector2(640.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
-		AddGameObject(eLayerType::Monster, factory->CreateObject(
+		AddGameObject(eLayerType::Monster, factory->CreateObject(new Monster,
 			Math::Vector2(740.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
 
 		GameObject* backGround = new BackGround;
@@ -40,7 +41,7 @@ namespace Game
 
 		
 		factory = std::make_unique<CameraFactory>();
-		Camera* camera = static_cast<Camera*>(factory->CreateObject(
+		Camera* camera = static_cast<Camera*>(factory->CreateObject(new Camera,
 			Math::Vector2(640.0f, 360.0f), Math::Vector2(1280.0f, 720.0f)));
 		AddCamera(camera);
 		SetCurCamera(camera);

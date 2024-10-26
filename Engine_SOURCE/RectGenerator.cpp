@@ -1,32 +1,32 @@
-#include "MouseDrager.h"
+#include "RectGenerator.h"
 #include "MouseDragTransform.h"
-#include "MouseDrag.h"
+#include "MouseRect.h"
 #include "BasicRenderer.h"
 #include "Camera.h"
+#include "MouseMgr.h"
 
 namespace Game
 {
-	MouseDrager::MouseDrager()
-		: GameObject("MouseDrager")
+	RectGenerator::RectGenerator()
+		: GameObject("RectGenerator")
 		, m_CompleteMakeRect(false)
 	{
 		SetTransformComponent(new MouseDragTransform(Math::Vector2(), Math::Vector2()));
-		SetMoveComponent(new MouseDrag);
+		SetMoveComponent(new MouseRect);
 		SetRenderComponent(new BasicRenderer);
 	}
 
-	MouseDrager::~MouseDrager()
+	RectGenerator::~RectGenerator()
 	{
 	}
-	void MouseDrager::Update(float dt)
+	void RectGenerator::Update(float dt)
 	{
 		GameObject::Update(dt);
 	}
-	void MouseDrager::PostUpdate(float dt, Camera* const curCamera)
+	void RectGenerator::PostUpdate(float dt, Camera* const curCamera)
 	{
 		GameObject::PostUpdate(dt, curCamera);
-		MouseDrag* const mouseMove = static_cast<MouseDrag*>(m_MoveComponent);
-		m_CompleteMakeRect = mouseMove->IsReleased();
+		m_CompleteMakeRect = MouseMgr::GetInst().IsReleased();
 		if (m_CompleteMakeRect)
 		{
 			const Math::Vector2& cameraPos = curCamera->GetPos();
@@ -41,7 +41,7 @@ namespace Game
 			m_DragedRect.Height = static_cast<INT>(size.y);
 		}
 	}
-	void MouseDrager::Render(HDC dc)
+	void RectGenerator::Render(HDC dc)
 	{
 		GameObject::Render(dc);
 	}

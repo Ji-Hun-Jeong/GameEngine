@@ -33,6 +33,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CollisionMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DragUI.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Factory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FileMgr.h" />
@@ -45,12 +46,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MainUI.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Monster.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MonsterCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MonsterFactory.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrag.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)MouseDrager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseUIMove.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)RectGenerator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseDragTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MouseRect.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MoveComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseMgr.h" />
@@ -76,6 +79,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)UI.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)UIFactory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)UIMgr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)UIMove.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WalkState.h" />
   </ItemGroup>
@@ -98,6 +102,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)CollisionFunc.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CollisionMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DragUI.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Factory.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FileMgr.cpp" />
@@ -110,13 +115,15 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MainUI.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Monster.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MonsterCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MonsterFactory.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrag.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)MouseDrager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseUIMove.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)RectGenerator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseDragTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseMgr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MouseRect.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MoveComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PathMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
@@ -140,6 +147,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)UI.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIFactory.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIMgr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIMove.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WalkState.cpp" />
   </ItemGroup>
 </Project>

@@ -5,37 +5,36 @@ namespace Game
 	class UI : public GameObject
 	{
 		CLONE(GameObject, UI)
-	public:
-		UI();
+	protected:
+		UI(const std::string& name);
 		UI(const UI& other) = default;
+
+	public:
 		~UI();
 
 	public:
-		void Update(float dt) override;
-		void PostUpdate(float dt, Camera* const curCamera) override;
-		void Render(HDC dc) override;
+		virtual void Update(float dt) override;
+		virtual void PostUpdate(float dt, Camera* const curCamera) override;
+		virtual void Render(HDC dc) override;
+		virtual void EnterMouse();
+		virtual void OnMouse();
+		virtual void ExitMouse();
 
 		void AddChildUI(UI* const ui);
 
-		void EnterMouse();
-		void OnMouse();
-		void ExitMouse();
-
+		UI* GetOwnerUI() { return m_OwnerUI; }
 		const std::vector<UI*>& GetChildUI() const { return m_VecChildUI; }
 
-		void SetCurOn(bool curOn) { m_CurOn = curOn; }
-		bool IsCurOn() { return m_CurOn; }
-		void SetPrevOn(bool prevOn) { m_PrevOn = prevOn; }
-		bool IsPrevOn() { return m_PrevOn; }
+		bool IsCurFocus() { return m_CurFocus; }
+		void SetPrevFocus(bool prevFocus) { m_PrevFocus = prevFocus; }
+		bool IsPrevFocus() { return m_PrevFocus; }
 
 	protected:
 		std::vector<UI*> m_VecChildUI;
 		UI* m_OwnerUI;
 
-		bool m_CurOn;
-		bool m_PrevOn;
-
-		static UINT s_numOfUI;
+		bool m_CurFocus;
+		bool m_PrevFocus;
 	};
 }
 

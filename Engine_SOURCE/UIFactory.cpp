@@ -3,18 +3,24 @@
 #include "StaticTransform.h"
 #include "BasicRenderer.h"
 #include "BackGroundTransform.h"
+#include "UIMove.h"
+#include "MainUI.h"
 
 namespace Game
 {
-	GameObject* UIFactory::CreateObject(const Math::Vector2& pos, const Math::Vector2& size)
+	GameObject* UIFactory::CreateObject(GameObject* obj, const Math::Vector2& pos, const Math::Vector2& size)
 	{
-		UI* ui = new UI;
+		UI* ui = dynamic_cast<UI*>(obj);
+		assert(ui);
 
-		BackGroundTransform* transform = new BackGroundTransform(pos, size);
+		StaticTransform* transform = new StaticTransform(pos, size);
 		ui->SetTransformComponent(transform);
 
 		BasicRenderer* renderer = new BasicRenderer;
 		ui->SetRenderComponent(renderer);
+
+		UIMove* moveComponent = new UIMove;
+		ui->SetMoveComponent(moveComponent);
 
 		return ui;
 	}

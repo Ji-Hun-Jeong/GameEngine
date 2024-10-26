@@ -16,6 +16,7 @@ namespace Game
 	{
 
 	}
+
 	void UIMgr::Update()
 	{
 		const std::map<std::string, GameObject*>& uiMap =
@@ -29,29 +30,38 @@ namespace Game
 
 		if (focusUI)
 		{
-			bool isPrevOn = focusUI->IsPrevOn();
+			bool isPrevOn = focusUI->IsPrevFocus();
 			if (isPrevOn)
+			{
+				if (focusUI != m_PrevFocusUI)
+					focusUI->EnterMouse();
+
 				focusUI->OnMouse();
+			}
+				
 			else
 			{
-				focusUI->EnterMouse();
 				if (m_PrevFocusUI)
 					m_PrevFocusUI->ExitMouse();
+
+				focusUI->EnterMouse();	
 			}
 
 			for (auto ui : m_VecCurOnUI)
-				ui->SetPrevOn(true);
+				ui->SetPrevFocus(true);
 			m_VecCurOnUI.clear();
 		}
+
 		m_PrevFocusUI = focusUI;
 	}
+
 	UI* UIMgr::getFocusUI(std::queue<GameObject*>& uiQueue)
 	{
 		const Math::Vector2& mousePos = MouseMgr::GetInst().GetMousePos();
 
 		auto onMouse = [mousePos](GameObject* ui)->bool
 			{
-				Gdiplus::Rect rect = Component::GetRectInMYC(ui->GetPos(), ui->GetSize());
+				Gdiplus::Rect rect = Component::GetRectInMYC(ui->GetFinalPos(), ui->GetSize());
 
 				if (rect.GetLeft() <= mousePos.x && mousePos.x <= rect.GetRight()
 					&& rect.GetTop() <= mousePos.y && mousePos.y <= rect.GetBottom())
@@ -69,11 +79,12 @@ namespace Game
 			bool mouseInUI = onMouse(ui);
 			if (mouseInUI == false)
 			{
-				if (ui->IsPrevOn())
+				if (ui->IsPrevFocus())
 					ui->ExitMouse();
-				ui->SetPrevOn(false);
+				ui->SetPrevFocus(false);
 				continue;
 			}
+
 			m_VecCurOnUI.push_back(ui);
 
 			const std::vector<UI*>& childUI = ui->GetChildUI();

@@ -6,9 +6,10 @@
 
 namespace Game
 {
-	GameObject* MonsterFactory::CreateObject(const Math::Vector2& pos, const Math::Vector2& size)
+	GameObject* MonsterFactory::CreateObject(GameObject* obj, const Math::Vector2& pos, const Math::Vector2& size)
 	{
-		Monster* monster = new Monster;
+		Monster* monster = dynamic_cast<Monster*>(obj);
+		assert(monster);
 
 		BackGroundTransform* transform = new BackGroundTransform(Math::Vector2(), Math::Vector2());
 		monster->SetTransformComponent(transform);

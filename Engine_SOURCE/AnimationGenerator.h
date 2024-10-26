@@ -1,6 +1,6 @@
 #pragma once
 #include "GameObject.h"
-#include "MouseDrager.h"
+#include "RectGenerator.h"
 
 namespace Game
 {
@@ -20,7 +20,7 @@ namespace Game
 		void Render(HDC dc) override;
 
 	private:
-		MouseDrager m_MouseDrager;
+		RectGenerator m_MouseDrager;
 		std::vector<Frame*> m_VecFrames;
 		std::vector<Gdiplus::Rect> m_VecFramesInfo;
 		std::string m_AnimationName;

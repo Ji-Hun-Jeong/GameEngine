@@ -1,9 +1,9 @@
 #include "TestScene2.h"
 #include "BackGroundRenderer.h"
-#include "MouseDrager.h"
+#include "RectGenerator.h"
 #include "AnimationGenerator.h"
 #include "CollisionMgr.h"
-#include "MouseDrag.h"
+#include "MouseRect.h"
 #include "MouseDragTransform.h"
 #include "CameraFactory.h"
 
@@ -21,11 +21,11 @@ namespace Game
 		
 		obj = new AnimationGenerator;
 		obj->SetTransformComponent(new MouseDragTransform(Math::Vector2(), Math::Vector2()));
-		obj->SetMoveComponent(new MouseDrag);
+		obj->SetMoveComponent(new MouseRect);
 		AddGameObject(eLayerType::Entity, obj);
 
 		std::unique_ptr<Factory> factory = std::make_unique<CameraFactory>();
-		Camera* camera = static_cast<Camera*>(factory->CreateObject(
+		Camera* camera = static_cast<Camera*>(factory->CreateObject(new Camera,
 			Math::Vector2(640.0f, 360.0f), Math::Vector2(1280.0f, 720.0f)));
 		AddCamera(camera);
 		SetCurCamera(camera);

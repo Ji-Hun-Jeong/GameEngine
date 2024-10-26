@@ -5,9 +5,10 @@
 
 namespace Game
 {
-	GameObject* CameraFactory::CreateObject(const Math::Vector2& pos, const Math::Vector2& size)
+	GameObject* CameraFactory::CreateObject(GameObject* obj, const Math::Vector2& pos, const Math::Vector2& size)
 	{
-		Camera* camera = new Camera;
+		Camera* camera = dynamic_cast<Camera*>(obj);
+		assert(camera);
 
 		CameraTransform* cameraTransform = new CameraTransform(Math::Vector2(), Math::Vector2());
 

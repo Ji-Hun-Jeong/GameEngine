@@ -2,6 +2,9 @@
 #include "UI.h"
 #include "UIFactory.h"
 #include "CameraFactory.h"
+#include "MainUI.h"
+#include "DragUI.h"
+#include "MouseUIMove.h"
 
 namespace Game
 {
@@ -10,24 +13,20 @@ namespace Game
 	{
 		std::unique_ptr<Factory> factory = std::make_unique<UIFactory>();
 		
-		UI* mainUI = static_cast<UI*>(
-			factory->CreateObject(Math::Vector2(300.0f, 300.0f), Math::Vector2(900.0f, 700.0f)));
+		UI* mainUI = static_cast<UI*>(factory->CreateObject(new MainUI
+			, Math::Vector2(600.0f, 300.0f), Math::Vector2(700.0f, 500.0f)));
 
 		AddGameObject(eLayerType::UI, mainUI);
 
-		UI* childUI = static_cast<UI*>(factory->CreateObject());
-		childUI->SetSize(Math::Vector2(500.0f, 500.0f));
-		childUI->SetOffset(Math::Vector2(0.0f, 0.0f));
-		mainUI->AddChildUI(childUI);
-
-		childUI = static_cast<UI*>(factory->CreateObject());
-		childUI->SetSize(Math::Vector2(100.0f, 100.0f));
-		childUI->SetOffset(Math::Vector2(0.0f, 100.0f));
+		UI* childUI = static_cast<UI*>(factory->CreateObject(new DragUI));
+		childUI->SetMoveComponent(new MouseUIMove);
+		childUI->SetSize(Math::Vector2(700.0f, 50.0f));
+		childUI->SetOffset(Math::Vector2(0.0f, -225.0f));
 		mainUI->AddChildUI(childUI);
 
 		factory = std::make_unique<CameraFactory>();
-		Camera* camera = static_cast<Camera*>(factory->CreateObject(
-			Math::Vector2(640.0f, 360.0f), Math::Vector2(1280.0f, 720.0f)));
+		Camera* camera = static_cast<Camera*>(factory->CreateObject(new Camera,
+			Math::Vector2(0.0f, 0.0f), Math::Vector2(1280.0f, 720.0f)));
 		AddCamera(camera);
 		SetCurCamera(camera);
 	}

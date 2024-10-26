@@ -2,13 +2,13 @@
 #include "GameObject.h"
 namespace Game
 {
-	class MouseDrager :	public GameObject
+	class RectGenerator :	public GameObject
 	{
-		CLONE(GameObject, MouseDrager)
+		CLONE(GameObject, RectGenerator)
 	public:
-		MouseDrager();
-		MouseDrager(const MouseDrager&) = default;
-		~MouseDrager();
+		RectGenerator();
+		RectGenerator(const RectGenerator&) = default;
+		~RectGenerator();
 
 	public:
 		void Update(float dt) override;

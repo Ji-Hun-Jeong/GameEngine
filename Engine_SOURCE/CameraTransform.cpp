@@ -12,6 +12,6 @@ namespace Game
 	}
 	void CameraTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
-		m_FinalPos = m_Pos;
+		m_FinalPos += m_Pos;
 	}
 }

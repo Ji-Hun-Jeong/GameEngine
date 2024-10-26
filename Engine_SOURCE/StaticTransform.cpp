@@ -11,6 +11,6 @@ namespace Game
 	}
 	void StaticTransform::TransformByCamera(float dt, const TransformComponent* const curCameraTransform)
 	{
-		m_FinalPos = m_Pos;
+		m_FinalPos += m_Pos;
 	}
 }

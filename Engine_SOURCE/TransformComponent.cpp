@@ -12,9 +12,9 @@ namespace Game
 	TransformComponent::~TransformComponent()
 	{
 	}
-	void TransformComponent::Update()
+	void TransformComponent::AdjustByOffset()
 	{
-		m_Pos += m_Offset;
+		m_FinalPos = m_Offset;
 	}
 	void TransformComponent::CopyValue(TransformComponent* const other) const
 	{

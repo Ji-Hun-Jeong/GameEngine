@@ -15,8 +15,8 @@ namespace Game
 	{
 		Gdiplus::Rect cameraScreen = curCameraTransform->GetFinalRectInMYC();
 
-		m_FinalPos.x = m_Pos.x - cameraScreen.X;
-		m_FinalPos.y = m_Pos.y - cameraScreen.Y;
+		m_FinalPos.x += m_Pos.x - cameraScreen.X;
+		m_FinalPos.y += m_Pos.y - cameraScreen.Y;
 	}
 	
 }

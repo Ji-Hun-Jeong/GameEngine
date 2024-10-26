@@ -164,8 +164,6 @@ namespace Game
 
 	void GameObject::Update(float dt)
 	{
-		if (m_TransformComponent)
-			m_TransformComponent->Update();
 		if (m_MoveComponent)
 			m_MoveComponent->Move(dt);
 		if (m_RigidBody)
@@ -181,7 +179,10 @@ namespace Game
 		TransformComponent* const cameraTransform = curCamera->GetComponent<TransformComponent*>("Transform");
 
 		if (m_TransformComponent)
+		{
+			m_TransformComponent->AdjustByOffset();
 			m_TransformComponent->TransformByCamera(dt, cameraTransform);
+		}
 
 		for (auto mCollider : m_VecColliders)
 		{

@@ -13,9 +13,10 @@
 
 namespace Game
 {
-	GameObject* PlayerFactory::CreateObject(const Math::Vector2& pos, const Math::Vector2& size)
+	GameObject* PlayerFactory::CreateObject(GameObject* obj, const Math::Vector2& pos, const Math::Vector2& size)
 	{
-		Player* player = new Player;
+		Player* player = dynamic_cast<Player*>(obj);
+		assert(player);
 
 		PlayerTransform* playerTransform = new PlayerTransform(pos, size);
 		player->SetTransformComponent(playerTransform);
