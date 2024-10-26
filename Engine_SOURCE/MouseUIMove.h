@@ -1,5 +1,5 @@
 #pragma once
-#include "MoveComponent.h"
+#include "UIMove.h"
 namespace Game
 {
 	class MouseUIMove : public MoveComponent
@@ -12,8 +12,6 @@ namespace Game
 
 	public:
 		void Move(float dt) override;
-
-	private:
 
 	};
 }

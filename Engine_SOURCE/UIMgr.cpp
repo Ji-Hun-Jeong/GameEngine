@@ -8,7 +8,8 @@
 namespace Game
 {
 	UIMgr::UIMgr()
-		: m_PrevFocusUI(nullptr)
+		: m_CurFocusUI(nullptr)
+		, m_PrevFocusUI(nullptr)
 	{
 		m_VecCurOnUI.reserve(30);
 	}
@@ -26,33 +27,42 @@ namespace Game
 		for (auto iter = uiMap.begin(); iter != uiMap.end(); ++iter)
 			uiQueue.push(iter->second);
 
-		UI* focusUI = getFocusUI(uiQueue);
+		m_CurFocusUI = getFocusUI(uiQueue);
 
-		if (focusUI)
+		if (m_CurFocusUI)
 		{
-			bool isPrevOn = focusUI->IsPrevFocus();
+			bool isPrevOn = m_CurFocusUI->IsPrevFocus();
 			if (isPrevOn)
 			{
-				if (focusUI != m_PrevFocusUI)
-					focusUI->EnterMouse();
+				if (m_CurFocusUI != m_PrevFocusUI)
+				{
+					m_CurFocusUI->EnterMouse();
+					if (m_PrevFocusUI)
+						m_PrevFocusUI->ExitMouse();
+				}
 
-				focusUI->OnMouse();
+				else
+					m_CurFocusUI->OnMouse();
 			}
-				
 			else
 			{
 				if (m_PrevFocusUI)
 					m_PrevFocusUI->ExitMouse();
 
-				focusUI->EnterMouse();	
+				m_CurFocusUI->EnterMouse();
 			}
 
 			for (auto ui : m_VecCurOnUI)
 				ui->SetPrevFocus(true);
 			m_VecCurOnUI.clear();
 		}
-
-		m_PrevFocusUI = focusUI;
+		else
+		{
+			if (m_PrevFocusUI)
+				m_PrevFocusUI->ExitMouse();
+		}
+			
+		m_PrevFocusUI = m_CurFocusUI;
 	}
 
 	UI* UIMgr::getFocusUI(std::queue<GameObject*>& uiQueue)

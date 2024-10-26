@@ -14,6 +14,7 @@ namespace Game
 
 	private:
 		std::vector<UI*> m_VecCurOnUI;
+		UI* m_CurFocusUI;
 		UI* m_PrevFocusUI;
 	};
 }

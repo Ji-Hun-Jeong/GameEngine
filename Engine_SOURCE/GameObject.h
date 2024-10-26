@@ -42,6 +42,9 @@ namespace Game
 		const Math::Vector2& GetPos() const;
 		const Math::Vector2& GetFinalPos() const;
 		const Math::Vector2& GetSize() const;
+		const Math::Vector2& GetOffset() const;
+		const Math::Vector2& GetPrevOffset() const;
+
 		Gdiplus::Rect GetFinalRectInMYC() const;
 		std::vector<Collider*>& GetColliders() { return m_VecColliders; }
 

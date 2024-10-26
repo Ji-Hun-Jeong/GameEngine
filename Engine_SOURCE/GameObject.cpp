@@ -133,10 +133,12 @@ namespace Game
 	{
 		m_TransformComponent->SetSize(size);
 	}
+
 	void GameObject::SetOffset(const Math::Vector2& offset)
 	{
 		m_TransformComponent->SetOffset(offset);
 	}
+
 	void GameObject::SetSizeFromTexture()
 	{
 		this->SetSize(m_RenderComponent->GetTextureSize());
@@ -155,6 +157,16 @@ namespace Game
 	const Math::Vector2& GameObject::GetSize() const
 	{
 		return m_TransformComponent->GetSize();
+	}
+
+	const Math::Vector2& GameObject::GetOffset() const
+	{
+		return m_TransformComponent->GetOffset();
+	}
+
+	const Math::Vector2& GameObject::GetPrevOffset() const
+	{
+		return m_TransformComponent->GetPrevOffset();
 	}
 
 	Gdiplus::Rect GameObject::GetFinalRectInMYC() const

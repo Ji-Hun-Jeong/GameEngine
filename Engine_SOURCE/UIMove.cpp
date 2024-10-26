@@ -27,6 +27,6 @@ namespace Game
 		TransformComponent* const ownerOfOwnerUITransform =
 			ownerOfOwnerUI->GetComponent<TransformComponent*>("Transform");
 
-		ownerTransform->SetPos(ownerOfOwnerUI->GetPos());
+		ownerTransform->SetPos(ownerOfOwnerUI->GetFinalPos());
 	}
 }

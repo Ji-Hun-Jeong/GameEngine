@@ -7,7 +7,6 @@
 #include "TimeMgr.h"
 #include "CollisionMgr.h"
 #include "UIMgr.h"
-
 namespace Game
 {
 	Application::Application(HWND hwnd, UINT screenWidth, UINT screenHeight)
@@ -19,31 +18,6 @@ namespace Game
 	{
 		if (m_Hwnd == nullptr)
 			assert(0);
-		{
-			//OPENFILENAMEA ofn;       // 구조체 선언
-			//char szFile[260] = { 0 };  // 파일 이름을 저장할 버퍼
-
-			//// OPENFILENAMEA 구조체 초기화
-			//ZeroMemory(&ofn, sizeof(ofn));
-			//ofn.lStructSize = sizeof(ofn);
-			//ofn.hwndOwner = m_Hwnd;      // 소유자 윈도우 핸들, 현재 콘솔이므로 NULL
-			//ofn.lpstrFile = szFile;    // 파일 이름 버퍼 지정
-			//ofn.nMaxFile = sizeof(szFile);  // 버퍼 크기
-			//ofn.lpstrFilter = "All Files\0*.*\0Text Files\0*.TXT\0";  // 파일 필터
-			//ofn.nFilterIndex = 1;      // 필터 인덱스
-			//ofn.lpstrFileTitle = NULL; // 파일 제목 버퍼
-			//ofn.nMaxFileTitle = 0;
-			//ofn.lpstrInitialDir = NULL; // 초기 디렉터리
-			//ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_OVERWRITEPROMPT;
-			//if (GetSaveFileNameA(&ofn))
-			//{
-			//	int a = 1;
-			//}
-			//else
-			//{
-			//	int a = 1;
-			//}
-		}
 		
 		ShowWindow(m_Hwnd, SW_SHOWDEFAULT);
 		UpdateWindow(m_Hwnd);
@@ -61,6 +35,7 @@ namespace Game
 		update();
 		postUpdate();
 		render();
+
 		if (KeyMgr::GetInst().GetKeyState(eKeyType::Esc, eButtonState::Tap))
 			m_Run = false;
 		return m_Run;
