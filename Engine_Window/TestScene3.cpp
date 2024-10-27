@@ -29,6 +29,12 @@ namespace Game
 		cchildUI->SetOffset(Math::Vector2(0.0f, -125.0f));
 		childUI->AddChildUI(cchildUI);
 
+		cchildUI = static_cast<UI*>(factory->CreateObject(new DragUI));
+		cchildUI->SetMoveComponent(new MouseUIMove);
+		cchildUI->SetSize(Math::Vector2(200.0f, 50.0f));
+		cchildUI->SetOffset(Math::Vector2(0.0f, -125.0f));
+		mainUI->AddChildUI(cchildUI);
+
 		/*childUI = static_cast<UI*>(factory->CreateObject(new MainUI));
 		childUI->SetSize(Math::Vector2(200.0f, 300.0f));
 		childUI->SetOffset(Math::Vector2(100.0f, 100.0f));

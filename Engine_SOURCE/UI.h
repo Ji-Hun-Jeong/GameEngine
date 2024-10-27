@@ -26,15 +26,12 @@ namespace Game
 		const std::vector<UI*>& GetChildUI() const { return m_VecChildUI; }
 
 		bool IsCurFocus() { return m_CurFocus; }
-		void SetPrevFocus(bool prevFocus) { m_PrevFocus = prevFocus; }
-		bool IsPrevFocus() { return m_PrevFocus; }
 
 	protected:
 		std::vector<UI*> m_VecChildUI;
 		UI* m_OwnerUI;
 
 		bool m_CurFocus;
-		bool m_PrevFocus;
 	};
 }
 

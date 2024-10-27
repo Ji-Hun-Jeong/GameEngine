@@ -29,39 +29,19 @@ namespace Game
 
 		m_CurFocusUI = getFocusUI(uiQueue);
 
-		if (m_CurFocusUI)
+		if (m_CurFocusUI == m_PrevFocusUI)
 		{
-			bool isPrevOn = m_CurFocusUI->IsPrevFocus();
-			if (isPrevOn)
-			{
-				if (m_CurFocusUI != m_PrevFocusUI)
-				{
-					m_CurFocusUI->EnterMouse();
-					if (m_PrevFocusUI)
-						m_PrevFocusUI->ExitMouse();
-				}
-
-				else
-					m_CurFocusUI->OnMouse();
-			}
-			else
-			{
-				if (m_PrevFocusUI)
-					m_PrevFocusUI->ExitMouse();
-
-				m_CurFocusUI->EnterMouse();
-			}
-
-			for (auto ui : m_VecCurOnUI)
-				ui->SetPrevFocus(true);
-			m_VecCurOnUI.clear();
+			if (m_CurFocusUI)
+				m_CurFocusUI->OnMouse();
 		}
 		else
 		{
+			if (m_CurFocusUI)
+				m_CurFocusUI->EnterMouse();
 			if (m_PrevFocusUI)
 				m_PrevFocusUI->ExitMouse();
 		}
-			
+
 		m_PrevFocusUI = m_CurFocusUI;
 	}
 
@@ -88,14 +68,7 @@ namespace Game
 
 			bool mouseInUI = onMouse(ui);
 			if (mouseInUI == false)
-			{
-				if (ui->IsPrevFocus())
-					ui->ExitMouse();
-				ui->SetPrevFocus(false);
 				continue;
-			}
-
-			m_VecCurOnUI.push_back(ui);
 
 			const std::vector<UI*>& childUI = ui->GetChildUI();
 			for (int i = 0; i < childUI.size(); ++i)

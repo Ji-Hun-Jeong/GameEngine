@@ -8,7 +8,6 @@ namespace Game
 		: GameObject(name)
 		, m_OwnerUI(nullptr)
 		, m_CurFocus(false)
-		, m_PrevFocus(false)
 	{
 		m_VecChildUI.reserve(10);
 	}
