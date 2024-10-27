@@ -1,6 +1,7 @@
 #include "MouseRect.h"
 #include "TransformComponent.h"
 #include "MouseMgr.h"
+#include "GameObject.h"
 
 namespace Game
 {

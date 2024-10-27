@@ -1,5 +1,4 @@
 #include "SpriteRenderer.h"
-#include "Texture.h"
 
 namespace Game
 {

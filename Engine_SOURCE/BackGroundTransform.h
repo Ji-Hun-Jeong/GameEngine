@@ -6,6 +6,7 @@ namespace Game
 	{
 		CLONE(TransformComponent, BackGroundTransform)
 	public:
+		BackGroundTransform();
 		explicit BackGroundTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		BackGroundTransform(const BackGroundTransform&) = default;
 		~BackGroundTransform();

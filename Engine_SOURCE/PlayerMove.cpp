@@ -1,6 +1,7 @@
 #include "PlayerMove.h"
 #include "RigidBody.h"
 #include "KeyMgr.h"
+#include "GameObject.h"
 
 namespace Game
 {

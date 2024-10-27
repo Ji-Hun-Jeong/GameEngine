@@ -6,6 +6,7 @@
 #include "BasicRigidBody.h"
 #include "StateController.h"
 #include "Animator.h"
+
 #include "IdleState.h"
 #include "JumpState.h"
 #include "WalkState.h"

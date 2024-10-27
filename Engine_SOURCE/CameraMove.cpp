@@ -1,6 +1,7 @@
 #include "CameraMove.h"
 #include "KeyMgr.h"
 #include "TransformComponent.h"
+#include "GameObject.h"
 
 namespace Game
 {

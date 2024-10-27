@@ -1,8 +1,12 @@
 #include "TransformComponent.h"
-#include "Camera.h"
 
 namespace Game
 {
+	TransformComponent::TransformComponent()
+		: TransformComponent(Math::Vector2(), Math::Vector2())
+	{
+
+	}
 	TransformComponent::TransformComponent(const Math::Vector2& pos, const Math::Vector2& size)
 		: Component("Transform")
 		, m_Pos(pos)

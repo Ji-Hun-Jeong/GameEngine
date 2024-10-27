@@ -2,6 +2,11 @@
 
 namespace Game
 {
+	BackGroundTransform::BackGroundTransform()
+		: BackGroundTransform(Math::Vector2(), Math::Vector2())
+	{
+
+	}
 	BackGroundTransform::BackGroundTransform(const Math::Vector2& pos, const Math::Vector2& size)
 		: TransformComponent(pos, size)
 	{

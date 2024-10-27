@@ -1,8 +1,8 @@
 #pragma once
 #include "RenderComponent.h"
+
 namespace Game
 {
-	class Animation;
 	class Animator : public RenderComponent
 	{
 		CLONE(RenderComponent, Animator)
@@ -13,10 +13,10 @@ namespace Game
 
 	public:
 		void Render(HDC dc, const TransformComponent* const transform) override;
-		void AddAnimation(Animation* const animation);
+		void AddAnimation(class Animation* const animation);
 
 	private:
-		std::map<std::string, Animation*> m_MapAnimations;
+		std::map<std::string, class Animation*> m_MapAnimations;
 	};
 }
 

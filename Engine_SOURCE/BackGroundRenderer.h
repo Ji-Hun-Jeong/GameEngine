@@ -1,5 +1,6 @@
 #pragma once
 #include "RenderComponent.h"
+
 namespace Game
 {
 	class BackGroundRenderer : public RenderComponent

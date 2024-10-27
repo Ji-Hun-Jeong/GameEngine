@@ -11,7 +11,7 @@ namespace Game
 		Monster* monster = dynamic_cast<Monster*>(obj);
 		assert(monster);
 
-		BackGroundTransform* transform = new BackGroundTransform(Math::Vector2(), Math::Vector2());
+		BackGroundTransform* transform = new BackGroundTransform;
 		monster->SetTransformComponent(transform);
 
 		monster->SetPos(pos);

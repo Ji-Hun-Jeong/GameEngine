@@ -1,6 +1,7 @@
 #pragma once
 #include "Entity.h"
 #include "StateController.h"
+#include "GameObject.h"
 namespace Game
 {
 	class State : public Entity

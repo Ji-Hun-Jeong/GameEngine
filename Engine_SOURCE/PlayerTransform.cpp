@@ -1,7 +1,12 @@
 #include "PlayerTransform.h"
-#include "KeyMgr.h"
+
 namespace Game
 {
+	PlayerTransform::PlayerTransform()
+		: PlayerTransform(Math::Vector2(), Math::Vector2())
+	{
+
+	}
 	PlayerTransform::PlayerTransform(const Math::Vector2& pos, const Math::Vector2& size)
 		: TransformComponent(pos, size)
 	{

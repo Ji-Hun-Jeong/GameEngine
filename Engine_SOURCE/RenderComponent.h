@@ -2,6 +2,7 @@
 #include "Component.h"
 #include "TransformComponent.h"
 #include "Texture.h"
+
 namespace Game
 {
 	class RenderComponent : public Component

@@ -1,5 +1,7 @@
 #include "TestScene2.h"
 #include "BackGroundRenderer.h"
+#include "BasicRenderer.h"
+#include "BackGroundTransform.h"
 #include "RectGenerator.h"
 #include "AnimationGenerator.h"
 #include "CollisionMgr.h"
@@ -13,6 +15,7 @@ namespace Game
 		: Scene("Test2", width, height)
 	{
 		GameObject* obj = new BackGround;
+		obj->SetTransformComponent(new BackGroundTransform);
 		obj->SetRenderComponent(new BackGroundRenderer);
 		obj->SetTexture("BackGroundTexture");
 		obj->SetSizeFromTexture();
@@ -20,7 +23,8 @@ namespace Game
 		AddGameObject(eLayerType::BackGround, obj);
 		
 		obj = new AnimationGenerator;
-		obj->SetTransformComponent(new MouseDragTransform(Math::Vector2(), Math::Vector2()));
+		obj->SetTransformComponent(new MouseDragTransform);
+		obj->SetRenderComponent(new BasicRenderer);
 		obj->SetMoveComponent(new MouseRect);
 		AddGameObject(eLayerType::Entity, obj);
 

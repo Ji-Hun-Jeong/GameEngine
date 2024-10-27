@@ -1,5 +1,6 @@
 #pragma once
 #include "Factory.h"
+
 namespace Game
 {
 	class UIFactory : public Factory

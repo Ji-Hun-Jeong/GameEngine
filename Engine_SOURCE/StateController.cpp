@@ -1,5 +1,5 @@
 #include "StateController.h"
-#include "State.h"	// 무슨 헤더파일 포함안됐다고 소멸자 안불리냐 ㅡㅡ 
+#include "State.h"	// 무슨 헤더파일 포함안됐다고 소멸자 안불리냐 ㅡㅡ
 
 namespace Game
 {
@@ -29,7 +29,6 @@ namespace Game
 
 	void StateController::AddState(State* const state)
 	{
-		assert(state);
 		auto pair = m_MapStates.insert(std::make_pair(state->GetName(), state));
 		assert(pair.second);
 

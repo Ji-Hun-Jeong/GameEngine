@@ -1,7 +1,5 @@
 #include "AnimationGenerator.h"
-#include "BasicRenderer.h"
 #include "Camera.h"
-#include "Component.h"
 #include "Frame.h"
 #include "KeyMgr.h"
 #include "PathMgr.h"
@@ -13,9 +11,7 @@ namespace Game
 		: GameObject("AnimationGenerator")
 		, m_AnimationName("Attack")
 	{
-		SetRenderComponent(new BasicRenderer);
 		m_VecFrames.reserve(10);
-		//m_VecAnimateFrames.reserve(10);
 	}
 	AnimationGenerator::AnimationGenerator(const AnimationGenerator& other)
 		: GameObject(other)

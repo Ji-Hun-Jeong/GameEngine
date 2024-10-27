@@ -12,21 +12,19 @@ union CollisionKey
 };
 namespace Game
 {
-	class Scene;
-	class Collider;
 	class CollisionMgr
 	{
 		SINGLE(CollisionMgr)
 	public:
 		void Update();
 		void CheckInCollisionMatrix(eLayerType left, eLayerType right, bool trueOrFalse);
-		static bool CheckCollidersCollision(const Collider* const collider1, const Collider* const collider2);
+		static bool CheckCollidersCollision(const class Collider* const collider1, const class Collider* const collider2);
 		static bool CheckBoxCollision(const Math::Vector2& pos1, const Math::Vector2& size1
 			, const Math::Vector2& pos2, const Math::Vector2& size2);
 
 	private:
-		void checkTwoGroupObjectsCollision(Scene* const scene, eLayerType left, eLayerType right);
-		void checkTwoObjectCollidersCollision(GameObject* obj1, GameObject* obj2);
+		void checkTwoGroupObjectsCollision(class Scene* const scene, eLayerType left, eLayerType right);
+		void checkTwoObjectCollidersCollision(class GameObject* obj1, class GameObject* obj2);
 
 
 	private:

@@ -1,5 +1,6 @@
 #pragma once
-#include "GameObject.h"
+#include "Entity.h"
+#include "Common.h"
 namespace Game
 {
 	class Component : public Entity
@@ -11,11 +12,11 @@ namespace Game
 
 	public:
 		static Gdiplus::Rect GetRectInMYC(const Math::Vector2& pos, const Math::Vector2& size);
-		GameObject* GetOwner() const { return m_Owner; }
-		void SetOwner(GameObject* const owner) { m_Owner = owner; }
+		class GameObject* GetOwner() const { return m_Owner; }
+		void SetOwner(class GameObject* const owner) { m_Owner = owner; }
 
 	protected:
-		GameObject* m_Owner;
+		class GameObject* m_Owner;
 	};
 }
 

@@ -1,5 +1,6 @@
 #include "BasicRigidBody.h"
 #include "TransformComponent.h"
+#include "GameObject.h"
 
 namespace Game
 {

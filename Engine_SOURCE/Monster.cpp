@@ -1,6 +1,4 @@
 #include "Monster.h"
-#include "Collider.h"
-#include "BackGroundTransform.h"
 
 namespace Game
 {

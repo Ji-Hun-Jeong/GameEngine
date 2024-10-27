@@ -6,6 +6,7 @@ namespace Game
 	{
 		CLONE(TransformComponent, PlayerTransform)
 	public:
+		PlayerTransform();
 		explicit PlayerTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		PlayerTransform(const PlayerTransform&) = default;
 		~PlayerTransform();

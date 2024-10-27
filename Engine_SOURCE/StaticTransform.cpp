@@ -2,6 +2,11 @@
 
 namespace Game
 {
+	StaticTransform::StaticTransform()
+		: StaticTransform(Math::Vector2(), Math::Vector2())
+	{
+
+	}
 	StaticTransform::StaticTransform(const Math::Vector2& pos, const Math::Vector2& size)
 		: TransformComponent(pos, size)
 	{

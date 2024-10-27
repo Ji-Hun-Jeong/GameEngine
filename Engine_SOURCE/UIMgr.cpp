@@ -11,7 +11,7 @@ namespace Game
 		: m_CurFocusUI(nullptr)
 		, m_PrevFocusUI(nullptr)
 	{
-		m_VecCurOnUI.reserve(30);
+		
 	}
 	UIMgr::~UIMgr()
 	{

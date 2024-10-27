@@ -1,8 +1,12 @@
 #include "CameraTransform.h"
-#include "KeyMgr.h"
 
 namespace Game
 {
+	CameraTransform::CameraTransform()
+		: CameraTransform(Math::Vector2(), Math::Vector2())
+	{
+
+	}
 	CameraTransform::CameraTransform(const Math::Vector2& pos, const Math::Vector2& size)
 		: TransformComponent(pos, size)
 	{

@@ -1,11 +1,9 @@
 #pragma once
 #include "Component.h"
+#include "CollisionFunc.h"
+
 namespace Game
 {
-	class TransformComponent;
-	class RenderComponent;
-	class Player;
-	class BackGround;
 	class Collider : public Component, public CollisionFunc
 	{
 	public:
@@ -19,7 +17,7 @@ namespace Game
 		virtual void OnCollisionDeliverOther(Collider* const otherCollider) const = 0;
 		virtual void ExitCollisionDeliverOther(Collider* const otherCollider) const = 0;
 
-		virtual void Update(float dt, const TransformComponent* const ownerTransformComponent);
+		virtual void Update(float dt, const class TransformComponent* const ownerTransformComponent);
 		virtual void Render(HDC dc);
 
 

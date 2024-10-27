@@ -9,10 +9,11 @@ namespace Game
 {
 	Animation::Animation(const std::string& name, float changeTime)
 		: Entity(name)
-		, m_AnimateFrame(0)
-		, m_ChangeTime(changeTime)
-		, m_MeasureTime(0.0f)
 		, m_Texture(nullptr)
+		, m_AnimateFrame(0)
+		, m_MeasureTime(0.0f)
+		, m_ChangeTime(changeTime)
+		, m_FinishAnimation(false)
 	{
 		m_VecTextureCutInfo.reserve(10);
 	}
@@ -24,6 +25,7 @@ namespace Game
 		, m_ChangeTime(other.m_ChangeTime)
 		, m_MeasureTime(other.m_MeasureTime)
 		, m_Texture(other.m_Texture)
+		, m_FinishAnimation(other.m_FinishAnimation)
 	{
 	}
 

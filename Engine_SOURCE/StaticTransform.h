@@ -1,11 +1,13 @@
 #pragma once
 #include "TransformComponent.h"
+
 namespace Game
 {
 	class StaticTransform :	public TransformComponent
 	{
 		CLONE(TransformComponent, StaticTransform)
 	public:
+		StaticTransform();
 		explicit StaticTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		StaticTransform(const StaticTransform&) = default;
 		~StaticTransform();

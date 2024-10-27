@@ -1,8 +1,8 @@
 #pragma once
 #include "Common.h"
+
 namespace Game
 {
-	class GameObject;
 	class Factory
 	{
 	public:
@@ -10,7 +10,7 @@ namespace Game
 		virtual ~Factory() = default;
 
 	public:
-		virtual GameObject* CreateObject(GameObject* obj
+		virtual class GameObject* CreateObject(class GameObject* obj
 			, const Math::Vector2& pos = Math::Vector2()
 			, const Math::Vector2& size = Math::Vector2()) = 0;
 

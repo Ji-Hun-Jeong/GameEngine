@@ -1,5 +1,4 @@
 #include "BasicRenderer.h"
-#include "TransformComponent.h"
 
 namespace Game
 {

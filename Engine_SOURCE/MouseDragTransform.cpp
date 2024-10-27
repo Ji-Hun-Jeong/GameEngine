@@ -1,8 +1,12 @@
 #include "MouseDragTransform.h"
-#include "MouseMgr.h"
 
 namespace Game
 {
+	MouseDragTransform::MouseDragTransform()
+		: MouseDragTransform(Math::Vector2(), Math::Vector2())
+	{
+
+	}
 	MouseDragTransform::MouseDragTransform(const Math::Vector2& pos, const Math::Vector2& size)
 		: TransformComponent(pos, size)
 	{

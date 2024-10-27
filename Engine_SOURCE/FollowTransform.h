@@ -6,6 +6,7 @@ namespace Game
 	{
 		CLONE(TransformComponent, FollowTransform)
 	public:
+		FollowTransform();
 		explicit FollowTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		FollowTransform(const FollowTransform&) = default;
 		~FollowTransform();

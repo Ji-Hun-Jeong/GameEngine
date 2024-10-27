@@ -6,6 +6,7 @@ namespace Game
 	{
 		CLONE(TransformComponent, CameraTransform)
 	public:
+		CameraTransform();
 		explicit CameraTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		CameraTransform(const CameraTransform&) = default;
 		~CameraTransform();

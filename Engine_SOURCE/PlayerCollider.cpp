@@ -5,6 +5,7 @@
 #include "CollisionMgr.h"
 #include "TimeMgr.h"
 #include "RigidBody.h"
+#include "GameObject.h"
 
 namespace Game
 {

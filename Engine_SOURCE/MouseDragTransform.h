@@ -6,6 +6,7 @@ namespace Game
 	{
 		CLONE(TransformComponent, MouseDragTransform)
 	public:
+		MouseDragTransform();
 		explicit MouseDragTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		MouseDragTransform(const MouseDragTransform&) = default;
 		~MouseDragTransform();

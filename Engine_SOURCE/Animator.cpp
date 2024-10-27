@@ -1,9 +1,11 @@
 #include "Animator.h"
 #include "TimeMgr.h"
 #include "FileMgr.h"
+
 #include "StateController.h"
 #include "State.h"
 #include "Animation.h"
+#include "GameObject.h"
 
 namespace Game
 {

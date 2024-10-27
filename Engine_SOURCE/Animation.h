@@ -21,12 +21,13 @@ namespace Game
 
 	private:
 		std::vector<Gdiplus::Rect> m_VecTextureCutInfo;
+		Texture* m_Texture;
+
 		size_t m_AnimateFrame;
 		float m_ChangeTime;
 		float m_MeasureTime;
 		bool m_FinishAnimation;
 
-		Texture* m_Texture;
 	};
 }
 

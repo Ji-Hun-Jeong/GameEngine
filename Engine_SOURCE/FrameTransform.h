@@ -6,6 +6,7 @@ namespace Game
 	{
 		CLONE(TransformComponent, FrameTransform)
 	public:
+		FrameTransform();
 		explicit FrameTransform(const Math::Vector2& pos, const Math::Vector2& size);
 		FrameTransform(const FrameTransform&) = default;
 		virtual ~FrameTransform();

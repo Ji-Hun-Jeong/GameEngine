@@ -2,6 +2,11 @@
 
 namespace Game
 {
+	FollowTransform::FollowTransform()
+		: FollowTransform(Math::Vector2(), Math::Vector2())
+	{
+
+	}
 	FollowTransform::FollowTransform(const Math::Vector2& pos, const Math::Vector2& size)
 		: TransformComponent(pos, size)
 		//, m_FollowObjectTransform(nullptr)

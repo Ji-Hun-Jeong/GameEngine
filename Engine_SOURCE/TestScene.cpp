@@ -30,16 +30,14 @@ namespace Game
 			Math::Vector2(740.0f, 460.0f), Math::Vector2(100.0f, 100.0f)));
 
 		GameObject* backGround = new BackGround;
+		backGround->SetTransformComponent(new BackGroundTransform);
 		backGround->SetRenderComponent(new BackGroundRenderer);
 		backGround->SetTexture("BackGroundTexture");
 		backGround->SetPos(Math::Vector2(1024.0f, 1024.0f));
 		backGround->SetSizeFromTexture();
 
-		//collider = new BackGroundCollider(backGround, 0);
-		//backGround->AddCollider(collider);
 		AddGameObject(eLayerType::BackGround, backGround);
 
-		
 		factory = std::make_unique<CameraFactory>();
 		Camera* camera = static_cast<Camera*>(factory->CreateObject(new Camera,
 			Math::Vector2(640.0f, 360.0f), Math::Vector2(1280.0f, 720.0f)));
