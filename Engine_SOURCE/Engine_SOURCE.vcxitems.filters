@@ -199,6 +199,12 @@
     <Filter Include="4. Component\MoveComponent\UIMove">
       <UniqueIdentifier>{0880d142-af61-4c93-a8f1-6d0712374cab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="9. Entity\Layout">
+      <UniqueIdentifier>{593b955c-4251-43c4-b054-f15f3530c856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9. Entity\Layout\FlowLayout">
+      <UniqueIdentifier>{d0ecd15e-7e86-4fb8-a8ca-2655edc3d355}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
@@ -403,6 +409,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)UIMove.h">
       <Filter>4. Component\MoveComponent\UIMove</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layout.h">
+      <Filter>9. Entity\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FlowLayout.h">
+      <Filter>9. Entity\Layout\FlowLayout</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
@@ -597,6 +609,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)UIMove.cpp">
       <Filter>4. Component\MoveComponent\UIMove</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Layout.cpp">
+      <Filter>9. Entity\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FlowLayout.cpp">
+      <Filter>9. Entity\Layout\FlowLayout</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

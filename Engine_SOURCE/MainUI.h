@@ -4,7 +4,7 @@ namespace Game
 {
 	class MainUI : public UI
 	{
-		CLONE(GameObject, MainUI)
+		CLONE(UI, MainUI)
 	public:
 		MainUI();
 		MainUI(const MainUI& other) = default;

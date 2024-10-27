@@ -4,7 +4,7 @@ namespace Game
 {
 	class DragUI : public UI
 	{
-		CLONE(GameObject, DragUI)
+		CLONE(UI, DragUI)
 	public:
 		DragUI();
 		DragUI(const DragUI& other) = default;

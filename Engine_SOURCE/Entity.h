@@ -1,5 +1,6 @@
 #pragma once
 #include "Common.h"
+
 namespace Game
 {
 	class Entity
@@ -7,7 +8,7 @@ namespace Game
 	public:
 		Entity(const std::string& name);
 		Entity(const Entity& other);
-		virtual ~Entity();
+		virtual ~Entity() = 0;
 
 	public:
 		const std::string& GetName() const { return m_Name; }

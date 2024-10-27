@@ -1,19 +1,33 @@
 #include "UI.h"
 #include "TransformComponent.h"
 #include "BasicRenderer.h"
+#include "Layout.h"
 
 namespace Game
 {
 	UI::UI(const std::string& name)
 		: GameObject(name)
 		, m_OwnerUI(nullptr)
+		, m_Layout(nullptr)
 		, m_CurFocus(false)
 	{
 		m_VecChildUI.reserve(10);
 	}
+	UI::UI(const UI& other)
+		: GameObject(other)
+		, m_OwnerUI(other.m_OwnerUI)
+		, m_Layout(other.m_Layout->GetClone())
+		, m_CurFocus(other.m_CurFocus)
+	{
+		m_VecChildUI.reserve(other.m_VecChildUI.capacity());
+		for (size_t i = 0; i < other.m_VecChildUI.size(); ++i)
+			m_VecChildUI.push_back(other.m_VecChildUI[i]->GetClone());
+	}
 	UI::~UI()
 	{
 		Utility::DeleteVector<UI*>(m_VecChildUI);
+		if (m_Layout)
+			delete m_Layout;
 	}
 	void UI::Update(float dt)
 	{
@@ -37,8 +51,11 @@ namespace Game
 	}
 	void UI::AddChildUI(UI* const ui)
 	{
+		if (m_Layout)
+			m_Layout->PlaceUI(this, ui);
 		ui->m_OwnerUI = this;
 		m_VecChildUI.push_back(ui);
+
 	}
 	void UI::EnterMouse()
 	{

@@ -37,6 +37,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Factory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FileMgr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FlowLayout.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FollowTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Frame.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FrameTransform.h" />
@@ -46,6 +47,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)KeyMgr.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BackGroundRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layout.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MainUI.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Monster.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MonsterCollider.h" />
@@ -106,6 +108,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Factory.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FileMgr.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FlowLayout.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FollowTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Frame.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FrameTransform.cpp" />
@@ -115,6 +118,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)KeyMgr.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BackGroundRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Layout.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MainUI.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Monster.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MonsterCollider.cpp" />

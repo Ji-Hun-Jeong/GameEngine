@@ -26,7 +26,7 @@ namespace Game
 			{
 				return Vector2(-x, -y);
 			}
-			Vector2& operator = (const Vector2& other) 
+			Vector2& operator = (const Vector2& other)
 			{
 				x = other.x; y = other.y;
 				return *this;
@@ -95,6 +95,10 @@ namespace Game
 			void Print() const
 			{
 				std::cout << "x : " << x << " y : " << y << '\n';
+			}
+			Vector2 operator - () const
+			{
+				return Vector2(-x, -y);
 			}
 			bool operator == (const Vector2& other) const
 			{
