@@ -3,7 +3,6 @@
 #include "StaticTransform.h"
 #include "BasicRenderer.h"
 #include "UIMove.h"
-#include "MainUI.h"
 
 namespace Game
 {

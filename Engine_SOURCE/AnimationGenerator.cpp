@@ -68,6 +68,7 @@ namespace Game
 					, m_VecFrames[i]->GetSize());
 			}
 			FileMgr::GetInst().SaveToFileByVector<Gdiplus::Rect>(m_VecFramesInfo);
+
 			Utility::DeleteVector<Frame*>(m_VecFrames);
 			m_VecFramesInfo.clear();
 		}

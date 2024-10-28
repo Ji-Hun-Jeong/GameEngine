@@ -1,7 +1,6 @@
 #include "UIMgr.h"
-#include "SceneMgr.h"
-#include "Scene.h"
 #include "MouseMgr.h"
+#include "Scene.h"
 #include "Component.h"
 #include "UI.h"
 

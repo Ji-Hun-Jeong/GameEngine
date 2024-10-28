@@ -1,5 +1,6 @@
 #pragma once
 #include "Common.h"
+
 namespace Game
 {
 	class SceneMgr
@@ -17,7 +18,7 @@ namespace Game
 
 		UINT GetScreenWidth() { return m_ScreenWidth; }
 		UINT GetScreenHeight() { return m_ScreenHeight; }
-		class Scene* GetCurScene() { assert(m_CurScene); return m_CurScene; }
+		Scene* GetCurScene() { assert(m_CurScene); return m_CurScene; }
 
 	private:
 		void processPrevFrameRequest();

@@ -17,7 +17,7 @@ namespace Game
 	public:
 		Scene(const std::string& name, UINT width, UINT height);
 		Scene(const Scene&) = delete;
-		virtual ~Scene() = 0;
+		virtual ~Scene();
 
 	public:
 		virtual void EnterScene() = 0;

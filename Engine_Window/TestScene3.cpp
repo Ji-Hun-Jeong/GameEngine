@@ -2,10 +2,10 @@
 #include "UI.h"
 #include "UIFactory.h"
 #include "CameraFactory.h"
-#include "MainUI.h"
-#include "DragUI.h"
 #include "MouseUIMove.h"
 #include "FlowLayout.h"
+#include "ChangeSceneEvent.h"
+#include "UI.h"
 
 namespace Game
 {
@@ -14,24 +14,22 @@ namespace Game
 	{
 		std::unique_ptr<Factory> factory = std::make_unique<UIFactory>();
 		
-		UI* mainUI = static_cast<UI*>(factory->CreateObject(new MainUI
+		UI* mainUI = static_cast<UI*>(factory->CreateObject(new UI("Main")
 			, Math::Vector2(600.0f, 300.0f), Math::Vector2(700.0f, 600.0f)));
 		mainUI->SetLayout(new FlowLayout);
 		AddGameObject(eLayerType::UI, mainUI);
 
-		UI* dragUI = static_cast<UI*>(factory->CreateObject(new DragUI));
+		UI* dragUI = static_cast<UI*>(factory->CreateObject(new UI("Drag")));
 		dragUI->SetMoveComponent(new MouseUIMove);
 		dragUI->SetSize(Math::Vector2(700.0f, 50.0f));
 		if (mainUI->AddChildUI(dragUI) == false)
 			delete dragUI;
 
-		for (int i = 0; i < 150; ++i)
-		{
-			UI* ui = static_cast<UI*>(factory->CreateObject(new MainUI));
-			ui->SetSize(Math::Vector2(50.0f, 50.0f));
-			if (mainUI->AddChildUI(ui) == false)
-				delete ui;
-		}
+		UI* ui = static_cast<UI*>(factory->CreateObject(new UI("ChangeScene")));
+		ui->SetPressedClickEvent(new ChangeSceneEvent("Test2"));
+		ui->SetSize(Math::Vector2(50.0f, 50.0f));
+		if (mainUI->AddChildUI(ui) == false)
+			delete ui;
 
 		factory = std::make_unique<CameraFactory>();
 		Camera* camera = static_cast<Camera*>(factory->CreateObject(new Camera,

@@ -12,7 +12,7 @@ namespace Game
 	public:
 		GameObject(const std::string& name);
 		GameObject(const GameObject& other);
-		virtual ~GameObject() = 0;
+		virtual ~GameObject();
 
 	public:
 		virtual GameObject* GetClone() const = 0;

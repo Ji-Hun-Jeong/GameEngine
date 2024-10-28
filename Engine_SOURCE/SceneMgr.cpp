@@ -1,6 +1,6 @@
 #include "SceneMgr.h"
-#include "TestScene.h"
 #include "TimeMgr.h"
+#include "Scene.h"
 
 namespace Game
 {

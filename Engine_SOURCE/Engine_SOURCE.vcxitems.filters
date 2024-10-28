@@ -181,12 +181,6 @@
     <Filter Include="2. Manager\UIMgr">
       <UniqueIdentifier>{198a1fe2-343c-407e-84e7-87132f932c60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="3. GameObject\UI\MainUI">
-      <UniqueIdentifier>{2c3eaf66-287f-4c30-a449-25d73d34f7bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3. GameObject\UI\DragUI">
-      <UniqueIdentifier>{dcd15db7-3a9f-4c79-87fd-0c699e4248ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="3. GameObject\RectGenerator">
       <UniqueIdentifier>{29410a45-625a-4d00-84ff-be8f5e637f82}</UniqueIdentifier>
     </Filter>
@@ -204,6 +198,12 @@
     </Filter>
     <Filter Include="9. Entity\Layout\FlowLayout">
       <UniqueIdentifier>{d0ecd15e-7e86-4fb8-a8ca-2655edc3d355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9. Entity\Event">
+      <UniqueIdentifier>{d36ea04f-b9c5-45ad-b942-05d3a8ccf50e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9. Entity\Event\ChangeSceneEvent">
+      <UniqueIdentifier>{b1becdb2-a0a5-4a28-958c-fb9e0bf73bfa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -394,12 +394,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)UIMgr.h">
       <Filter>2. Manager\UIMgr</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)MainUI.h">
-      <Filter>3. GameObject\UI\MainUI</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)DragUI.h">
-      <Filter>3. GameObject\UI\DragUI</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MouseRect.h">
       <Filter>4. Component\MoveComponent\MouseRect</Filter>
     </ClInclude>
@@ -414,6 +408,12 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)FlowLayout.h">
       <Filter>9. Entity\Layout\FlowLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Event.h">
+      <Filter>9. Entity\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ChangeSceneEvent.h">
+      <Filter>9. Entity\Event\ChangeSceneEvent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -595,12 +595,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)UIMgr.cpp">
       <Filter>2. Manager\UIMgr</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)MainUI.cpp">
-      <Filter>3. GameObject\UI\MainUI</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)DragUI.cpp">
-      <Filter>3. GameObject\UI\DragUI</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MouseRect.cpp">
       <Filter>4. Component\MoveComponent\MouseRect</Filter>
     </ClCompile>
@@ -615,6 +609,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)FlowLayout.cpp">
       <Filter>9. Entity\Layout\FlowLayout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Event.cpp">
+      <Filter>9. Entity\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ChangeSceneEvent.cpp">
+      <Filter>9. Entity\Event\ChangeSceneEvent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
