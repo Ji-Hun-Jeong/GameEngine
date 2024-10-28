@@ -9,7 +9,7 @@ namespace Game
 {
 	AnimationGenerator::AnimationGenerator()
 		: GameObject("AnimationGenerator")
-		, m_AnimationName("Attack")
+		, m_AnimationName("")
 	{
 		m_VecFrames.reserve(10);
 	}
@@ -35,7 +35,8 @@ namespace Game
 		m_MouseDrager.Update(dt);
 		static KeyMgr& keyMgr = KeyMgr::GetInst();
 		if (keyMgr.GetKeyState(eKeyType::Ctrl, eButtonState::Hold) &&
-			keyMgr.GetKeyState(eKeyType::Z, eButtonState::Tap) && m_VecFrames.empty() == false)
+			keyMgr.GetKeyState(eKeyType::Z, eButtonState::Tap) && 
+			m_VecFrames.empty() == false)
 		{
 			delete m_VecFrames[m_VecFrames.size() - 1];
 			m_VecFrames.pop_back();
@@ -60,13 +61,11 @@ namespace Game
 			keyMgr.GetKeyState(eKeyType::S, eButtonState::Tap))
 		{
 			m_VecFramesInfo.resize(m_VecFrames.size());
-			const Gdiplus::Rect rect = curCamera->GetFinalRectInMYC();
+			const Gdiplus::Rect cameraScreen = curCamera->GetFinalRectInMYC();
 			for (size_t i = 0; i < m_VecFrames.size(); ++i)
 			{
-				m_VecFramesInfo[i] = Component::GetRectInMYC(m_VecFrames[i]->GetFinalPos()
+				m_VecFramesInfo[i] = Component::GetRectInMYC(m_VecFrames[i]->GetPos()
 					, m_VecFrames[i]->GetSize());
-				m_VecFramesInfo[i].X += rect.X;
-				m_VecFramesInfo[i].Y += rect.Y;
 			}
 			FileMgr::GetInst().SaveToFileByVector<Gdiplus::Rect>(m_VecFramesInfo);
 			Utility::DeleteVector<Frame*>(m_VecFrames);
@@ -77,9 +76,9 @@ namespace Game
 	{
 		GameObject::Render(dc);
 
+		m_MouseDrager.Render(dc);
+
 		for (size_t i = 0; i < m_VecFrames.size(); ++i)
 			m_VecFrames[i]->Render(dc);
-
-		m_MouseDrager.Render(dc);
 	}
 }

@@ -11,12 +11,7 @@ namespace Game
 		~MainUI();
 
 	public:
-		void Update(float dt) override;
-		void PostUpdate(float dt, Camera* const curCamera) override;
-		void Render(HDC dc) override;
-		void EnterMouse() override;
-		void OnMouse() override;
-		void ExitMouse() override;
+
 	};
 }
 

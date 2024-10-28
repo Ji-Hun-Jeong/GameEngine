@@ -20,7 +20,7 @@ namespace Game
 		virtual void OnMouse();
 		virtual void ExitMouse();
 
-		void AddChildUI(UI* const ui);
+		bool AddChildUI(UI* const ui);
 		void SetLayout(class Layout* const layout) { m_Layout = layout; }
 
 		UI* GetOwnerUI() { return m_OwnerUI; }

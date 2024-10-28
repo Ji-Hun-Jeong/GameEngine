@@ -12,7 +12,7 @@ namespace Game
 		~FlowLayout();
 
 	public:
-		void PlaceUI(class UI* const parentUI, class UI* const attachUI) override;
+		bool PlaceUI(class UI* const parentUI, class UI* const attachUI) override;
 
 	private:
 		UINT m_WidthGap;

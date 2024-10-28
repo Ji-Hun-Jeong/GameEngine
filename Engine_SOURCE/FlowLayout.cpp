@@ -26,28 +26,40 @@ namespace Game
 	{
 	}
 
-	void FlowLayout::PlaceUI(UI* const parentUI, UI* const attachUI)
+	bool FlowLayout::PlaceUI(UI* const parentUI, UI* const attachUI)
 	{
 		const std::vector<UI*>& childVec = parentUI->GetChildUI();
 		const Math::Vector2& parentPos = parentUI->GetFinalPos();
 		const Math::Vector2& parentSize = parentUI->GetSize();
 
-		attachUI->SetPos(parentPos);
 		const Math::Vector2& attachUISize = attachUI->GetSize();
 
-		const UI* lastChild = nullptr;
-		Math::Vector2 lastOffset;
+		float right = parentSize.x / 2.0f;
+		float bottom = parentSize.y / 2.0f;
+
+		const Math::Vector2& firstOffset = -parentSize / 2.0f + attachUISize / 2.0f;
+		Math::Vector2 finalOffset;
 		if (childVec.size())
 		{
+			const UI* lastChild = nullptr;
 			lastChild = childVec.back();
-			lastOffset = lastChild->GetOffset();
+			finalOffset = lastChild->GetOffset();
+			finalOffset.x += lastChild->GetSize().x / 2.0f + attachUISize.x / 2.0f;
 
-			//lastOffset.x += attachUISize.x;
+			if (right < finalOffset.x + attachUISize.x / 2.0f)
+			{
+				finalOffset.x = firstOffset.x;
+				finalOffset.y += lastChild->GetSize().y / 2.0f + attachUISize.y / 2.0f;
+
+				if (bottom < finalOffset.y + attachUISize.y / 2.0f)
+					return false;
+			}
 		}
 		else
-			lastOffset = -parentSize/2.0f + attachUISize/2.0f;
+			finalOffset = firstOffset;
 
-		attachUI->SetOffset(lastOffset);
+		attachUI->SetPos(parentPos);
+		attachUI->SetOffset(finalOffset);
 	}
 }
 

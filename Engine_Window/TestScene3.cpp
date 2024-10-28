@@ -22,8 +22,16 @@ namespace Game
 		UI* dragUI = static_cast<UI*>(factory->CreateObject(new DragUI));
 		dragUI->SetMoveComponent(new MouseUIMove);
 		dragUI->SetSize(Math::Vector2(700.0f, 50.0f));
-		//dragUI->SetOffset(Math::Vector2(0.0f, -275.0f));
-		mainUI->AddChildUI(dragUI);
+		if (mainUI->AddChildUI(dragUI) == false)
+			delete dragUI;
+
+		for (int i = 0; i < 150; ++i)
+		{
+			UI* ui = static_cast<UI*>(factory->CreateObject(new MainUI));
+			ui->SetSize(Math::Vector2(50.0f, 50.0f));
+			if (mainUI->AddChildUI(ui) == false)
+				delete ui;
+		}
 
 		factory = std::make_unique<CameraFactory>();
 		Camera* camera = static_cast<Camera*>(factory->CreateObject(new Camera,

@@ -24,6 +24,7 @@ namespace Game
 		std::vector<Frame*> m_VecFrames;
 		std::vector<Gdiplus::Rect> m_VecFramesInfo;
 		std::string m_AnimationName;
+
 	};
 }
 

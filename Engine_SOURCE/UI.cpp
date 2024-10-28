@@ -49,13 +49,21 @@ namespace Game
 		for (int i = 0; i < m_VecChildUI.size(); ++i)
 			m_VecChildUI[i]->Render(dc);
 	}
-	void UI::AddChildUI(UI* const ui)
+	bool UI::AddChildUI(UI* const ui)
 	{
-		if (m_Layout)
-			m_Layout->PlaceUI(this, ui);
-		ui->m_OwnerUI = this;
-		m_VecChildUI.push_back(ui);
+		bool permitAttach = true;
 
+		if (m_Layout)
+			permitAttach = m_Layout->PlaceUI(this, ui);
+		else
+			permitAttach = Layout::IsPossibleInParentUI(GetSize(), ui->GetSize(), ui->GetOffset());
+
+		if (permitAttach)
+		{
+			ui->m_OwnerUI = this;
+			m_VecChildUI.push_back(ui);
+		}
+		return permitAttach;
 	}
 	void UI::EnterMouse()
 	{

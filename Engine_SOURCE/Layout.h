@@ -12,8 +12,10 @@ namespace Game
 
 	public:
 		virtual Layout* GetClone() const = 0;
-		virtual void PlaceUI(class UI* parent, class UI* child) = 0;
+		virtual bool PlaceUI(class UI* parent, class UI* child) = 0;
 
+		static bool IsPossibleInParentUI(const Math::Vector2& parentSize, const Math::Vector2& childUISize
+			, const Math::Vector2& childUIOffset);
 	};
 }
 
