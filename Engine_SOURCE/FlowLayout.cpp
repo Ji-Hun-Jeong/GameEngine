@@ -60,6 +60,8 @@ namespace Game
 
 		attachUI->SetPos(parentPos);
 		attachUI->SetOffset(finalOffset);
+
+		return true;
 	}
 }
 
